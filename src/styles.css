@@ -172,25 +172,27 @@ body.dark .btn-secondary:hover {
 }
 
 .social-icon {
-  width: 1.5rem;
-  height: 1.5rem;
-  transition: transform 0.3s ease;
-  filter: grayscale(100%);
-  opacity: 0.7;
+  width: 1.2rem;
+  height: 1.2rem;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+  color: #1a1a1a;
 }
 
 .social-icon:hover {
-  transform: scale(1.2);
-  filter: grayscale(0%);
+  transform: translateY(-3px);
   opacity: 1;
+  color: #000;
 }
 
 body.dark .social-icon {
-  filter: invert(1) grayscale(100%);
+  color: #f0f0f0;
+  filter: none; /* Remove previous filter */
 }
 
 body.dark .social-icon:hover {
-  filter: invert(1) grayscale(0%);
+  color: #fff;
+  filter: none;
 }
 
 /* Theme toggle button */

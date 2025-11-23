@@ -63,47 +63,67 @@ const Home = ({ name, title, setActiveSection, theme }) => {
       justifyContent: "center", 
       alignItems: "center", 
       textAlign: "center",
-      background: theme === 'light' ? "radial-gradient(circle at 50% 30%, #eef2ff 0%, #ffffff 70%)" : "radial-gradient(circle at 50% 30%, #2a2a2a 0%, #1a1a1a 70%)",
-      paddingTop: "5rem" // Push content down slightly but keep it centered
+      background: theme === 'light' 
+        ? "radial-gradient(circle at 50% 40%, rgba(220, 230, 255, 0.8) 0%, rgba(255, 255, 255, 0) 60%), radial-gradient(circle at 50% 60%, rgba(220, 255, 240, 0.5) 0%, rgba(255, 255, 255, 0) 60%)" 
+        : "radial-gradient(circle at 50% 40%, rgba(40, 40, 60, 0.8) 0%, rgba(26, 26, 26, 0) 60%)",
+      paddingTop: "2rem"
     }}>
       <div style={{ 
-        width: "280px", // Bigger circle
-        height: "280px", 
+        width: "320px", 
+        height: "320px", 
         borderRadius: "50%", 
         overflow: "hidden", 
-        marginBottom: "2.5rem",
-        boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
-        border: "4px solid white"
+        marginBottom: "2rem",
+        boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
+        border: "none" // Removed border to match screenshot closer
       }}>
         <img src={image} alt={imageAltText} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
       </div>
       
       <h1 style={{ 
         fontFamily: "Montserrat, sans-serif", 
-        fontSize: "4.5rem", // Larger font
-        fontWeight: "800", // Bolder
+        fontSize: "5rem", 
+        fontWeight: "800", 
         color: theme === 'light' ? "#1a1a1a" : "#f0f0f0", 
-        margin: "0",
-        letterSpacing: "-0.02em"
+        margin: "0.5rem 0",
+        letterSpacing: "-0.02em",
+        lineHeight: "1.1"
       }}>
-        {text}<span className="cursor">|</span>
+        {text}<span className="cursor" style={{ fontWeight: "100", color: theme === 'light' ? "#1a1a1a" : "#f0f0f0" }}>|</span>
       </h1>
       
       <p style={{ 
         maxWidth: "700px", 
-        margin: "2rem 0", 
-        fontSize: "1.5rem", 
-        color: theme === 'light' ? "#4a4a4a" : "#ccc",
-        lineHeight: "1.6"
+        margin: "1.5rem 0 2.5rem", 
+        fontSize: "1.35rem", 
+        color: theme === 'light' ? "#555" : "#ccc",
+        lineHeight: "1.6",
+        fontWeight: "400"
       }}>
         {title}
       </p>
       
-      <div style={{ display: "flex", gap: "1.5rem", marginTop: "1rem" }}>
-        <button onClick={() => setActiveSection("portfolio")} className="btn btn-primary" style={{ fontSize: "1.1rem", padding: "1rem 2.5rem" }}>
-          View My Work &rarr;
+      <div style={{ display: "flex", gap: "1.5rem" }}>
+        <button onClick={() => setActiveSection("portfolio")} className="btn btn-primary" style={{ 
+          fontSize: "1rem", 
+          padding: "0.8rem 2rem", 
+          borderRadius: "8px", 
+          fontWeight: "600",
+          display: "flex",
+          alignItems: "center",
+          gap: "0.5rem"
+        }}>
+          View My Work <span style={{ fontSize: "1.2rem" }}>&rarr;</span>
         </button>
-        <button onClick={() => window.location.href = "mailto:guanya.peng24@gmail.com"} className="btn btn-secondary" style={{ fontSize: "1.1rem", padding: "1rem 2.5rem" }}>
+        <button onClick={() => window.location.href = "mailto:guanya.peng24@gmail.com"} className="btn btn-secondary" style={{ 
+          fontSize: "1rem", 
+          padding: "0.8rem 2rem", 
+          borderRadius: "8px", 
+          fontWeight: "600",
+          background: theme === 'light' ? "white" : "transparent",
+          color: theme === 'light' ? "#1a1a1a" : "#f0f0f0",
+          border: theme === 'light' ? "1px solid #e5e7eb" : "1px solid #444"
+        }}>
           Get in Touch
         </button>
       </div>
