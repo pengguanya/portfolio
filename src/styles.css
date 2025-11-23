@@ -98,28 +98,45 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: #4e567e;
+/* Cursor animation for typewriter effect */
+.cursor {
+  display: inline-block;
+  margin-left: 5px;
+  animation: blink 1s infinite;
 }
 
-.container {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 330px 300px;
-  margin: 20px auto;
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
 }
 
-.container .box {
-  border-radius: 10px;
-  border: 1px solid rgb(204, 204, 204);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 24px 16px;
-  text-align: center;
+/* Button styles */
+.btn {
+  padding: 1rem 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border-radius: 4px;
 }
 
-img.socialIcon {
-  height: 30px;
-  width: 30px;
+.btn-primary {
+  background-color: #1a1a1a;
+  color: white;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #333;
+}
+
+.btn-secondary {
+  background-color: white;
+  color: #1a1a1a;
+  border: 1px solid #ccc;
+}
+
+.btn-secondary:hover {
+  background-color: #f0f0f0;
 }
