@@ -24,7 +24,7 @@ import image from "../images/photo_gpeng.png";
 
 const imageAltText = "Photo of G.Peng";
 
-const Home = ({ name, title }) => {
+const Home = ({ name, title, setActiveSection, theme }) => {
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
@@ -63,34 +63,49 @@ const Home = ({ name, title }) => {
       justifyContent: "center", 
       alignItems: "center", 
       textAlign: "center",
-      background: "linear-gradient(to bottom, #f0f4f8, #ffffff)"
+      background: theme === 'light' ? "radial-gradient(circle at 50% 30%, #eef2ff 0%, #ffffff 70%)" : "radial-gradient(circle at 50% 30%, #2a2a2a 0%, #1a1a1a 70%)",
+      paddingTop: "5rem" // Push content down slightly but keep it centered
     }}>
       <div style={{ 
-        width: "200px", 
-        height: "200px", 
+        width: "280px", // Bigger circle
+        height: "280px", 
         borderRadius: "50%", 
         overflow: "hidden", 
-        marginBottom: "2rem",
-        boxShadow: "0 4px 10px rgba(0,0,0,0.1)"
+        marginBottom: "2.5rem",
+        boxShadow: "0 10px 25px rgba(0,0,0,0.15)",
+        border: "4px solid white"
       }}>
         <img src={image} alt={imageAltText} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
       </div>
       
-      <h1 style={{ fontFamily: "Montserrat, sans-serif", fontSize: "3.5rem", color: "#1a1a1a", margin: "0" }}>
+      <h1 style={{ 
+        fontFamily: "Montserrat, sans-serif", 
+        fontSize: "4.5rem", // Larger font
+        fontWeight: "800", // Bolder
+        color: theme === 'light' ? "#1a1a1a" : "#f0f0f0", 
+        margin: "0",
+        letterSpacing: "-0.02em"
+      }}>
         {text}<span className="cursor">|</span>
       </h1>
       
-      <p style={{ maxWidth: "600px", margin: "1.5rem 0", fontSize: "1.2rem", color: "#666" }}>
+      <p style={{ 
+        maxWidth: "700px", 
+        margin: "2rem 0", 
+        fontSize: "1.5rem", 
+        color: theme === 'light' ? "#4a4a4a" : "#ccc",
+        lineHeight: "1.6"
+      }}>
         {title}
       </p>
       
-      <div style={{ display: "flex", gap: "1rem", marginTop: "1rem" }}>
-        <a href="#portfolio" className="btn btn-primary">View My Work &rarr;</a>
-        <a href="#footer" className="btn btn-secondary">Get in Touch</a>
-      </div>
-      
-      <div style={{ position: "absolute", bottom: "3rem" }}>
-        <img src={arrowSvg} style={{ height: "3rem", width: "3rem" }} alt={imageAltText} />
+      <div style={{ display: "flex", gap: "1.5rem", marginTop: "1rem" }}>
+        <button onClick={() => setActiveSection("portfolio")} className="btn btn-primary" style={{ fontSize: "1.1rem", padding: "1rem 2.5rem" }}>
+          View My Work &rarr;
+        </button>
+        <button onClick={() => window.location.href = "mailto:guanya.peng24@gmail.com"} className="btn btn-secondary" style={{ fontSize: "1.1rem", padding: "1rem 2.5rem" }}>
+          Get in Touch
+        </button>
       </div>
     </section>
   );

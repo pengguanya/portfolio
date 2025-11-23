@@ -39,13 +39,56 @@ const primaryColor = "#4E567E";
 const secondaryColor = "#D2F1E4";
 
 const App = () => {
+  const [activeSection, setActiveSection] = React.useState("home");
+  const [theme, setTheme] = React.useState("light");
+
+  const toggleTheme = () => {
+    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+  };
+
+  React.useEffect(() => {
+    document.body.className = theme;
+  }, [theme]);
+
+  const renderContent = () => {
+    switch (activeSection) {
+      case "home":
+        return <Home name={siteProps.name} title={siteProps.title} setActiveSection={setActiveSection} theme={theme} />;
+      case "about":
+        return <About />;
+      case "portfolio":
+        return <Portfolio />;
+      default:
+        return <Home name={siteProps.name} title={siteProps.title} setActiveSection={setActiveSection} theme={theme} />;
+    }
+  };
+
   return (
     <div id="main">
-      <Header />
-      <Home name={siteProps.name} title={siteProps.title} />
-      <About />
-      <Portfolio />
-      <Footer {...siteProps} primaryColor={primaryColor} secondaryColor={secondaryColor} />
+      <Header activeSection={activeSection} setActiveSection={setActiveSection} theme={theme} toggleTheme={toggleTheme} />
+      {renderContent()}
+      <div className="social-icons-container">
+        {siteProps.gitHub && (
+          <a href={`https://github.com/${siteProps.gitHub}`} target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub" className="social-icon" />
+          </a>
+        )}
+        {siteProps.linkedIn && (
+          <a href={`https://www.linkedin.com/in/${siteProps.linkedIn}`} target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn" className="social-icon" />
+          </a>
+        )}
+        {siteProps.twitter && (
+          <a href={`https://twitter.com/${siteProps.twitter}`} target="_blank" rel="noopener noreferrer">
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/x.svg" alt="Twitter" className="social-icon" />
+          </a>
+        )}
+        {siteProps.email && (
+          <a href={`mailto:${siteProps.email}`}>
+            <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Email" className="social-icon" />
+          </a>
+        )}
+      </div>
     </div>
   );
 };
