@@ -2,17 +2,16 @@
 * CSS file to hold styles that apply across the application
 */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap");
-
 html,
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Roboto", sans-serif;
   height: 100%;
   margin: 0;
   overflow-x: hidden;
   padding: 0;
   width: 100%;
+  letter-spacing: 0.03em;
+  word-spacing: 0.05em;
 }
 
 div#main {
@@ -47,11 +46,12 @@ section img.background {
 }
 
 h1 {
-  font-family: "Inter", sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 7rem;
   font-weight: 400;
   line-height: 0.8;
   margin: 0;
+  color: #1f2937;
 }
 
 h2 {
@@ -59,19 +59,21 @@ h2 {
   font-weight: 400;
   margin: 0;
   padding-top: 1rem;
+  color: #1f2937;
 }
 
 h3 {
   font-weight: 400;
   font-size: 1.25rem;
   margin: 0;
+  color: #1f2937;
 }
 
 p {
   font-size: 18px;
-  line-height: 1.5;
+  line-height: 1.6;
   margin-bottom: 0;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 p.large {
@@ -144,7 +146,7 @@ a {
 
 /* Dark mode styles */
 body.dark {
-  background-color: #1a1a1a;
+  background-color: #09090b;
   color: #f0f0f0;
 }
 
@@ -160,6 +162,54 @@ body.dark .btn-secondary {
 
 body.dark .btn-secondary:hover {
   background-color: #444;
+}
+
+/* Dark Mode Overrides */
+body.dark .about-content h1,
+body.dark .about-section h2,
+body.dark .card h3,
+body.dark .cert-item h4 {
+  color: #f3f4f6;
+}
+
+body.dark .about-content p {
+  color: #c4c8cc;
+}
+
+body.dark .sub-text,
+body.dark .detail-list,
+body.dark .skill-list li,
+body.dark .cert-item p {
+  color: #9ca3af;
+}
+
+body.dark .sub-text.major {
+  color: #d1d5db;
+}
+
+body.dark .date-text {
+  color: #6b7280;
+}
+
+body.dark .card {
+  background-color: #09090b;
+  border-color: #272729;
+}
+
+body.dark .icon-box {
+  color: #f3f4f6;
+}
+
+body.dark .tool-item {
+  color: #d1d5db;
+}
+
+body.dark .tool-item:hover {
+  color: #f3f4f6;
+}
+
+body.dark .gray-bg {
+  background-color: #272729;
 }
 
 /* Social icons fixed at bottom right */
@@ -211,4 +261,206 @@ body.dark .social-icon:hover {
   width: 1.5rem;
   height: 1.5rem;
   fill: currentColor;
+}
+
+/* About Page Styles */
+.about-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-image {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.about-content {
+  margin-bottom: 4rem;
+}
+
+.about-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  color: #1f2937;
+}
+
+.about-content p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #6b7280;
+  line-height: 1.8;
+}
+
+.about-section {
+  margin-bottom: 4rem;
+}
+
+.about-section h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: #1f2937;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.grid-4 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: #d1d5db;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.gray-bg {
+  background-color: #f6f6f6;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1f2937;
+}
+
+.sub-text {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.sub-text.major {
+  font-weight: 600;
+  color: #4b5563;
+}
+
+.date-text {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.detail-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: #6b7280;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.cert-item h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: #1f2937;
+}
+
+.cert-item p {
+  color: #6b7280;
+  margin-bottom: 0.25rem;
+}
+
+.skill-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.icon-box {
+  margin-bottom: 0.75rem;
+  color: #1f2937;
+  display: flex;
+  justify-content: center;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.skill-list li {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 0.5rem;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 2.5rem;
+  padding: 1rem;
+}
+
+.tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  color: #374151;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.tool-item:hover {
+  color: #1f2937;
+}
+
+.tool-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+
+@media (max-width: 768px) {
+  .about-container {
+    padding: 1rem;
+  }
+  
+  .grid-2, .grid-3, .grid-4 {
+    grid-template-columns: 1fr;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
 }
