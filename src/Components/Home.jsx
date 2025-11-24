@@ -8,6 +8,7 @@
 import React, { useState, useEffect } from "react";
 import arrowSvg from "../images/down-arrow.svg";
 import PropTypes from "prop-types";
+import { getGreetings } from "../utils/greetings";
 
 /**
  * Home background image
@@ -28,9 +29,10 @@ const Home = ({ name, title, setActiveSection, theme }) => {
   const [text, setText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
-  const [typingSpeed, setTypingSpeed] = useState(150);
+  const [typingSpeed, setTypingSpeed] = useState(100);
 
-  const toRotate = [`Hi, I'm ${name}`, `Hola, soy ${name}`, `Olá, eu sou ${name}`];
+  const greetings = getGreetings(name);
+  const toRotate = greetings.map(g => g.text);
 
   useEffect(() => {
     const handleType = () => {
@@ -42,7 +44,7 @@ const Home = ({ name, title, setActiveSection, theme }) => {
         : fullText.substring(0, text.length + 1)
       );
 
-      setTypingSpeed(isDeleting ? 50 : 150);
+      setTypingSpeed(isDeleting ? 40 : 100);
 
       if (!isDeleting && text === fullText) {
         setTimeout(() => setIsDeleting(true), 2000);
@@ -63,14 +65,12 @@ const Home = ({ name, title, setActiveSection, theme }) => {
       justifyContent: "center", 
       alignItems: "center", 
       textAlign: "center",
-      background: theme === 'light' 
-        ? "radial-gradient(circle at 50% 40%, rgba(220, 230, 255, 0.8) 0%, rgba(255, 255, 255, 0) 60%), radial-gradient(circle at 50% 60%, rgba(220, 255, 240, 0.5) 0%, rgba(255, 255, 255, 0) 60%)" 
-        : "radial-gradient(circle at 50% 40%, rgba(40, 40, 60, 0.8) 0%, rgba(26, 26, 26, 0) 60%)",
-      paddingTop: "2rem"
+      paddingTop: "4rem",
+      minHeight: "90vh"
     }}>
       <div style={{ 
-        width: "320px", 
-        height: "320px", 
+        width: "300px", 
+        height: "300px", 
         borderRadius: "50%", 
         overflow: "hidden", 
         marginBottom: "2rem",
@@ -81,12 +81,12 @@ const Home = ({ name, title, setActiveSection, theme }) => {
       </div>
       
       <h1 style={{ 
-        fontFamily: "Montserrat, sans-serif", 
+        fontFamily: "'Inter', sans-serif", 
         fontSize: "5rem", 
-        fontWeight: "800", 
+        fontWeight: "600", 
         color: theme === 'light' ? "#1a1a1a" : "#f0f0f0", 
         margin: "0.5rem 0",
-        letterSpacing: "-0.02em",
+        letterSpacing: "-0.04em",
         lineHeight: "1.1"
       }}>
         {text}<span className="cursor" style={{ fontWeight: "100", color: theme === 'light' ? "#1a1a1a" : "#f0f0f0" }}>|</span>
@@ -106,19 +106,25 @@ const Home = ({ name, title, setActiveSection, theme }) => {
       <div style={{ display: "flex", gap: "1.5rem" }}>
         <button onClick={() => setActiveSection("portfolio")} className="btn btn-primary" style={{ 
           fontSize: "1rem", 
-          padding: "0.8rem 2rem", 
-          borderRadius: "8px", 
+          padding: "1rem 1.8rem", 
+          borderRadius: "12px", 
           fontWeight: "600",
           display: "flex",
           alignItems: "center",
-          gap: "0.5rem"
+          gap: "0.5rem",
+          background: theme === 'light' ? "#1a1a1a" : "#f0f0f0",
+          color: theme === 'light' ? "#fff" : "#1a1a1a"
         }}>
-          View My Work <span style={{ fontSize: "1.2rem" }}>&rarr;</span>
+          View My Work 
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
         </button>
         <button onClick={() => window.location.href = "mailto:guanya.peng24@gmail.com"} className="btn btn-secondary" style={{ 
           fontSize: "1rem", 
-          padding: "0.8rem 2rem", 
-          borderRadius: "8px", 
+          padding: "1rem 1.8rem", 
+          borderRadius: "12px", 
           fontWeight: "600",
           background: theme === 'light' ? "white" : "transparent",
           color: theme === 'light' ? "#1a1a1a" : "#f0f0f0",
