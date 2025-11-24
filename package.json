@@ -1,7 +1,7 @@
 {
-  "name": "educator-js-codespace-template",
+  "name": "guanya-peng-portfolio",
   "version": "1.0.0",
-  "description": "Educator JS Codespace Template",
+  "description": "Guanya Peng's Portfolio",
   "source": "src/index.html",
   "homepage": "https://pengguanya.github.io/portfolio",
   "scripts": {
@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/microsoft/codespaces-teaching-template-js.git"
   },
-  "author": "Microsoft",
+  "author": "Guanya Peng",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/microsoft/codespaces-teaching-template-js/issues"
