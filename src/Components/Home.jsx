@@ -84,19 +84,19 @@ const Home = ({ name, title, setActiveSection, theme }) => {
         fontFamily: "'Inter', sans-serif", 
         fontSize: "5rem", 
         fontWeight: "600", 
-        color: theme === 'light' ? "#1a1a1a" : "#f0f0f0", 
+        color: theme === 'light' ? "#1f2937" : "#f0f0f0", 
         margin: "0.5rem 0",
         letterSpacing: "-0.04em",
         lineHeight: "1.1"
       }}>
-        {text}<span className="cursor" style={{ fontWeight: "100", color: theme === 'light' ? "#1a1a1a" : "#f0f0f0" }}>|</span>
+        {text}<span className="cursor" style={{ fontWeight: "100", color: theme === 'light' ? "#1f2937" : "#f0f0f0" }}>|</span>
       </h1>
       
       <p style={{ 
         maxWidth: "700px", 
         margin: "1.5rem 0 2.5rem", 
         fontSize: "1.35rem", 
-        color: theme === 'light' ? "#555" : "#ccc",
+        color: theme === 'light' ? "#6b7280" : "#9ca3af",
         lineHeight: "1.6",
         fontWeight: "400"
       }}>
