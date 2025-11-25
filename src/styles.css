@@ -474,3 +474,27 @@ body.dark .social-icon:hover {
 body.dark .contact-input::placeholder {
   color: #6b7280; /* Dark mode: Darker gray */
 }
+
+/* Contact form focus styles */
+.contact-input:focus {
+  border-color: #6b7280 !important; /* Light mode: Gray 500 */
+  border-width: 2px !important;
+}
+
+body.dark .contact-input:focus {
+  border-color: #6b7280 !important; /* Dark mode: Gray 500 */
+  border-width: 2px !important;
+}
+
+/* Social card hover effects */
+.social-card {
+  transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.social-card:hover {
+  background-color: #f3f4f6 !important; /* Light mode: Very light gray */
+}
+
+body.dark .social-card:hover {
+  background-color: #262626 !important; /* Dark mode: Neutral dark gray */
+}

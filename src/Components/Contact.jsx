@@ -140,6 +140,8 @@ const Contact = ({ theme, siteProps }) => {
             <label style={styles.label}>Name</label>
             <input
               type="text"
+              name="name"
+              autoComplete="name"
               placeholder="Your name"
               style={styles.input}
               className="contact-input"
@@ -149,6 +151,8 @@ const Contact = ({ theme, siteProps }) => {
             <label style={styles.label}>Email</label>
             <input
               type="email"
+              name="email"
+              autoComplete="email"
               placeholder="your.email@example.com"
               style={styles.input}
               className="contact-input"
@@ -172,7 +176,7 @@ const Contact = ({ theme, siteProps }) => {
           <h2 style={styles.socialTitle}>Connect with me</h2>
           
           {siteProps.gitHub && (
-            <a href={`https://github.com/${siteProps.gitHub}`} target="_blank" rel="noopener noreferrer" style={styles.socialCard}>
+            <a href={`https://github.com/${siteProps.gitHub}`} target="_blank" rel="noopener noreferrer" style={styles.socialCard} className="social-card">
               <FaGithub style={styles.icon} />
               <div style={styles.cardContent}>
                 <span style={styles.cardTitle}>GitHub</span>
@@ -182,7 +186,7 @@ const Contact = ({ theme, siteProps }) => {
           )}
 
           {siteProps.linkedIn && (
-            <a href={`https://linkedin.com/in/${siteProps.linkedIn}`} target="_blank" rel="noopener noreferrer" style={styles.socialCard}>
+            <a href={`https://linkedin.com/in/${siteProps.linkedIn}`} target="_blank" rel="noopener noreferrer" style={styles.socialCard} className="social-card">
               <FaLinkedin style={styles.icon} />
               <div style={styles.cardContent}>
                 <span style={styles.cardTitle}>LinkedIn</span>
@@ -192,7 +196,7 @@ const Contact = ({ theme, siteProps }) => {
           )}
 
           {siteProps.twitter && (
-            <a href={`https://twitter.com/${siteProps.twitter}`} target="_blank" rel="noopener noreferrer" style={styles.socialCard}>
+            <a href={`https://twitter.com/${siteProps.twitter}`} target="_blank" rel="noopener noreferrer" style={styles.socialCard} className="social-card">
               <FaTwitter style={styles.icon} />
               <div style={styles.cardContent}>
                 <span style={styles.cardTitle}>Twitter</span>
@@ -202,7 +206,7 @@ const Contact = ({ theme, siteProps }) => {
           )}
 
           {siteProps.email && (
-            <a href={`mailto:${siteProps.email}`} style={styles.socialCard}>
+            <a href={`mailto:${siteProps.email}`} style={styles.socialCard} className="social-card">
               <FaEnvelope style={styles.icon} />
               <div style={styles.cardContent}>
                 <span style={styles.cardTitle}>Email</span>
