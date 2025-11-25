@@ -1,8 +1,93 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 const Contact = ({ theme, siteProps }) => {
   const isLight = theme === "light";
+
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const [errors, setErrors] = useState({});
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+    // Clear error when user starts typing
+    if (errors[name]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: "",
+      }));
+    }
+  };
+
+  const validateForm = () => {
+    const newErrors = {};
+    const { name, email, message } = formData;
+
+    if (!name || name.length < 2) {
+      newErrors.name = "Name must be at least 2 characters";
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+      newErrors.email = "Invalid email address";
+    }
+
+    if (!message || message.length < 10) {
+      newErrors.message = "Message must be at least 10 characters";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    if (!validateForm()) {
+      return;
+    }
+
+    const { name, email, message } = formData;
+    
+    if (!siteProps.email) {
+      alert("Configuration error: No email address set.");
+      return;
+    }
+
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${siteProps.email}`, {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          _subject: `Contact from ${name}`
+        })
+      });
+
+      if (response.ok) {
+        alert("Message sent successfully!");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        alert("Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      alert("An error occurred. Please try again later.");
+      console.error("Form submission error:", error);
+    }
+  };
 
   const styles = {
     section: {
@@ -122,6 +207,11 @@ const Contact = ({ theme, siteProps }) => {
       color: isLight ? "#6b7280" : "#9ca3af",
       fontSize: "0.9rem",
     },
+    error: {
+      color: "#ef4444",
+      fontSize: "0.875rem",
+      marginTop: "0.25rem",
+    },
   };
 
   return (
@@ -135,7 +225,7 @@ const Contact = ({ theme, siteProps }) => {
 
       <div style={styles.grid}>
         {/* Contact Form */}
-        <form style={styles.form} onSubmit={(e) => e.preventDefault()}>
+        <form style={styles.form} onSubmit={handleSubmit}>
           <div>
             <label style={styles.label}>Name</label>
             <input
@@ -145,7 +235,10 @@ const Contact = ({ theme, siteProps }) => {
               placeholder="Your name"
               style={styles.input}
               className="contact-input"
+              value={formData.name}
+              onChange={handleChange}
             />
+            {errors.name && <span style={styles.error}>{errors.name}</span>}
           </div>
           <div>
             <label style={styles.label}>Email</label>
@@ -156,15 +249,22 @@ const Contact = ({ theme, siteProps }) => {
               placeholder="your.email@example.com"
               style={styles.input}
               className="contact-input"
+              value={formData.email}
+              onChange={handleChange}
             />
+            {errors.email && <span style={styles.error}>{errors.email}</span>}
           </div>
           <div>
             <label style={styles.label}>Message</label>
             <textarea
+              name="message"
               placeholder="Your message..."
               style={styles.textarea}
               className="contact-input"
+              value={formData.message}
+              onChange={handleChange}
             />
+            {errors.message && <span style={styles.error}>{errors.message}</span>}
           </div>
           <button type="submit" style={styles.button}>
             Send Message
