@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { formatCategoryName } from "../utils/formatters";
 
 const Articles = ({ theme }) => {
   const [categorizedArticles, setCategorizedArticles] = useState({});
@@ -225,7 +226,7 @@ const Articles = ({ theme }) => {
 
       {Object.keys(categorizedArticles).sort().map((category) => (
         <div key={category} style={styles.categorySection}>
-          <h2 style={styles.categoryTitle}>{category}</h2>
+          <h2 style={styles.categoryTitle}>{formatCategoryName(category)}</h2>
           <div style={styles.grid}>
             {categorizedArticles[category].slice(0, 3).map((article, index) => (
               <a
