@@ -140,6 +140,7 @@ const Contact = ({ theme, siteProps }) => {
       fontSize: "0.95rem",
       outline: "none",
       transition: "border-color 0.2s",
+      boxSizing: "border-box",
     },
     textarea: {
       width: "100%",
@@ -152,9 +153,10 @@ const Contact = ({ theme, siteProps }) => {
       minHeight: "120px",
       resize: "vertical",
       outline: "none",
+      boxSizing: "border-box",
     },
     button: {
-      padding: "1rem 2rem",
+      padding: "0.75rem 2rem",
       backgroundColor: isLight ? "#1a1a1a" : "#f0f0f0",
       color: isLight ? "#fff" : "#1a1a1a",
       border: "none",
@@ -164,6 +166,7 @@ const Contact = ({ theme, siteProps }) => {
       cursor: "pointer",
       transition: "opacity 0.2s",
       width: "100%",
+      boxSizing: "border-box",
     },
     socialSection: {
       display: "flex",
