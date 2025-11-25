@@ -87,9 +87,20 @@ const Home = ({ name, title, setActiveSection, theme }) => {
         color: theme === 'light' ? "#1f2937" : "#f0f0f0", 
         margin: "0.5rem 0",
         letterSpacing: "-0.04em",
-        lineHeight: "1.1"
+        lineHeight: "1.1",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center"
       }}>
-        {text}<span className="cursor" style={{ fontWeight: "100", color: theme === 'light' ? "#1f2937" : "#f0f0f0" }}>|</span>
+        {text}
+        <span className="cursor" style={{ 
+          display: "inline-block", 
+          width: "6px", 
+          height: "1em", 
+          backgroundColor: theme === 'light' ? "#1f2937" : "#f0f0f0", 
+          marginLeft: "10px",
+          marginBottom: "0.1em" 
+        }}></span>
       </h1>
       
       <p style={{ 
