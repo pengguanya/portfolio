@@ -7,6 +7,7 @@
 import React from "react";
 
 import About from "./Components/About";
+import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
@@ -56,6 +57,8 @@ const App = () => {
         return <Home name={siteProps.name} title={siteProps.title} setActiveSection={setActiveSection} theme={theme} />;
       case "about":
         return <About />;
+      case "contact":
+        return <Contact theme={theme} siteProps={siteProps} />;
       case "portfolio":
         return <Portfolio />;
       default:

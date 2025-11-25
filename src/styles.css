@@ -464,3 +464,13 @@ body.dark .social-icon:hover {
     font-size: 3rem;
   }
 }
+
+/* Contact form placeholder styles */
+.contact-input::placeholder {
+  color: #9ca3af; /* Light mode: Lighter gray */
+  opacity: 1;
+}
+
+body.dark .contact-input::placeholder {
+  color: #6b7280; /* Dark mode: Darker gray */
+}
