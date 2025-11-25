@@ -518,3 +518,9 @@ body.dark .social-card:hover {
   color: white !important;
   border-color: #ef4444 !important;
 }
+
+/* Article Card Hover Effect */
+.article-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
