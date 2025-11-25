@@ -11,6 +11,7 @@ const Contact = ({ theme, siteProps }) => {
   });
 
   const [errors, setErrors] = useState({});
+  const [submitError, setSubmitError] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -52,6 +53,8 @@ const Contact = ({ theme, siteProps }) => {
     e.preventDefault();
     
     if (!validateForm()) {
+      setSubmitError(true);
+      setTimeout(() => setSubmitError(false), 500);
       return;
     }
 
@@ -82,10 +85,14 @@ const Contact = ({ theme, siteProps }) => {
         setFormData({ name: "", email: "", message: "" });
       } else {
         alert("Failed to send message. Please try again.");
+        setSubmitError(true);
+        setTimeout(() => setSubmitError(false), 500);
       }
     } catch (error) {
       alert("An error occurred. Please try again later.");
       console.error("Form submission error:", error);
+      setSubmitError(true);
+      setTimeout(() => setSubmitError(false), 500);
     }
   };
 
@@ -269,7 +276,7 @@ const Contact = ({ theme, siteProps }) => {
             />
             {errors.message && <span style={styles.error}>{errors.message}</span>}
           </div>
-          <button type="submit" style={styles.button}>
+          <button type="submit" style={styles.button} className={`contact-button ${submitError ? "error" : ""}`}>
             Send Message
           </button>
         </form>

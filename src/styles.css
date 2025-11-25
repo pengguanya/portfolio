@@ -498,3 +498,23 @@ body.dark .contact-input:focus {
 body.dark .social-card:hover {
   background-color: #262626 !important; /* Dark mode: Neutral dark gray */
 }
+
+/* Contact button active state */
+.contact-button:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+/* Error shake animation */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.contact-button.error {
+  animation: shake 0.4s ease-in-out;
+  background-color: #ef4444 !important; /* Red color for error */
+  color: white !important;
+  border-color: #ef4444 !important;
+}
