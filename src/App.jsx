@@ -9,6 +9,7 @@ import React from "react";
 import About from "./Components/About";
 import Articles from "./Components/Articles";
 import Contact from "./Components/Contact";
+import Experience from "./Components/Experience";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
 import Home from "./Components/Home";
@@ -60,6 +61,8 @@ const App = () => {
         return <Home name={siteProps.name} title={siteProps.title} setActiveSection={setActiveSection} theme={theme} />;
       case "about":
         return <About />;
+      case "experience":
+        return <Experience theme={theme} />;
       case "articles":
         return <Articles theme={theme} />;
       case "contact":

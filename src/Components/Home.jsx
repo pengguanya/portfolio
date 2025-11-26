@@ -129,7 +129,7 @@ const Home = ({ name, title, setActiveSection, theme }) => {
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
         </button>
-        <button onClick={() => window.location.href = "mailto:guanya.peng24@gmail.com"} className="btn btn-secondary" style={{ 
+        <button onClick={() => setActiveSection("contact")} className="btn btn-secondary" style={{ 
           fontSize: "1rem", 
           padding: "0.75rem",
           width: "10rem",
