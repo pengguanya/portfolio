@@ -37,7 +37,7 @@ const Footer = (props) => {
         backgroundColor: "transparent",
         width: "100%",
         boxSizing: "border-box",
-        borderTop: theme === "light" ? "1px solid #e5e7eb" : "1px solid #333",
+        borderTop: "1px solid var(--border-color)",
         marginTop: "auto"
       }}
     >

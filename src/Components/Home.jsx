@@ -80,24 +80,19 @@ const Home = ({ name, title, setActiveSection, theme }) => {
         <img src={image} alt={imageAltText} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
       </div>
       
-      <h1 style={{ 
-        fontFamily: "'Inter', sans-serif", 
-        fontSize: "5rem", 
-        fontWeight: "600", 
-        color: theme === 'light' ? "#1f2937" : "#f0f0f0", 
-        margin: "0.5rem 0",
-        letterSpacing: "-0.04em",
-        lineHeight: "1.1",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center"
+            <h1 style={{ 
+        color: "var(--text-title)", 
+        fontSize: "4rem", 
+        fontWeight: "700", 
+        letterSpacing: "-0.02em",
+        lineHeight: "1.1"
       }}>
         {text}
         <span className="cursor" style={{ 
           display: "inline-block", 
-          width: "6px", 
+          width: "3px", 
           height: "1em", 
-          backgroundColor: theme === 'light' ? "#1f2937" : "#f0f0f0", 
+          backgroundColor: "var(--text-title)", 
           marginLeft: "10px",
           marginBottom: "0.1em" 
         }}></span>
@@ -107,7 +102,7 @@ const Home = ({ name, title, setActiveSection, theme }) => {
         maxWidth: "700px", 
         margin: "1.5rem 0 2.5rem", 
         fontSize: "1.35rem", 
-        color: theme === 'light' ? "#6b7280" : "#9ca3af",
+        color: "var(--text-primary)",
         lineHeight: "1.6",
         fontWeight: "400"
       }}>
@@ -117,14 +112,14 @@ const Home = ({ name, title, setActiveSection, theme }) => {
       <div style={{ display: "flex", gap: "1.5rem" }}>
         <button onClick={() => setActiveSection("portfolio")} className="btn btn-primary" style={{ 
           fontSize: "1rem", 
-          padding: "1rem 1.8rem", 
+          padding: "0.75rem",
+          width: "11rem",
           borderRadius: "12px", 
           fontWeight: "600",
           display: "flex",
           alignItems: "center",
-          gap: "0.5rem",
-          background: theme === 'light' ? "#1a1a1a" : "#f0f0f0",
-          color: theme === 'light' ? "#fff" : "#1a1a1a"
+          justifyContent: "center",
+          gap: "0.5rem"
         }}>
           View My Work 
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -134,16 +129,19 @@ const Home = ({ name, title, setActiveSection, theme }) => {
         </button>
         <button onClick={() => window.location.href = "mailto:guanya.peng24@gmail.com"} className="btn btn-secondary" style={{ 
           fontSize: "1rem", 
-          padding: "1rem 1.8rem", 
+          padding: "0.75rem",
+          width: "10rem",
           borderRadius: "12px", 
           fontWeight: "600",
-          background: theme === 'light' ? "white" : "transparent",
-          color: theme === 'light' ? "#1a1a1a" : "#f0f0f0",
-          border: theme === 'light' ? "1px solid #e5e7eb" : "1px solid #444"
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center"
         }}>
           Get in Touch
         </button>
       </div>
+      
+
     </section>
   );
 };

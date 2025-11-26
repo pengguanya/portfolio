@@ -130,7 +130,7 @@ const Articles = ({ theme }) => {
       fontSize: "2.5rem",
       fontWeight: "700",
       marginBottom: "1rem",
-      color: isLight ? "#1f2937" : "#f0f0f0",
+      color: "var(--text-title)",
     },
     grid: {
       display: "grid",
@@ -139,10 +139,10 @@ const Articles = ({ theme }) => {
       width: "100%",
     },
     card: {
-      backgroundColor: isLight ? "white" : "#121212",
+      backgroundColor: "var(--bg-card)",
       borderRadius: "12px",
       overflow: "hidden",
-      boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
+      boxShadow: "0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
       transition: "transform 0.2s, box-shadow 0.2s, background-color 0.2s",
       cursor: "pointer",
       textDecoration: "none",
@@ -150,7 +150,7 @@ const Articles = ({ theme }) => {
       display: "flex",
       flexDirection: "column",
       height: "100%",
-      border: isLight ? "1px solid #e5e7eb" : "1px solid #333",
+      border: "1px solid var(--border-color)",
     },
     cardContent: {
       padding: "1.5rem",
@@ -162,23 +162,23 @@ const Articles = ({ theme }) => {
       fontSize: "1.25rem",
       fontWeight: "600",
       marginBottom: "0.5rem",
-      color: isLight ? "#1f2937" : "#f0f0f0",
+      color: "var(--text-title)",
     },
     cardDate: {
       fontSize: "0.875rem",
-      color: isLight ? "#6b7280" : "#9ca3af",
+      color: "var(--text-date)",
       marginBottom: "1rem",
     },
     cardExcerpt: {
       fontSize: "1rem",
-      color: isLight ? "#6b7280" : "#9ca3af",
+      color: "var(--text-primary)",
       lineHeight: "1.5",
       flex: 1,
     },
     loading: {
       textAlign: "center",
       fontSize: "1.2rem",
-      color: isLight ? "#6b7280" : "#9ca3af",
+      color: "var(--text-date)",
     },
     categorySection: {
       width: "100%",
@@ -188,8 +188,8 @@ const Articles = ({ theme }) => {
       fontSize: "1.8rem",
       fontWeight: "600",
       marginBottom: "1.5rem",
-      color: isLight ? "#1f2937" : "#f0f0f0",
-      borderBottom: isLight ? "2px solid #e5e7eb" : "2px solid #374151",
+      color: "var(--text-title)",
+      borderBottom: "2px solid var(--border-color)",
       paddingBottom: "0.5rem",
       display: "inline-block",
       textTransform: "capitalize",
@@ -208,7 +208,7 @@ const Articles = ({ theme }) => {
     return (
       <section style={styles.section} id="articles">
         <div style={styles.loading}>{error}</div>
-        <a href="https://pengguanya.github.io/" target="_blank" rel="noopener noreferrer" style={{ marginTop: "1rem", color: isLight ? "#4E567E" : "#9ca3af" }}>
+        <a href="https://pengguanya.github.io/" target="_blank" rel="noopener noreferrer" style={{ marginTop: "1rem", color: "var(--text-primary)" }}>
           Visit Blog Directly
         </a>
       </section>
@@ -219,7 +219,7 @@ const Articles = ({ theme }) => {
     <section style={styles.section} id="articles">
       <div style={styles.header}>
         <h1 style={styles.title}>Latest Articles</h1>
-        <p style={{ fontSize: "1.2rem", color: isLight ? "#6b7280" : "#9ca3af" }}>
+        <p style={{ fontSize: "1.2rem", color: "var(--text-subtitle)" }}>
           Thoughts on Data Science, Statistics, and Development
         </p>
       </div>

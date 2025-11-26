@@ -114,11 +114,11 @@ const Contact = ({ theme, siteProps }) => {
       fontSize: "2.5rem",
       fontWeight: "700",
       marginBottom: "1rem",
-      color: isLight ? "#1f2937" : "#f0f0f0",
+      color: "var(--text-title)",
     },
     subtitle: {
       fontSize: "1.2rem",
-      color: isLight ? "#6b7280" : "#9ca3af",
+      color: "var(--text-subtitle)",
     },
     grid: {
       display: "grid",
@@ -135,15 +135,15 @@ const Contact = ({ theme, siteProps }) => {
       display: "block",
       marginBottom: "0.5rem",
       fontWeight: "600",
-      color: isLight ? "#1f2937" : "#f0f0f0",
+      color: "var(--text-title)",
     },
     input: {
       width: "100%",
       padding: "0.6rem",
       borderRadius: "8px",
-      border: isLight ? "1px solid #e5e7eb" : "1px solid #333",
-      backgroundColor: isLight ? "#fff" : "#09090b",
-      color: isLight ? "#1f2937" : "#f0f0f0",
+      border: "1px solid var(--border-color)",
+      backgroundColor: "var(--bg-card)",
+      color: "var(--text-primary)",
       fontSize: "0.95rem",
       outline: "none",
       transition: "border-color 0.2s",
@@ -153,9 +153,9 @@ const Contact = ({ theme, siteProps }) => {
       width: "100%",
       padding: "0.6rem",
       borderRadius: "8px",
-      border: isLight ? "1px solid #e5e7eb" : "1px solid #333",
-      backgroundColor: isLight ? "#fff" : "#09090b",
-      color: isLight ? "#1f2937" : "#f0f0f0",
+      border: "1px solid var(--border-color)",
+      backgroundColor: "var(--bg-card)",
+      color: "var(--text-primary)",
       fontSize: "0.95rem",
       minHeight: "120px",
       resize: "vertical",
@@ -163,17 +163,9 @@ const Contact = ({ theme, siteProps }) => {
       boxSizing: "border-box",
     },
     button: {
-      padding: "0.75rem 2rem",
-      backgroundColor: isLight ? "#1a1a1a" : "#f0f0f0",
-      color: isLight ? "#fff" : "#1a1a1a",
-      border: "none",
-      borderRadius: "8px",
-      fontSize: "1rem",
-      fontWeight: "600",
-      cursor: "pointer",
-      transition: "opacity 0.2s",
       width: "100%",
       boxSizing: "border-box",
+      borderRadius: "8px",
     },
     socialSection: {
       display: "flex",
@@ -184,7 +176,7 @@ const Contact = ({ theme, siteProps }) => {
       fontSize: "1.25rem",
       fontWeight: "600",
       marginBottom: "0.5rem",
-      color: isLight ? "#1f2937" : "#f0f0f0",
+      color: "var(--text-title)",
       marginTop: "-0.25rem",
       paddingTop: 0,
     },
@@ -194,15 +186,15 @@ const Contact = ({ theme, siteProps }) => {
       gap: "1rem",
       padding: "1.5rem",
       borderRadius: "12px",
-      border: isLight ? "1px solid #e5e7eb" : "1px solid #333",
-      backgroundColor: isLight ? "#fff" : "#09090b",
+      border: "1px solid var(--border-color)",
+      backgroundColor: "var(--bg-card)",
       textDecoration: "none",
       transition: "transform 0.2s, border-color 0.2s",
       cursor: "pointer",
     },
     icon: {
       fontSize: "1.5rem",
-      color: isLight ? "#1f2937" : "#f0f0f0",
+      color: "var(--text-title)",
     },
     cardContent: {
       display: "flex",
@@ -210,11 +202,11 @@ const Contact = ({ theme, siteProps }) => {
     },
     cardTitle: {
       fontWeight: "600",
-      color: isLight ? "#1f2937" : "#f0f0f0",
+      color: "var(--text-title)",
       marginBottom: "0.25rem",
     },
     cardHandle: {
-      color: isLight ? "#6b7280" : "#9ca3af",
+      color: "var(--text-primary)",
       fontSize: "0.9rem",
     },
     error: {
@@ -276,7 +268,7 @@ const Contact = ({ theme, siteProps }) => {
             />
             {errors.message && <span style={styles.error}>{errors.message}</span>}
           </div>
-          <button type="submit" style={styles.button} className={`contact-button ${submitError ? "error" : ""}`}>
+          <button type="submit" style={styles.button} className={`btn btn-primary contact-button ${submitError ? "error" : ""}`}>
             Send Message
           </button>
         </form>

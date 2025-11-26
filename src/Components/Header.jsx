@@ -10,7 +10,7 @@ const Header = ({ activeSection, setActiveSection, theme, toggleTheme }) => {
   const linkStyle = {
     cursor: "pointer",
     fontWeight: "500",
-    color: theme === "light" ? "#6b7280" : "#9ca3af",
+    color: "var(--text-primary)",
     textDecoration: "none",
     fontSize: "0.95rem",
     transition: "color 0.2s ease",
@@ -21,7 +21,7 @@ const Header = ({ activeSection, setActiveSection, theme, toggleTheme }) => {
   };
 
   const activeStyle = {
-    color: theme === "light" ? "#1f2937" : "#fff",
+    color: "var(--text-title)",
     fontWeight: "600"
   };
 
@@ -31,7 +31,7 @@ const Header = ({ activeSection, setActiveSection, theme, toggleTheme }) => {
     left: 0,
     right: 0,
     height: "2px",
-    backgroundColor: theme === "light" ? "#1f2937" : "#fff",
+    backgroundColor: "var(--text-title)",
     borderRadius: "2px"
   };
 
@@ -48,12 +48,12 @@ const Header = ({ activeSection, setActiveSection, theme, toggleTheme }) => {
         width: "100%",
         zIndex: 10,
         boxSizing: "border-box",
-        background: theme === "light" ? "rgba(255,255,255,0.8)" : "rgba(5,5,5,0.8)",
+        background: "var(--nav-bg)",
         backdropFilter: "blur(8px)",
-        borderBottom: theme === "light" ? "1px solid #e5e7eb" : "1px solid #333"
+        borderBottom: "1px solid var(--border-color)"
       }}
     >
-      <div style={{ fontWeight: "700", fontSize: "1.1rem", color: theme === "light" ? "#1f2937" : "#f0f0f0", justifySelf: "start" }}>
+      <div style={{ fontWeight: "700", fontSize: "1.1rem", color: "var(--text-title)", justifySelf: "start" }}>
         Guanya Peng
       </div>
       
@@ -74,14 +74,14 @@ const Header = ({ activeSection, setActiveSection, theme, toggleTheme }) => {
       </div>
 
       <div style={{ display: "flex", alignItems: "center", gap: "1rem", justifySelf: "end" }}>
-        <div style={{ width: "1px", height: "20px", background: theme === "light" ? "#ddd" : "#444", margin: "0 0.5rem" }}></div>
+        <div style={{ width: "1px", height: "20px", background: "var(--border-color)", margin: "0 0.5rem" }}></div>
 
-        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontSize: "0.9rem", fontWeight: "600", color: theme === "light" ? "#1f2937" : "#f0f0f0" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", cursor: "pointer", fontSize: "0.9rem", fontWeight: "600", color: "var(--text-title)" }}>
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
           EN
         </div>
 
-        <button onClick={toggleTheme} className="theme-toggle" style={{ color: theme === "light" ? "#1f2937" : "#f0f0f0", padding: 0 }}>
+        <button onClick={toggleTheme} className="theme-toggle" style={{ color: "var(--text-title)", padding: 0 }}>
           {theme === "light" ? (
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
           ) : (
