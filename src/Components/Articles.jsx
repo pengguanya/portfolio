@@ -114,10 +114,6 @@ const Articles = ({ theme }) => {
 
   const styles = {
     section: {
-      padding: "8rem 2rem",
-      minHeight: "100vh",
-      maxWidth: "1200px",
-      margin: "0 auto",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
@@ -206,7 +202,7 @@ const Articles = ({ theme }) => {
 
   if (error) {
     return (
-      <section style={styles.section} id="articles">
+      <section style={styles.section} className="page-section" id="articles">
         <div style={styles.loading}>{error}</div>
         <a href="https://pengguanya.github.io/" target="_blank" rel="noopener noreferrer" style={{ marginTop: "1rem", color: "var(--text-primary)" }}>
           Visit Blog Directly
@@ -216,7 +212,7 @@ const Articles = ({ theme }) => {
   }
 
   return (
-    <section style={styles.section} id="articles">
+    <section style={styles.section} className="page-section" id="articles">
       <div style={styles.header}>
         <h1 style={styles.title}>Latest Articles</h1>
         <p style={{ fontSize: "1.2rem", color: "var(--text-subtitle)" }}>

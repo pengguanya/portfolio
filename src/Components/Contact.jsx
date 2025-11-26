@@ -98,13 +98,9 @@ const Contact = ({ theme, siteProps }) => {
 
   const styles = {
     section: {
-      padding: "8rem 2rem",
-      minHeight: "100vh",
       display: "flex",
       flexDirection: "column",
       alignItems: "center",
-      maxWidth: "960px",
-      margin: "0 auto",
     },
     header: {
       textAlign: "center",
@@ -217,7 +213,7 @@ const Contact = ({ theme, siteProps }) => {
   };
 
   return (
-    <section style={styles.section} id="contact">
+    <section style={styles.section} className="page-section" id="contact">
       <div style={styles.header}>
         <h1 style={styles.title}>Get in Touch</h1>
         <p style={styles.subtitle}>

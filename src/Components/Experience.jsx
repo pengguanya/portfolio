@@ -99,7 +99,7 @@ const experiences = [
 
 const Experience = () => {
   return (
-    <section className="experience-section" id="experience">
+    <section className="experience-section page-section" id="experience">
       <div className="experience-header">
         <h1>Experience</h1>
         <p>A timeline of my professional journey and key achievements.</p>

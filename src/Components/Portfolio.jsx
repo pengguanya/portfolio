@@ -22,6 +22,13 @@
 import React, { useState } from "react";
 import "./Portfolio.css";
 
+import clinicalAgentsImg from "../images/projects/clinical-agents.jpg";
+import deepClinicalImg from "../images/projects/deep-clinical-v2.jpg";
+import proteinImg from "../images/projects/protein-v2.jpg";
+import crmPackImg from "../images/projects/crmpack-v2.jpg";
+import semanticSearchImg from "../images/projects/semantic-search.jpg";
+import labAutomationImg from "../images/projects/lab-automation.jpg";
+
 /**
  * Project Data
  * Add, remove, or modify projects here.
@@ -34,7 +41,7 @@ const projectList = [
     url: null,
     sourceUrl: "https://github.com/pengguanya/clinical-agent-team",
     category: ["AI/ML", "Research"],
-    image: null // Placeholder will be used
+    image: clinicalAgentsImg
   },
   {
     title: "DeepClinicalInsights",
@@ -43,7 +50,7 @@ const projectList = [
     url: null,
     sourceUrl: "https://github.com/pengguanya/DeepClinicalInsights",
     category: ["AI/ML", "Data"],
-    image: null
+    image: deepClinicalImg
   },
   {
     title: "PD-1/Nivolumab Deep Learning",
@@ -52,7 +59,7 @@ const projectList = [
     url: null,
     sourceUrl: "https://github.com/pengguanya/pd1_nivolumab",
     category: ["AI/ML", "Research"],
-    image: null
+    image: proteinImg
   },
   {
     title: "crmPack",
@@ -61,7 +68,7 @@ const projectList = [
     url: null,
     sourceUrl: "https://github.com/openpharma/crmPack",
     category: ["Data", "Research", "Open Source"],
-    image: null
+    image: crmPackImg
   },
   {
     title: "Semantic Knowledge Retrieval",
@@ -71,7 +78,7 @@ const projectList = [
     sourceUrl: null,
     buttonText: "View Project",
     category: ["AI/ML", "Data"],
-    image: null
+    image: semanticSearchImg
   },
   {
     title: "Computer Vision and AI for Local Lab Ranges Automation",
@@ -81,7 +88,7 @@ const projectList = [
     sourceUrl: null,
     buttonText: "View Poster",
     category: ["AI/ML"],
-    image: null
+    image: labAutomationImg
   }
 ];
 
@@ -110,7 +117,7 @@ const Portfolio = () => {
   };
 
   return (
-    <section className="portfolio-section" id="portfolio">
+    <section className="portfolio-section page-section" id="portfolio">
       <div className="portfolio-header">
         <h1>Portfolio</h1>
         <p>A selection of my recent projects, showcasing my expertise in AI/ML, data visualization, and research.</p>
