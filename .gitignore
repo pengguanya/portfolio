@@ -26,3 +26,7 @@ node_modules/
 # Ignore context
 context/
 .context/
+
+# Ignore projects
+projects/
+.projects/
