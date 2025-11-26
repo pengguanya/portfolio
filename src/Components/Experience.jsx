@@ -5,6 +5,12 @@
  */
 
 import React from "react";
+import "./Experience.css";
+
+import rocheLogo from "../images/companies/roche.svg";
+import biotronikLogo from "../images/companies/biotronik.svg";
+import sakkLogo from "../images/companies/sakk.jpeg";
+import uzhLogo from "../images/companies/uzh.svg";
 
 const experiences = [
   {
@@ -12,6 +18,7 @@ const experiences = [
     date: "01/2022 - Present",
     title: "Senior Data Science Product Leader",
     company: "Roche",
+    logo: rocheLogo,
     location: "Basel, Switzerland",
     description: "Leading cross-functional initiatives at the intersection of AI, Engineering, and Statistics to transform clinical data operations.",
     achievements: [
@@ -26,6 +33,7 @@ const experiences = [
     date: "09/2020 - 12/2021",
     title: "Senior Data Manager (AI/ML)",
     company: "Roche",
+    logo: rocheLogo,
     location: "Basel, Switzerland",
     description: "Bridging the gap between Data Engineering and Data Science to enhance clinical trial resilience.",
     achievements: [
@@ -39,6 +47,7 @@ const experiences = [
     date: "02/2019 - 08/2020",
     title: "Clinical Programming Analyst",
     company: "Roche",
+    logo: rocheLogo,
     location: "Basel, Switzerland",
     description: "Delivering data visualization solutions and software tools to support clinical analysis.",
     achievements: [
@@ -51,6 +60,7 @@ const experiences = [
     date: "07/2016 - 01/2019",
     title: "Statistical Programming Analyst",
     company: "Biotronik AG",
+    logo: biotronikLogo,
     location: "Bülach, Switzerland",
     description: "Applying statistical rigor and machine learning to medical device safety data.",
     achievements: [
@@ -64,6 +74,7 @@ const experiences = [
     date: "2015 - 2016",
     title: "Statistician Trainee",
     company: "Swiss Group for Clinical Cancer Research (SAKK)",
+    logo: sakkLogo,
     location: "Bern, Switzerland",
     description: "Ensuring data integrity and statistical validity for oncology clinical trials through automated pipelines.",
     achievements: [
@@ -76,6 +87,7 @@ const experiences = [
     date: "11/2010 - 12/2014",
     title: "PhD Research – Computational Structural Biology",
     company: "Paul Scherrer Institut / University of Zürich",
+    logo: uzhLogo,
     location: "Switzerland",
     description: "Pioneering computational research in structural biology using advanced algorithms.",
     achievements: [
@@ -97,10 +109,14 @@ const Experience = () => {
         {experiences.map((exp) => (
           <div key={exp.id} className="timeline-item">
             <div className="timeline-marker">
-              <svg className="timeline-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
-                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
-              </svg>
+              {exp.logo ? (
+                <img src={exp.logo} alt={`${exp.company} logo`} className="timeline-logo-img" />
+              ) : (
+                <svg className="timeline-logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                  <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+                </svg>
+              )}
             </div>
             <div className="timeline-content">
               <div className="timeline-date">

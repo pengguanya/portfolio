@@ -6,7 +6,7 @@
  */
 import React from "react";
 
-const Header = ({ activeSection, setActiveSection, theme, toggleTheme }) => {
+const Header = ({ activeSection, setActiveSection, theme, toggleTheme, routes }) => {
   const linkStyle = {
     cursor: "pointer",
     fontWeight: "500",
@@ -58,7 +58,7 @@ const Header = ({ activeSection, setActiveSection, theme, toggleTheme }) => {
       </div>
       
       <div style={{ display: "flex", gap: "2rem", alignItems: "center", justifySelf: "center", height: "100%" }}>
-        {["home", "about", "experience", "portfolio", "articles", "contact"].map((section) => (
+        {routes.map((section) => (
           <a 
             key={section}
             onClick={() => setActiveSection(section)} 

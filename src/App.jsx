@@ -43,6 +43,8 @@ const siteProps = {
 const primaryColor = "#4E567E";
 const secondaryColor = "#D2F1E4";
 
+const routes = ["home", "about", "experience", "portfolio", "articles", "contact"];
+
 const App = () => {
   const [activeSection, setActiveSection] = React.useState("home");
   const [theme, setTheme] = React.useState("light");
@@ -85,7 +87,7 @@ const App = () => {
 
   return (
     <div id="main" style={{ background: getBackground(), minHeight: "100vh", transition: "background 0.3s ease" }}>
-      <Header activeSection={activeSection} setActiveSection={setActiveSection} theme={theme} toggleTheme={toggleTheme} />
+      <Header activeSection={activeSection} setActiveSection={setActiveSection} theme={theme} toggleTheme={toggleTheme} routes={routes} />
       {renderContent()}
       <Footer {...siteProps} primaryColor={primaryColor} secondaryColor={secondaryColor} theme={theme} />
     </div>
