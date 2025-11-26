@@ -90,11 +90,13 @@ const Home = ({ name, title, setActiveSection, theme }) => {
         {text}
         <span className="cursor" style={{ 
           display: "inline-block", 
-          width: "3px", 
-          height: "1em", 
+          width: "6px", 
+          height: "1.2em", 
           backgroundColor: "var(--text-title)", 
           marginLeft: "10px",
-          marginBottom: "0.1em" 
+          verticalAlign: "middle",
+          position: "relative",
+          top: "-0.1em"
         }}></span>
       </h1>
       
