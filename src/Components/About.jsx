@@ -5,7 +5,7 @@
  */
 
 import React from "react";
-import image from "../images/photo_gpeng.png";
+import image from "../images/about-photo.jpg";
 
 // Import tool icons
 import vscodeIcon from "../images/tools/vscode.svg";
