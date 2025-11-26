@@ -1,0 +1,58 @@
+/**
+* CSS Variables - The Theme Configuration
+* Defines all colors and design tokens for Light and Dark modes.
+*/
+
+:root {
+  /* Light Mode Colors (Default) */
+  --bg-primary: #ffffff;      /* Main page background */
+  --bg-secondary: #f3f4f6;    /* Secondary background (e.g., alternate sections) */
+  --bg-card: #ffffff;         /* Background for cards and containers */
+  
+  --text-primary: #6b7280;    /* Main body text color */
+  --text-title: #1f2937;      /* Headings, strong text, and primary buttons */
+  --text-subtitle: #525252;   /* Subtitles and secondary text */
+  --text-date: #737373;       /* Dates and metadata */
+  --text-muted: #9ca3af;      /* Placeholders and disabled text */
+  
+  --border-color: #e5e7eb;    /* Borders for cards, inputs, and dividers */
+  --shadow-color: rgba(0, 0, 0, 0.1); /* Shadow color for depth effects */
+  
+  --nav-bg: rgba(255, 255, 255, 0.8); /* Navigation bar background */
+  --nav-text: #1f2937;        /* Navigation link text */
+
+  --color-error: #ef4444;     /* Error messages and states */
+  --color-accent: #4e567e;    /* List markers and decorative accents */
+  --bg-hover: #f3f4f6;        /* Background color on hover for interactive elements */
+  --bg-card-hover: #ffffff;   /* Background color on hover for cards */
+  
+  --social-icon-color: #1a1a1a; /* Social icon default color */
+  --social-icon-hover: #000000; /* Social icon hover color */
+}
+
+body.dark {
+  /* Dark Mode Colors */
+  --bg-primary: #121212;      /* Main page background (Dark) */
+  --bg-secondary: #1f1f1f;    /* Secondary background (Dark) */
+  --bg-card: #1e1e1e;         /* Card background (Dark) */
+  
+  --text-primary: #888888;    /* Main body text color (Light Gray) */
+  --text-title: #e5e5e5;      /* Headings and primary text (White/Lightest Gray) */
+  --text-subtitle: #a3a3a3;   /* Subtitles (Medium Gray) */
+  --text-date: #a3a3a3;       /* Dates (Medium Gray) */
+  --text-muted: #525252;      /* Muted text (Dark Gray) */
+  
+  --border-color: #333333;    /* Borders (Dark Gray) */
+  --shadow-color: rgba(0, 0, 0, 0.5); /* Shadows (Stronger in dark mode) */
+  
+  --nav-bg: rgba(18, 18, 18, 0.8);    /* Navigation background */
+  --nav-text: #e5e5e5;        /* Navigation text */
+
+  --color-error: #ef4444;     /* Error color (Same as light mode) */
+  --color-accent: #a3a3a3;    /* Accents (Lighter for visibility on dark bg) */
+  --bg-hover: #262626;        /* Hover background (Dark Gray) */
+  --bg-card-hover: #2d2d2d;   /* Card hover background (Lighter Dark) */
+  
+  --social-icon-color: #f0f0f0; /* Social icon default color (Dark Mode) */
+  --social-icon-hover: #ffffff; /* Social icon hover color (Dark Mode) */
+}

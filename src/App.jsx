@@ -14,7 +14,9 @@ import Header from "./Components/Header";
 import Home from "./Components/Home";
 import Portfolio from "./Components/Portfolio";
 
-import "./styles.css";
+import "./styles/variables.css";
+import "./styles/global.css";
+import "./styles/components.css";
 
 /**
  * This object represents your information. The project is set so that you
@@ -72,10 +74,10 @@ const App = () => {
   const getBackground = () => {
     if (activeSection === "home") {
       return theme === 'light' 
-        ? "radial-gradient(circle at 35% 30%, rgba(59, 130, 246, 0.15) 0%, rgba(255, 255, 255, 0) 45%), radial-gradient(circle at 65% 30%, rgba(139, 92, 246, 0.15) 0%, rgba(255, 255, 255, 0) 45%), radial-gradient(circle at 50% 70%, rgba(16, 185, 129, 0.2) 0%, rgba(255, 255, 255, 0) 50%), #ffffff" 
-        : "radial-gradient(circle at 50% 40%, rgba(76, 29, 149, 0.35) 0%, rgba(5, 5, 5, 0) 60%), radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.25) 0%, rgba(5, 5, 5, 0) 50%), radial-gradient(circle at 80% 70%, rgba(5, 150, 105, 0.2) 0%, rgba(5, 5, 5, 0) 50%), #050505";
+        ? "radial-gradient(circle at 35% 30%, rgba(59, 130, 246, 0.15) 0%, rgba(255, 255, 255, 0) 45%), radial-gradient(circle at 65% 30%, rgba(139, 92, 246, 0.15) 0%, rgba(255, 255, 255, 0) 45%), radial-gradient(circle at 50% 70%, rgba(16, 185, 129, 0.2) 0%, rgba(255, 255, 255, 0) 50%), var(--bg-primary)" 
+        : "radial-gradient(circle at 50% 40%, rgba(76, 29, 149, 0.35) 0%, rgba(5, 5, 5, 0) 60%), radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.25) 0%, rgba(5, 5, 5, 0) 50%), radial-gradient(circle at 80% 70%, rgba(5, 150, 105, 0.2) 0%, rgba(5, 5, 5, 0) 50%), var(--bg-primary)";
     }
-    return theme === "light" ? "#ffffff" : "#050505";
+    return "var(--bg-primary)";
   };
 
   return (

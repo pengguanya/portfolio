@@ -1,0 +1,119 @@
+/**
+* Global Styles - The Foundation
+* Resets, typography, and base HTML element styles.
+*/
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+  width: 100%;
+  letter-spacing: 0.03em;
+  word-spacing: 0.05em;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+div#main {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+section {
+  position: relative;
+  width: 100vw;
+}
+
+section.min-height {
+  min-height: 100vh;
+}
+
+section.padding {
+  padding: 5rem 0;
+}
+
+section img.background {
+  height: 100%;
+  left: 50%;
+  object-fit: cover;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, 0);
+  width: 100vmax;
+  z-index: -1;
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 7rem;
+  font-weight: 400;
+  line-height: 0.8;
+  margin: 0;
+  color: var(--text-title);
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0;
+  padding-top: 1rem;
+  color: var(--text-title);
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin: 0;
+  color: var(--text-title);
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 0;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+p.large {
+  font-size: 24px;
+}
+
+p.small {
+  font-size: 15px;
+}
+
+hr {
+  margin: 2.5rem;
+}
+
+li {
+  line-height: 1.7;
+}
+
+li::marker {
+  color: var(--color-accent);
+}
+
+a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+/* Cursor animation for typewriter effect */
+.cursor {
+  display: inline-block;
+  margin-left: 5px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
