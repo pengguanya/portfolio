@@ -1,33 +1,147 @@
-name: Deploy to GitHub Pages
+name: Deploy Portfolio
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
-  contents: write
+  contents: read
 
 jobs:
-  build-and-deploy:
+  targets:
+    name: Resolve deployment targets
     runs-on: ubuntu-latest
+    outputs:
+      deploy_github: ${{ steps.parse.outputs.deploy_github }}
+      deploy_azure: ${{ steps.parse.outputs.deploy_azure }}
+      run_build: ${{ steps.parse.outputs.run_build }}
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+
+      - name: Parse deployment-targets.json
+        id: parse
+        run: |
+          set -euo pipefail
+          CONFIG_FILE="deployment-targets.json"
+          if [ ! -f "$CONFIG_FILE" ]; then
+            echo "::error::Missing $CONFIG_FILE. Add it to control where deployments run."
+            exit 1
+          fi
+
+          GITHUB_TARGET=$(jq -r '.deployToGithubPages // true' "$CONFIG_FILE")
+          AZURE_TARGET=$(jq -r '.deployToAzureStaticWebApps // true' "$CONFIG_FILE")
+
+          for value in "$GITHUB_TARGET" "$AZURE_TARGET"; do
+            if [ "$value" != "true" ] && [ "$value" != "false" ]; then
+              echo "::error::Configuration values must be true or false."
+              exit 1
+            fi
+          done
+
+          if [ "$GITHUB_TARGET" = "true" ] || [ "$AZURE_TARGET" = "true" ]; then
+            RUN_BUILD=true
+          else
+            RUN_BUILD=false
+          fi
+
+          {
+            echo "deploy_github=$GITHUB_TARGET"
+            echo "deploy_azure=$AZURE_TARGET"
+            echo "run_build=$RUN_BUILD"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Record configuration
+        run: |
+          {
+            echo "### Deployment configuration"
+            echo ""
+            echo "- GitHub Pages: **${{ steps.parse.outputs.deploy_github }}**"
+            echo "- Azure Static Web Apps: **${{ steps.parse.outputs.deploy_azure }}**"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  build:
+    name: Build site
+    runs-on: ubuntu-latest
+    needs: targets
+    if: needs.targets.outputs.run_build == 'true'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: 20
+          cache: npm
 
-      - name: Install Dependencies
-        run: npm install
+      - name: Install dependencies
+        run: npm ci
 
       - name: Build
-        run: npm run build-gh
+        run: npm run build
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-dist
+          path: dist
+          if-no-files-found: error
+
+  deploy_github:
+    name: Deploy to GitHub Pages
+    needs:
+      - targets
+      - build
+    if: needs.targets.outputs.deploy_github == 'true'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Download build files
+        uses: actions/download-artifact@v4
+        with:
+          name: site-dist
+          path: dist
+
+      - name: Upload artifact to Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
 
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  deploy_azure:
+    name: Deploy to Azure Static Web Apps
+    needs:
+      - targets
+      - build
+    if: needs.targets.outputs.deploy_azure == 'true'
+    runs-on: ubuntu-latest
+    environment:
+      name: azure-production
+    steps:
+      - name: Download build files
+        uses: actions/download-artifact@v4
         with:
-          folder: dist
-          branch: gh-pages
+          name: site-dist
+          path: dist
+
+      - name: Deploy
+        uses: azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          action: upload
+          app_location: dist
+          api_location: ""
+          output_location: ""

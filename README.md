@@ -183,9 +183,35 @@ const projectList = [
 
 ## 🏃 Deploy your web application
 
-Project includes the setup needed for you to deploy **FREE** to either [Azure Static Web Apps](https://azure.microsoft.com/products/app-service/static/?WT.mc_id=academic-79839-sagibbon) _**or**_ [GitHub Pages](https://pages.github.com/)</a>. Instructions are included below for both:
+Project includes the setup needed for you to deploy **FREE** to either [Azure Static Web Apps](https://azure.microsoft.com/products/app-service/static/?WT.mc_id=academic-79839-sagibbon) _**or**_ [GitHub Pages](https://pages.github.com/)</a>. You can now let GitHub Actions handle both targets automatically, or follow the original one-off/manual instructions below if you ever need them.
 
-### Azure Static Web Apps
+### Automated deployments (recommended)
+
+Every push to `main` (for example after a pull request merge) triggers `/.github/workflows/deploy.yml`. The workflow:
+
+1. Reads `deployment-targets.json` to see whether GitHub Pages and/or Azure Static Web Apps deployments are enabled.
+2. Builds the site once with `npm ci && npm run build`.
+3. Reuses the compiled `dist` folder to publish to the enabled destinations.
+
+**Configure where to deploy**
+
+- Toggle the booleans inside `deployment-targets.json`. Setting `"deployToGithubPages": false` skips Pages, and `"deployToAzureStaticWebApps": false` skips Azure. The workflow exits early if both are `false`.
+- You can still run the workflow manually (e.g., for hotfixes) via the `Actions → Deploy Portfolio → Run workflow` button.
+
+**GitHub Pages requirements**
+
+- In your repository settings under *Pages*, set the source to **GitHub Actions**.
+- The workflow uploads the built site via `deploy-pages@v4`, so no extra secrets are required.
+
+**Azure Static Web Apps requirements**
+
+- Create or reuse a Static Web App resource and grab its deployment token from **Azure Portal → Your Static Web App → Manage deployment tokens**.
+- Add the token as the `AZURE_STATIC_WEB_APPS_API_TOKEN` secret in your GitHub repository.
+- The workflow uses `azure/static-web-apps-deploy@v1` and uploads the same `dist` artifact that was produced during the build phase. No additional build commands run on Azure.
+
+If you prefer to deploy directly from your editor or need to bootstrap new cloud resources, the manual steps that ship with this template are still documented below.
+
+### Azure Static Web Apps (manual)
 
 [Azure Static Web Apps](https://azure.microsoft.com/products/app-service/static/?WT.mc_id=academic-79839-sagibbon) is Microsoft's hosting solution for static sites (or sites that are rendered in the user's browser, not on a server) through Azure. This service provides additional opportunities to expand your site through Azure Functions, authentication, staging versions and more.
 
@@ -213,7 +239,7 @@ With your project open in Codespaces:
 
 > 🤩 **Bonus**: [Setup a custom domain for your Azure Static Web App](https://learn.microsoft.com/en-us/shows/azure-tips-and-tricks-static-web-apps/how-to-set-up-a-custom-domain-name-in-azure-static-web-apps-10-of-16--azure-tips-and-tricks-static-w/?WT.mc_id=academic-79839-sagibbon)
 
-### GitHub Pages
+### GitHub Pages (manual)
 
 [GitHub Pages](https://pages.github.com/) allows you to host websites directly from your GitHub repository. This project is already set up for you to get your portfolio deployed to GitHub pages with minimal steps.
 
