@@ -4,6 +4,9 @@ on:
   push:
     branches:
       - main
+  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
 permissions:
@@ -95,7 +98,7 @@ jobs:
     needs:
       - targets
       - build
-    if: needs.targets.outputs.deploy_github == 'true'
+    if: needs.targets.outputs.deploy_github == 'true' && github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -125,7 +128,7 @@ jobs:
     needs:
       - targets
       - build
-    if: needs.targets.outputs.deploy_azure == 'true'
+    if: needs.targets.outputs.deploy_azure == 'true' && github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment:
       name: azure-production
@@ -152,7 +155,7 @@ jobs:
     needs:
       - targets
       - build
-    if: needs.targets.outputs.run_build == 'true' && github.ref == 'refs/heads/main'
+    if: needs.targets.outputs.run_build == 'true' && github.event_name == 'push' && github.ref == 'refs/heads/main'
     steps:
       - name: Checkout
         uses: actions/checkout@v4
