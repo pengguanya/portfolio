@@ -6,19 +6,16 @@
   "homepage": "https://pengguanya.github.io/portfolio",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build",
-    "build-gh": "parcel build --public-url 'https://pengguanya.github.io/portfolio'",
-    "predeploy": "npm run build-gh",
-    "deploy": "gh-pages -d dist"
+    "build": "parcel build"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/microsoft/codespaces-teaching-template-js.git"
+    "url": "git+https://github.com/pengguanya/portfolio.git"
   },
   "author": "Guanya Peng",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/microsoft/codespaces-teaching-template-js/issues"
+    "url": "https://github.com/pengguanya/portfolio/issues"
   },
   "dependencies": {
     "caniuse-lite": "^1.0.30001757",
