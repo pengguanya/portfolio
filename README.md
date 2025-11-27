@@ -35,12 +35,12 @@ My personal portfolio site built with React and Parcel. It showcases recent AI/M
 
 ## Deployment Automation
 - Workflow: `/.github/workflows/deploy.yml`
-- Triggers: push to `main` and manual `workflow_dispatch`
+- Triggers: push to `main`, pull requests targeting `main` (for status checks), and manual `workflow_dispatch`
 - Jobs:
   1. **Resolve deployment targets** – reads `deployment-targets.json` to see whether GitHub Pages and/or Azure should run.
   2. **Build site** – runs `npm ci && npm run build`, then uploads the `dist/` folder as an artifact (`site-dist`).
-  3. **Deploy to GitHub Pages** – downloads the artifact, uploads it via `actions/upload-pages-artifact`, and publishes with `actions/deploy-pages` (remember to set Pages → Source → GitHub Actions in repo settings).
-  4. **Deploy to Azure Static Web Apps** – downloads the same artifact and uploads it with `azure/static-web-apps-deploy@v1`. Requires the secret `AZURE_STATIC_WEB_APPS_API_TOKEN` in Repo Settings → Secrets.
+  3. **Deploy to GitHub Pages** – downloads the artifact, uploads it via `actions/upload-pages-artifact`, and publishes with `actions/deploy-pages` (remember to set Pages → Source → GitHub Actions in repo settings). Runs only on pushes to `main`.
+  4. **Deploy to Azure Static Web Apps** – downloads the same artifact and uploads it with `azure/static-web-apps-deploy@v1`. Requires the secret `AZURE_STATIC_WEB_APPS_API_TOKEN` in Repo Settings → Secrets. Runs only on pushes to `main`.
 
 **Toggling targets:**
 - Edit `deployment-targets.json` and set the booleans you want:
@@ -56,6 +56,8 @@ My personal portfolio site built with React and Parcel. It showcases recent AI/M
 - From the GitHub UI: Actions → Deploy Portfolio → Run workflow → branch `main`.
 - From CLI: `gh workflow run "Deploy Portfolio" --ref main` then watch with `gh run watch <run-id>`.
 - Inspect logs via `gh run view <run-id> --log --exit-status`.
+
+**Branch protection tip:** Require the `Deploy Portfolio / build` check in your branch protection rules so pull requests must pass the build before merging, while deployments still only happen after the merge.
 
 ## Release Automation
 - Uses [semantic-release](https://semantic-release.gitbook.io/) with Conventional Commits to bump versions, write `CHANGELOG.md`, tag releases, and create GitHub releases.
@@ -96,3 +98,5 @@ This is a personal site, but feel free to open issues if you spot bugs or want t
 
 ## License
 ISC © Guanya Peng
+
+<!-- ci-test placeholder -->
