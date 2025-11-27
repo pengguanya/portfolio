@@ -57,6 +57,15 @@ My personal portfolio site built with React and Parcel. It showcases recent AI/M
 - From CLI: `gh workflow run "Deploy Portfolio" --ref main` then watch with `gh run watch <run-id>`.
 - Inspect logs via `gh run view <run-id> --log --exit-status`.
 
+## Release Automation
+- Uses [semantic-release](https://semantic-release.gitbook.io/) with Conventional Commits to bump versions, write `CHANGELOG.md`, tag releases, and create GitHub releases.
+- Only commits with release-relevant types (`feat`, `fix`, `perf`, etc.) trigger new versions; `chore`, `docs`, and similar maintenance commits are skipped.
+- Configuration lives in `.releaserc.json`. The release job runs at the end of `/.github/workflows/deploy.yml` after a successful build on `main`.
+- Outputs:
+  - Updates `package.json` / `package-lock.json` versions.
+  - Appends changelog entries to `CHANGELOG.md`.
+  - Pushes the release commit and git tag back to `main`.
+
 ## Repository Structure
 ```
 ├── src/
@@ -68,6 +77,8 @@ My personal portfolio site built with React and Parcel. It showcases recent AI/M
 ├── dist/ (build output)
 ├── context/ (notes, not tracked by git)
 ├── .github/workflows/deploy.yml
+├── .releaserc.json
+├── CHANGELOG.md
 ├── deployment-targets.json
 ├── package.json / package-lock.json
 └── README.md
