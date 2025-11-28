@@ -6,7 +6,7 @@
   "homepage": "https://pengguanya.github.io/portfolio",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build --public-url ./"
+    "build": "parcel build --public-url ./ && touch dist/.nojekyll"
   },
   "repository": {
     "type": "git",
