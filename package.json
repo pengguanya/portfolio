@@ -6,7 +6,7 @@
   "homepage": "https://pengguanya.github.io/portfolio",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build"
+    "build": "parcel build --public-url ./"
   },
   "repository": {
     "type": "git",
