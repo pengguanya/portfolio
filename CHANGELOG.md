@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/pengguanya/portfolio/compare/v1.0.0...v1.0.1) (2025-11-28)
+
+
+### Bug Fixes
+
+* add .nojekyll to fix github pages 404s ([717a0f2](https://github.com/pengguanya/portfolio/commit/717a0f2ad920d2ebfa02c1aa81d89ecef12ec042))
+
 # 1.0.0 (2025-11-28)
 
 
