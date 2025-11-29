@@ -13,7 +13,7 @@
   --bg-tools-card: #f3f4f6;   /* Light gray background for tools section (Tailwind gray-100) */
   --border-tools-card: #e5e7eb;
 
-  --text-primary: #6b7280;    /* Main body text color */
+  --text-primary: #57606a;    /* Main body text color (Slightly darker than original #6b7280) */
   --text-title: #1f2937;      /* Headings, strong text, and primary buttons */
   --text-subtitle: #525252;   /* Subtitles and secondary text */
   --text-date: #737373;       /* Dates and metadata */
