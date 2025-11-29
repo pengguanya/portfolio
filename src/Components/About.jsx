@@ -168,18 +168,20 @@ const About = () => {
             ))}
           </div>
 
-          <div className="card full-width" style={{ marginTop: "2rem" }}>
-            <h3 style={{ marginBottom: "1rem" }}>Online Courses & Certifications</h3>
-            <div className="cert-grid">
-              {certifications.map((cert, index) => (
-                <div className="cert-item" key={index}>
-                  <h4>{cert.name}</h4>
-                  <p>{cert.provider}</p>
-                  <p className="date-text">{cert.year}</p>
-                </div>
-              ))}
+          {certifications.length > 0 && (
+            <div className="card full-width" style={{ marginTop: "2rem" }}>
+              <h3 style={{ marginBottom: "1rem" }}>Online Courses & Certifications</h3>
+              <div className="cert-grid">
+                {certifications.map((cert, index) => (
+                  <div className="cert-item" key={index}>
+                    <h4>{cert.name}</h4>
+                    <p>{cert.provider}</p>
+                    <p className="date-text">{cert.year}</p>
+                  </div>
+                ))}
+              </div>
             </div>
-          </div>
+          )}
         </div>
 
         <div className="about-section">
@@ -211,8 +213,8 @@ const About = () => {
                         src={tool.icon}
                         alt={tool.name}
                         style={{
-                          width: "40px",
-                          height: "40px",
+                          width: "100%",
+                          height: "100%",
                           objectFit: "contain",
                         }}
                       />
