@@ -93,6 +93,11 @@ My personal portfolio site built with React and Parcel. It showcases recent AI/M
 - **Images:** drop files into `src/images` and update imports
 - **Styles:** global rules in `src/styles.css` plus component-specific CSS next to each component
 
+## Responsive Layout & Navigation
+- The fixed header (`src/Components/Header.jsx`) now collapses into a hamburger menu on tablets/phones (≤768px). Related styles live in `src/styles.css` under `.site-header`, `.nav-links`, and `.mobile-menu-button`.
+- Typography, grid spacing, and hero imagery adapt at 1200px, 1024px, 768px, and 640px so every section stays readable without horizontal scrolling.
+- To retune the experience for new sections, adjust the media queries near the bottom of `src/styles.css`; each block is annotated with its target viewport width.
+
 ## Contributing / Issues
 This is a personal site, but feel free to open issues if you spot bugs or want to discuss improvements. Pull requests are welcome for fixes or minor enhancements.
 
