@@ -153,6 +153,9 @@
     align-items: center; /* Center items vertically */
     order: 2;
     pointer-events: auto;
+    box-shadow: none;
+    border: none;
+    backdrop-filter: none;
   }
   
   .nav-link {
