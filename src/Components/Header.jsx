@@ -4,10 +4,11 @@
  * Top navigation bar for your site. Set to remain visible as the
  * user scrolls so that they can constantly reach any part of your page.
  */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 const Header = ({ activeSection, setActiveSection, theme, toggleTheme, routes }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navRef = useRef(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -20,6 +21,24 @@ const Header = ({ activeSection, setActiveSection, theme, toggleTheme, routes })
     return () => window.removeEventListener("resize", handleResize);
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    const root = document.documentElement;
+    const navHeight = isMenuOpen && navRef.current ? navRef.current.scrollHeight : 0;
+
+    if (isMenuOpen) {
+      root.classList.add("mobile-nav-open");
+    } else {
+      root.classList.remove("mobile-nav-open");
+    }
+
+    root.style.setProperty("--mobile-nav-height", `${navHeight}px`);
+
+    return () => {
+      root.classList.remove("mobile-nav-open");
+      root.style.setProperty("--mobile-nav-height", "0px");
+    };
+  }, [isMenuOpen]);
+
   const handleSectionChange = (section) => {
     setActiveSection(section);
     setIsMenuOpen(false);
@@ -30,7 +49,7 @@ const Header = ({ activeSection, setActiveSection, theme, toggleTheme, routes })
       <div className="header-brand">Guanya Peng</div>
 
       <button
-        className="mobile-menu-button"
+        className={`mobile-menu-button ${isMenuOpen ? "open" : ""}`}
         aria-label="Toggle navigation"
         aria-expanded={isMenuOpen}
         onClick={() => setIsMenuOpen((prev) => !prev)}
@@ -40,7 +59,7 @@ const Header = ({ activeSection, setActiveSection, theme, toggleTheme, routes })
         <span className="mobile-menu-line" />
       </button>
 
-      <nav className={`nav-links ${isMenuOpen ? "open" : ""}`}>
+      <nav ref={navRef} className={`nav-links ${isMenuOpen ? "open" : ""}`}>
         {routes.map((section) => {
           const isActive = activeSection === section;
           return (

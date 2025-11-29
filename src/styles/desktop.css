@@ -78,7 +78,7 @@
 
   /* Home Page Desktop Specifics */
   .home-section {
-    padding-top: 8rem; /* Push content down: 4rem header + 4rem space */
+    padding-top: 9rem; /* Extra breathing room between header and hero */
     justify-content: center;
   }
 
@@ -88,11 +88,13 @@
 
   .home-description {
     font-size: 1.35rem; /* Restore desktop size */
+    margin: 2.25rem 0 3rem; /* Larger gap before buttons */
   }
 
   .home-photo-wrapper {
-    width: 300px; /* Restore desktop size */
-    height: 300px;
+    width: 270px; /* Slightly smaller portrait */
+    height: 270px;
+    margin-top: 0.5rem;
   }
 
   /* Restore Horizontal Buttons for Desktop */
@@ -150,6 +152,7 @@
     animation: none;
     align-items: center; /* Center items vertically */
     order: 2;
+    pointer-events: auto;
   }
   
   .nav-link {
