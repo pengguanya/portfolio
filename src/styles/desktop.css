@@ -76,6 +76,46 @@
     padding-top: 4rem; /* Consistent extra spacing for all page headers */
   }
 
+  /* Home Page Desktop Specifics */
+  .home-section {
+    padding-top: 8rem; /* Push content down: 4rem header + 4rem space */
+    justify-content: center;
+  }
+
+  .home-title {
+    font-size: 4rem; /* Restore desktop size */
+  }
+
+  .home-description {
+    font-size: 1.35rem; /* Restore desktop size */
+  }
+
+  .home-photo-wrapper {
+    width: 300px; /* Restore desktop size */
+    height: 300px;
+  }
+
+  /* Restore Horizontal Buttons for Desktop */
+  .home-buttons {
+    display: flex;
+    gap: 1.5rem;
+    flex-direction: row;
+    width: auto;
+    max-width: none;
+  }
+
+  .home-btn {
+    width: 11rem !important; /* Restore standard width */
+    font-size: 1rem !important;
+    padding: 0.75rem !important;
+    border-radius: 12px; /* Enforce rounded corners on desktop */
+  }
+  
+  /* Use slightly smaller width for the secondary button if desired, or standard 11rem */
+  .home-btn:last-child {
+    width: 10rem !important;
+  }
+
   /* Fixed Header for Desktop */
   .site-header {
     position: fixed;
@@ -247,6 +287,21 @@
     right: 2rem;
     gap: 1.5rem;
     z-index: 100;
+  }
+
+  /* Footer Desktop Specifics */
+  .site-footer {
+    padding: 2rem 10rem;
+    justify-content: flex-end;
+  }
+  
+  .footer-icons {
+    gap: 2.5rem;
+  }
+  
+  .footer-icons .social-icon {
+    width: 24px !important; /* Restore desktop size */
+    height: 24px !important;
   }
 }
 

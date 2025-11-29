@@ -59,86 +59,38 @@ const Home = ({ name, title, setActiveSection, theme }) => {
   }, [text, isDeleting, loopNum, toRotate, typingSpeed]);
 
   return (
-    <section id="home" className="min-height" style={{ 
-      display: "flex", 
-      flexDirection: "column", 
-      justifyContent: "center", 
-      alignItems: "center", 
-      textAlign: "center",
-      paddingTop: "4rem",
-      minHeight: "90vh"
-    }}>
-      <div style={{ 
-        width: "300px", 
-        height: "300px", 
-        borderRadius: "50%", 
-        overflow: "hidden", 
-        marginBottom: "2rem",
-        boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
-        border: "none" // Removed border to match screenshot closer
-      }}>
+    <section id="home" className="min-height home-section">
+      <div className="home-photo-wrapper">
         <img src={image} alt={imageAltText} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
       </div>
       
-            <h1 style={{ 
-        color: "var(--text-title)", 
-        fontSize: "4rem", 
-        fontWeight: "700", 
-        letterSpacing: "-0.02em",
-        lineHeight: "1.1"
-      }}>
+      <h1 className="home-title">
         {text}
         <span className="cursor" style={{ 
           display: "inline-block", 
           width: "6px", 
           height: "1.2em", 
           backgroundColor: "var(--text-title)", 
-          marginLeft: "10px",
-          verticalAlign: "middle",
-          position: "relative",
-          top: "-0.1em"
+          marginLeft: "10px", 
+          verticalAlign: "middle", 
+          position: "relative", 
+          top: "-0.1em" 
         }}></span>
       </h1>
       
-      <p style={{ 
-        maxWidth: "700px", 
-        margin: "1.5rem 0 2.5rem", 
-        fontSize: "1.35rem", 
-        color: "var(--text-primary)",
-        lineHeight: "1.6",
-        fontWeight: "400"
-      }}>
+      <p className="home-description">
         {title}
       </p>
       
-      <div style={{ display: "flex", gap: "1.5rem" }}>
-        <button onClick={() => setActiveSection("portfolio")} className="btn btn-primary" style={{ 
-          fontSize: "1rem", 
-          padding: "0.75rem",
-          width: "11rem",
-          borderRadius: "12px", 
-          fontWeight: "600",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "0.5rem"
-        }}>
+      <div className="home-buttons">
+        <button onClick={() => setActiveSection("portfolio")} className="btn btn-primary home-btn">
           View My Work 
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
             <line x1="5" y1="12" x2="19" y2="12"></line>
             <polyline points="12 5 19 12 12 19"></polyline>
           </svg>
         </button>
-        <button onClick={() => setActiveSection("contact")} className="btn btn-secondary" style={{ 
-          fontSize: "1rem", 
-          padding: "0.75rem",
-          width: "10rem",
-          borderRadius: "12px", 
-          fontWeight: "600",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center"
-        }}>
+        <button onClick={() => setActiveSection("contact")} className="btn btn-secondary home-btn">
           Get in Touch
         </button>
       </div>

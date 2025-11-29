@@ -144,7 +144,72 @@ body.dark .article-card:hover {
   background-color: var(--bg-card-hover) !important;
 }
 
-/* Page Transitions */
+/* Home Page Specifics */
+.home-title {
+  color: var(--text-title);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.home-description {
+  max-width: 700px;
+  margin: 2rem 0 2.5rem; /* Increased top margin from 1.5rem to 2rem */
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.home-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 4rem;
+  min-height: 90vh;
+}
+
+.home-photo-wrapper {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border: none;
+}
+
+/* Home Page Buttons (Shared Base) */
+.home-btn {
+  border-radius: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Footer (Base Styles) */
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Default to desktop right-align */
+  padding: 2rem 10rem;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px solid var(--border-color);
+  margin-top: auto;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 2.5rem;
+}
+
 @keyframes pageTransition {
   0% {
     opacity: 0;
