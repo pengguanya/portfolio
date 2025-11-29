@@ -124,6 +124,10 @@
     padding: 0 4rem;
     flex-wrap: nowrap;
   }
+
+  .header-brand {
+    order: 1;
+  }
   
   /* Reset Mobile Menu to Horizontal Desktop Menu */
   .mobile-menu-button {
@@ -145,6 +149,7 @@
     transform: none;
     animation: none;
     align-items: center; /* Center items vertically */
+    order: 2;
   }
   
   .nav-link {
@@ -171,6 +176,16 @@
   /* Theme Controls */
   .theme-controls {
     margin-left: 0;
+    order: 3;
+  }
+
+  .language-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-title);
   }
   
   .language-pill svg {
