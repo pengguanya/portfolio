@@ -32,6 +32,9 @@
   
   --social-icon-color: #1a1a1a; /* Social icon default color */
   --social-icon-hover: #000000; /* Social icon hover color */
+  
+  /* Theme Toggle Icon */
+  --icon-theme-toggle: #1f2937; /* Dark icon for light mode */
 }
 
 body.dark {
@@ -63,4 +66,7 @@ body.dark {
   
   --social-icon-color: #f0f0f0; /* Social icon default color (Dark Mode) */
   --social-icon-hover: #ffffff; /* Social icon hover color (Dark Mode) */
+  
+  /* Theme Toggle Icon */
+  --icon-theme-toggle: #e5e5e5; /* Ensure contrast against dark background */
 }

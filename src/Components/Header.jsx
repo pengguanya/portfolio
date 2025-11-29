@@ -76,7 +76,7 @@ const Header = ({ activeSection, setActiveSection, theme, toggleTheme, routes })
           EN
         </div>
 
-        <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle theme">
+        <button onClick={toggleTheme} className="theme-toggle" aria-label="Toggle theme" style={{ color: "var(--icon-theme-toggle)" }}>
           {theme === "light" ? (
             <svg
               width="20"
