@@ -152,7 +152,7 @@ const About = () => {
           ))}
         </div>
 
-        <div className="about-section">
+        <div className="about-section about-education">
           <h2>Education</h2>
           <div className="grid-3">
             {education.map((edu, index) => (
@@ -169,8 +169,8 @@ const About = () => {
           </div>
 
           {certifications.length > 0 && (
-            <div className="card full-width" style={{ marginTop: "2rem" }}>
-              <h3 style={{ marginBottom: "1rem" }}>Online Courses & Certifications</h3>
+            <div className="card full-width about-certifications">
+              <h3>Online Courses & Certifications</h3>
               <div className="cert-grid">
                 {certifications.map((cert, index) => (
                   <div className="cert-item" key={index}>
