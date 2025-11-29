@@ -1,0 +1,145 @@
+/**
+ * BASE STYLES
+ * Shared typography, resets, and global utility classes.
+ * (Colors are imported from variables.css)
+ */
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+  width: 100%;
+  letter-spacing: 0.03em;
+  word-spacing: 0.05em;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Standardized margins for section headers */
+h1, h2 {
+  margin-bottom: 1rem; /* Ensure gap between title and content */
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0 0 1rem 0; /* Standardized margin */
+  color: var(--text-title);
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0 0 1.5rem 0; /* Standardized margin */
+  padding-top: 1rem;
+  color: var(--text-title);
+}
+
+/* Common Utility Classes */
+.gray-bg {
+  background-color: var(--bg-secondary);
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 5px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Button styles (Shared) */
+.btn {
+  padding: 1rem 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.btn-primary {
+  background-color: var(--text-title);
+  color: var(--bg-primary);
+  border: 1px solid var(--text-title);
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
+}
+
+.btn-secondary {
+  background-color: var(--bg-primary);
+  color: var(--text-title);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+/* Dark Mode Specific Component Overrides */
+body.dark .tool-item {
+  color: var(--text-subtitle);
+}
+
+body.dark .tool-item:hover {
+  color: var(--text-title);
+}
+
+body.dark .gray-bg {
+  background-color: var(--bg-secondary);
+}
+
+body.dark .social-icon {
+  filter: none;
+}
+
+body.dark .social-icon:hover {
+  filter: none;
+}
+
+body.dark .contact-input::placeholder {
+  color: var(--text-primary);
+}
+
+body.dark .contact-input:focus {
+  border-color: var(--text-primary) !important;
+  border-width: 2px !important;
+}
+
+body.dark .social-card:hover {
+  background-color: var(--bg-hover) !important;
+}
+
+body.dark .article-card:hover {
+  background-color: var(--bg-card-hover) !important;
+}
+
+/* Page Transitions */
+@keyframes pageTransition {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: pageTransition 0.4s ease-out forwards;
+}

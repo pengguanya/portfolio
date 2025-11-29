@@ -1,0 +1,551 @@
+/**
+ * MOBILE STYLES (Default / Mobile-First)
+ * These styles apply by default (usually < 1024px)
+ * and provide the foundation for the responsive layout.
+ */
+
+div#main {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+}
+
+section {
+  position: relative;
+  width: 100vw;
+}
+
+/* Default to auto height for mobile to avoid big white gaps */
+section.min-height {
+  min-height: auto;
+}
+
+section.padding {
+  padding: 3rem 0;
+}
+
+section img.background {
+  height: 100%;
+  left: 50%;
+  object-fit: cover;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  transform: translate(-50%, 0);
+  width: 100vmax;
+  z-index: -1;
+}
+
+/* Mobile Typography */
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0;
+  color: var(--text-title);
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0;
+  padding-top: 1rem;
+  color: var(--text-title);
+}
+
+h3 {
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin: 0;
+  color: var(--text-title);
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+  font-weight: 400;
+  color: var(--text-primary);
+}
+
+p.large {
+  font-size: 1.1rem;
+}
+
+p.small {
+  font-size: 0.9rem;
+}
+
+hr {
+  margin: 2rem 0;
+}
+
+li {
+  line-height: 1.7;
+}
+
+li::marker {
+  color: var(--color-accent);
+}
+
+a {
+  color: var(--text-primary);
+  text-decoration: none;
+}
+
+/* Mobile Header (Push Down Style) */
+.site-header {
+  position: relative; /* Scrolls with page, or use fixed if strictly needed */
+  width: 100%;
+  height: auto;
+  min-height: 3rem;
+  padding: 0.5rem 1.25rem;
+  display: flex;
+  flex-wrap: wrap; /* Allows menu to expand height */
+  align-items: center;
+  justify-content: space-between;
+  background: var(--nav-bg);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border-color);
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.header-brand {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--text-title);
+}
+
+/* Mobile Menu: Hidden by default, pushes content down when open */
+.nav-links {
+  width: 100%;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  gap: 0;
+  margin-top: 1rem;
+  border-top: 1px solid var(--border-color);
+  
+  /* Reset desktop overrides */
+  position: relative;
+  top: auto;
+  left: auto;
+  right: auto;
+  height: auto;
+  background: transparent;
+  backdrop-filter: none;
+}
+
+.nav-links.open {
+  display: flex;
+  padding: 1rem 0;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.nav-link {
+  width: 100%;
+  position: relative;
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  color: var(--text-primary);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 0; /* Tappable area */
+  text-transform: capitalize;
+  transition: color 0.2s ease;
+  font-size: 1rem;
+}
+
+.nav-link.active {
+  color: var(--text-title);
+  font-weight: 600;
+}
+
+.nav-link-indicator {
+  display: none; /* Hide underline on mobile */
+}
+
+/* Mobile Menu Button */
+.mobile-menu-button {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--text-title);
+}
+
+.mobile-menu-line {
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 1px;
+}
+
+/* Theme Controls (Mobile: Align right) */
+.theme-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-left: auto; /* Push to right next to hamburger */
+  margin-right: 1rem;
+}
+
+.language-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-title);
+}
+
+.language-pill svg {
+  display: none; /* Hide globe icon on small mobile */
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-toggle svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  fill: currentColor;
+}
+
+/* Mobile Containers */
+.about-container {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 1.25rem 1rem;
+}
+
+.about-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.profile-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px -1px var(--shadow-color);
+}
+
+.about-content {
+  margin-bottom: 4rem;
+}
+
+.about-content h1 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: left;
+  color: var(--text-title);
+}
+
+.about-section h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text-title);
+}
+
+/* Mobile Grids (Stacked 1 column) */
+.grid-2,
+.grid-3,
+.grid-4 {
+  display: grid;
+  grid-template-columns: 1fr; /* Stack vertically */
+  gap: 2rem;
+  max-width: 100%; /* Prevent overflow on mobile */
+  box-sizing: border-box;
+}
+
+/* Card Styles */
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem; /* Reduced padding for mobile */
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  border-color: var(--text-muted);
+  box-shadow: 0 10px 15px -3px var(--shadow-color);
+  transform: translateY(-2px);
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--text-title);
+}
+
+.sub-text {
+  font-size: 1rem;
+  color: var(--text-subtitle);
+  margin-bottom: 0.25rem;
+}
+
+.sub-text.major {
+  font-weight: 600;
+  color: var(--text-subtitle);
+}
+
+.date-text {
+  font-size: 0.9rem;
+  color: var(--text-date);
+  margin-bottom: 1rem;
+  font-weight: 300;
+}
+
+.detail-list {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: var(--text-primary);
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.cert-item h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem 0;
+  color: var(--text-title);
+}
+
+.cert-item p {
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+/* Skill & Tools */
+.skill-card {
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.icon-box {
+  margin-bottom: 0.75rem;
+  color: var(--text-title);
+  display: flex;
+  justify-content: center;
+}
+
+.skill-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0 0;
+}
+
+.skill-list li {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 2.5rem;
+  padding: 1rem;
+}
+
+.tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--text-primary);
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+.tool-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+
+/* Contact Form Mobile */
+.contact-input {
+  width: 100%;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  color: var(--text-primary);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+
+.contact-input::placeholder {
+  color: var(--text-muted);
+  opacity: 1;
+}
+
+.contact-input:focus {
+  border-color: var(--text-primary) !important;
+  border-width: 2px !important;
+}
+
+.social-icons-container {
+  display: none; /* Hide floating social icons on mobile */
+}
+
+.social-card {
+  transition: background-color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.social-card:hover {
+  background-color: var(--bg-hover) !important;
+}
+
+.contact-button:active {
+  transform: scale(0.98);
+  opacity: 0.9;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+.contact-button.error {
+  animation: shake 0.4s ease-in-out;
+  background-color: var(--color-error) !important;
+  color: white !important;
+  border-color: var(--color-error) !important;
+}
+
+/* Portfolio Box Styles */
+.box {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px var(--shadow-color);
+}
+
+.box h3 {
+  color: var(--text-title);
+  margin-top: 0;
+}
+
+.box p {
+  color: var(--text-primary);
+}
+
+.box a {
+  text-decoration: none;
+}
+
+.article-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05) !important;
+}
+
+
+/* =========================================
+   LANDSCAPE MOBILE SPECIALTIES
+   (Fixing the big text / layout issues)
+   ========================================= */
+@media (max-height: 500px) and (orientation: landscape) {
+  /* Fix vertical scrolling height */
+  html, body {
+    height: auto;
+    min-height: 100%;
+  }
+
+  .site-header {
+    height: auto;
+    min-height: 3rem;
+    padding: 0.5rem 1.5rem;
+  }
+
+  /* Compact sections */
+  section.padding {
+    padding: 1.5rem 0;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+    padding-top: 0;
+  }
+
+  p, 
+  .about-content p,
+  .cert-item p {
+    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .card, .box {
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .cert-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  
+  /* Side-by-Side Contact Form in Landscape */
+  #contact > div:last-child {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 1.5rem !important;
+    align-items: start;
+  }
+}
+

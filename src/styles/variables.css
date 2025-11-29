@@ -1,7 +1,7 @@
 /**
-* CSS Variables - The Theme Configuration
-* Defines all colors and design tokens for Light and Dark modes.
-*/
+ * CSS Variables - The Theme Configuration
+ * Defines all colors and design tokens for Light and Dark modes.
+ */
 
 :root {
   /* Light Mode Colors (Default) */
@@ -9,6 +9,10 @@
   --bg-secondary: #f3f4f6;    /* Secondary background (e.g., alternate sections) */
   --bg-card: #ffffff;         /* Background for cards and containers */
   
+  /* Tools Card Specifics */
+  --bg-tools-card: #f3f4f6;   /* Light gray background for tools section (Tailwind gray-100) */
+  --border-tools-card: #e5e7eb;
+
   --text-primary: #6b7280;    /* Main body text color */
   --text-title: #1f2937;      /* Headings, strong text, and primary buttons */
   --text-subtitle: #525252;   /* Subtitles and secondary text */
@@ -36,6 +40,10 @@ body.dark {
   --bg-secondary: #1f1f1f;    /* Secondary background (Dark) */
   --bg-card: #1e1e1e;         /* Card background (Dark) */
   
+  /* Tools Card Specifics (Dark Mode) */
+  --bg-tools-card: #262626;   /* Darker gray for tools section */
+  --border-tools-card: #333333;
+
   --text-primary: #888888;    /* Main body text color (Light Gray) */
   --text-title: #e5e5e5;      /* Headings and primary text (White/Lightest Gray) */
   --text-subtitle: #a3a3a3;   /* Subtitles (Medium Gray) */

@@ -15,9 +15,7 @@ import Header from "./Components/Header";
 import Home from "./Components/Home";
 import Portfolio from "./Components/Portfolio";
 
-import "./styles/variables.css";
-import "./styles/global.css";
-import "./styles/components.css";
+import "./styles.css";
 
 /**
  * This object represents your information. The project is set so that you
@@ -88,7 +86,9 @@ const App = () => {
   return (
     <div id="main" style={{ background: getBackground(), minHeight: "100vh", transition: "background 0.3s ease" }}>
       <Header activeSection={activeSection} setActiveSection={setActiveSection} theme={theme} toggleTheme={toggleTheme} routes={routes} />
-      {renderContent()}
+      <div key={activeSection} className="animate-in">
+        {renderContent()}
+      </div>
       <Footer {...siteProps} primaryColor={primaryColor} secondaryColor={secondaryColor} theme={theme} />
     </div>
   );

@@ -1,0 +1,257 @@
+/**
+ * DESKTOP STYLES
+ * Overrides for Tablet (≥768px) and Desktop (≥1024px)
+ * Wrapped in media queries to ensure they only apply to larger screens.
+ */
+
+/* =========================================
+   TABLET (≥768px)
+   Transition from mobile stack to partial grid
+   ========================================= */
+@media (min-width: 768px) {
+  /* Tablet Grids */
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .grid-3 {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .grid-4 {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .about-container {
+    padding: 2rem;
+  }
+  
+  /* Reset Nav to row if needed (though usually desktop handles this at 1024) */
+}
+
+
+/* =========================================
+   DESKTOP (≥1024px)
+   Full PC Layout
+   ========================================= */
+@media (min-width: 1024px) {
+  /* Add padding to prevent header overlap and ensure content visibility */
+  .page-section {
+    padding-top: 6rem; /* Push content down below fixed header */
+  }
+
+  /* Max Width Constraints to prevent horizontal overflow */
+  div#main, section {
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .about-container, 
+  .grid-2, 
+  .grid-3, 
+  .grid-4,
+  #contact > div {
+    max-width: 1200px; /* Constrain content width */
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Constrain specialized containers */
+  .timeline,
+  .articles-grid,
+  .portfolio-grid {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+
+  /* Ensure page titles don't get hidden */
+  .experience-header,
+  .portfolio-header,
+  .articles-header,
+  .contact-header {
+    padding-top: 4rem; /* Consistent extra spacing for all page headers */
+  }
+
+  /* Fixed Header for Desktop */
+  .site-header {
+    position: fixed;
+    top: 0;
+    height: 4rem;
+    padding: 0 4rem;
+    flex-wrap: nowrap;
+  }
+  
+  /* Reset Mobile Menu to Horizontal Desktop Menu */
+  .mobile-menu-button {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    width: auto;
+    height: 100%;
+    margin-top: 0;
+    border-top: none;
+    padding: 0;
+    gap: 2rem;
+    background: transparent;
+    opacity: 1;
+    transform: none;
+    animation: none;
+    align-items: center; /* Center items vertically */
+  }
+  
+  .nav-link {
+    width: auto;
+    padding: 0;
+    font-size: 0.95rem;
+    height: 100%; /* Make link fill the height for proper underline positioning if needed, or just align */
+    display: flex;
+    align-items: center; /* Ensure text inside link is centered */
+  }
+  
+  .nav-link-indicator {
+    display: block;
+    position: absolute;
+    bottom: -3px; /* Tiny gap below border (-1px would overlap, -2px is barely separated) */
+    left: 0;
+    right: 0;
+    height: 1px; /* Very thin line */
+    background: var(--text-title);
+    border-radius: 0;
+    z-index: 11;
+  }
+
+  /* Theme Controls */
+  .theme-controls {
+    margin-left: 0;
+  }
+  
+  .language-pill svg {
+    display: block;
+  }
+
+  /* Typography Scale Up */
+  h1 {
+    font-size: 7rem;
+    line-height: 0.8;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 18px;
+  }
+  
+  p.large {
+    font-size: 24px;
+  }
+  
+  p.small {
+    font-size: 15px;
+  }
+
+  /* =========================================
+     ABOUT PAGE SPACING & TYPOGRAPHY
+     ========================================= */
+  
+  /* 1. Container Width */
+  .about-container {
+    max-width: 1100px; 
+    padding: 2rem;
+  }
+  
+  /* Dynamic Certification Layout (Flexbox) */
+  .cert-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center items in the last row */
+    gap: 2rem;
+  }
+
+  .cert-item {
+    flex: 1 1 calc(25% - 2rem); /* Try to fit 4 per row (25%), allowing 3 to wrap nicely */
+    max-width: 350px; /* Don't get too wide */
+    min-width: 250px; /* Don't get too narrow */
+    box-sizing: border-box;
+  }
+
+  /* Force 4-column layout for Tools Grid */
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+  }
+
+  /* Light gray background for the tools container */
+  .card.full-width.gray-bg {
+    background-color: var(--bg-tools-card);
+    border-color: var(--border-tools-card);
+  }
+
+  /* Increase tool icon size */
+  .tool-icon {
+    height: 50px; /* Increased from 40px base */
+    width: 50px;
+    margin-bottom: 0; /* Eliminated margin completely */
+  }
+  
+  .tool-icon img, .tool-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+  
+  /* 2. Header (Photo) Spacing */
+  .about-header {
+    padding-top: 2.5rem; 
+    margin-bottom: 2rem; /* Space between Photo and "About Me" title */
+  }
+  
+  .profile-image {
+    max-width: 400px;
+  }
+  
+  /* 3. "About Me" Section Spacing */
+  .about-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem; /* Space between Title "About Me" and the paragraphs */
+  }
+
+  .about-content {
+    margin-bottom: 3rem; /* Space between the Paragraphs and the "Education" section */
+  }
+
+  /* 4. Lower Sections (Education, Skills, Tools) */
+  .about-section h2 {
+    font-size: 1.8rem;
+    /* Note: h2 has its own internal margin from base.css, usually adequate */
+  }
+
+  .about-section {
+    margin-bottom: 3rem; /* Space between "Education" -> "Skills" -> "Tools" */
+  }
+
+  /* Restore Floating Social Icons */
+  .social-icons-container {
+    display: flex;
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    gap: 1.5rem;
+    z-index: 100;
+  }
+}
+
+/* Extra Large Screens */
+@media (min-width: 1200px) {
+  /* Fine-tuning for very large monitors if needed */
+}
+
