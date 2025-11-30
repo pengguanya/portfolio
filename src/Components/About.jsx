@@ -152,7 +152,7 @@ const About = () => {
           ))}
         </div>
 
-        <div className="about-section about-education">
+        <div className="about-section about-education section-shell">
           <h2>Education</h2>
           <div className="grid-3">
             {education.map((edu, index) => (
@@ -184,7 +184,7 @@ const About = () => {
           )}
         </div>
 
-        <div className="about-section">
+        <div className="about-section section-shell">
           <h2>Skills & Expertise</h2>
           <div className="grid-4">
             {skills.map((skill, index) => (
@@ -201,7 +201,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="about-section">
+        <div className="about-section section-shell">
           <h2>My Favorite Tools</h2>
           <div className="card full-width gray-bg">
             <div className="tools-grid">

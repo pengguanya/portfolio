@@ -62,6 +62,24 @@ section img.background {
   z-index: -1;
 }
 
+/* Shared Section Shell for mobile */
+@media (max-width: 1023px) {
+  .section-shell {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
+  .section-shell .grid-2,
+  .section-shell .grid-3,
+  .section-shell .grid-4,
+  .section-shell .cert-grid,
+  .section-shell .tools-grid {
+    max-width: 100%;
+    margin: 0;
+  }
+}
+
 /* Mobile Typography */
 h1 {
   font-family: "Roboto", sans-serif;
@@ -393,12 +411,6 @@ body.dark .nav-links {
 
 @media (max-width: 1023px) {
   #about .about-education {
-    max-width: 90%;
-    margin: 0 auto 2rem;
-  }
-
-  #about .about-education .grid-3 {
-    max-width: 100%;
     margin: 0 auto;
   }
 }
@@ -463,12 +475,11 @@ body.dark .nav-links {
 
 @media (max-width: 1023px) {
   #about .about-certifications {
-    max-width: 90%;
-    margin: 2rem auto 1.5rem;
     padding: 0.5rem 0.75rem 0.75rem;
     border: 1px solid var(--border-color);
     box-shadow: 0 6px 10px -4px var(--shadow-color);
     border-radius: 12px;
+    margin-top: 1.25rem;
   }
 
   #about .about-certifications h3 {
@@ -477,8 +488,7 @@ body.dark .nav-links {
   }
 
   #about .about-certifications .cert-grid {
-    max-width: 100%;
-    margin: 0 auto;
+    padding: 0;
   }
 }
 
@@ -538,6 +548,13 @@ body.dark .nav-links {
   grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
   gap: 2.5rem;
   padding: 1rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 1023px) {
+  #about .card.full-width.gray-bg {
+    padding: 1rem;
+  }
 }
 
 .tool-item {
@@ -866,15 +883,39 @@ body.dark .timeline-marker {
     max-width: none;
   }
 
-  /* About -> Education cards: fit 3 per row in landscape */
-  #about .grid-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1rem;
-    max-width: 98%;
+  .section-shell {
+    max-width: 100%;
   }
 
-  #about .grid-3 .card {
+  /* About -> Education cards: fit 3 per row in landscape */
+  #about .about-education {
+    max-width: 100%;
+    margin: 0 auto 0.75rem;
+  }
+
+  #about .about-education .grid-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  #about .about-education .grid-3 .card {
     padding: 0.85rem 0.75rem;
+  }
+
+  #about .about-certifications {
+    max-width: 100%;
+    margin: 0.75rem auto 1rem;
+  }
+
+  #about .about-certifications .cert-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
   }
 
   /* About page tweaks */
