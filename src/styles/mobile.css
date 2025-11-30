@@ -496,6 +496,43 @@ body.dark .nav-links {
   #about .section-shell {
     margin-bottom: 1.25rem;
   }
+
+  #about .section-shell .grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #about .section-shell .grid-4 .card h3 {
+    font-size: 1.05rem;
+  }
+
+  #about .section-shell .grid-4 .icon-box {
+    margin-bottom: 0.5rem;
+  }
+
+  #about .section-shell .grid-4 .icon-box svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  #about .card.full-width.gray-bg .tools-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  #about .card.full-width.gray-bg .tool-item {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0.5rem;
+  }
+
+  #about .card.full-width.gray-bg .tool-icon {
+    height: 28px;
+    width: 28px;
+  }
+
+  #about .card.full-width.gray-bg .tool-item span {
+    font-size: 0.9rem;
+  }
 }
 
 .cert-grid {

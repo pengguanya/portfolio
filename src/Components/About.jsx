@@ -24,7 +24,7 @@ import railwayIcon from "../images/tools/railway.png";
 import langchainIcon from "../images/tools/langchain.png";
 import n8nIcon from "../images/tools/n8n.png";
 
-import Anthropic from "./Icons/Anthropic";
+import anthropicIcon from "../images/tools/anthropic.svg";
 
 import {
   FaCode,
@@ -125,7 +125,7 @@ const tools = [
   { name: "GitLab", icon: gitlabIcon },
   { name: "Notion", icon: notionIcon },
   { name: "OpenAI", icon: openaiIcon },
-  { name: "Anthropic", icon: <Anthropic size={40} style={{ color: "#141413" }} /> },
+  { name: "Anthropic", icon: anthropicIcon },
   { name: "Perplexity", icon: perplexityIcon },
   { name: "AWS", icon: awsIcon },
   { name: "Bolt.new", icon: boltIcon },
