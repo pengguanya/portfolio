@@ -66,6 +66,12 @@ section img.background {
 @media (max-width: 1023px) {
   .section-shell {
     width: 100%;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .section-shell > .section-content {
+    width: 100%;
     max-width: 90%;
     margin: 0 auto;
   }
@@ -409,12 +415,6 @@ body.dark .nav-links {
   color: var(--text-title);
 }
 
-@media (max-width: 1023px) {
-  #about .about-education {
-    margin: 0 auto;
-  }
-}
-
 /* Mobile Grids (Stacked 1 column) */
 .grid-2,
 .grid-3,
@@ -489,6 +489,12 @@ body.dark .nav-links {
 
   #about .about-certifications .cert-grid {
     padding: 0;
+  }
+}
+
+@media (max-width: 1023px) {
+  #about .section-shell {
+    margin-bottom: 1.25rem;
   }
 }
 

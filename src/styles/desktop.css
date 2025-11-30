@@ -256,12 +256,6 @@
     max-width: 1100px;
   }
 
-  /* Light gray background for the tools container */
-  .card.full-width.gray-bg {
-    background-color: var(--bg-tools-card);
-    border-color: var(--border-tools-card);
-  }
-
   /* Increase tool icon size */
   .tool-icon {
     height: 50px; /* Increased from 40px base */

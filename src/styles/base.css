@@ -199,6 +199,15 @@ body.dark .article-card:hover {
   margin-right: auto;
 }
 
+.section-content {
+  width: 100%;
+}
+
+.card.full-width.gray-bg {
+  background-color: var(--bg-tools-card);
+  border-color: var(--border-tools-card);
+}
+
 /* Footer (Base Styles) */
 .site-footer {
   display: flex;

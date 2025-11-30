@@ -154,77 +154,83 @@ const About = () => {
 
         <div className="about-section about-education section-shell">
           <h2>Education</h2>
-          <div className="grid-3">
-            {education.map((edu, index) => (
-              <div className="card" key={index}>
-                <h3>{edu.degree}</h3>
-                <p className="sub-text major">{edu.major}</p>
-                <p className="sub-text">{edu.school}</p>
-                <p className="date-text">{edu.year}</p>
-                <ul className="detail-list">
-                  <li>{edu.detail}</li>
-                </ul>
-              </div>
-            ))}
-          </div>
-
-          {certifications.length > 0 && (
-            <div className="card full-width about-certifications">
-              <h3>Online Courses & Certifications</h3>
-              <div className="cert-grid">
-                {certifications.map((cert, index) => (
-                  <div className="cert-item" key={index}>
-                    <h4>{cert.name}</h4>
-                    <p>{cert.provider}</p>
-                    <p className="date-text">{cert.year}</p>
-                  </div>
-                ))}
-              </div>
+          <div className="section-content">
+            <div className="grid-3">
+              {education.map((edu, index) => (
+                <div className="card" key={index}>
+                  <h3>{edu.degree}</h3>
+                  <p className="sub-text major">{edu.major}</p>
+                  <p className="sub-text">{edu.school}</p>
+                  <p className="date-text">{edu.year}</p>
+                  <ul className="detail-list">
+                    <li>{edu.detail}</li>
+                  </ul>
+                </div>
+              ))}
             </div>
-          )}
+
+            {certifications.length > 0 && (
+              <div className="card full-width about-certifications">
+                <h3>Online Courses & Certifications</h3>
+                <div className="cert-grid">
+                  {certifications.map((cert, index) => (
+                    <div className="cert-item" key={index}>
+                      <h4>{cert.name}</h4>
+                      <p>{cert.provider}</p>
+                      <p className="date-text">{cert.year}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
         </div>
 
         <div className="about-section section-shell">
           <h2>Skills & Expertise</h2>
-          <div className="grid-4">
-            {skills.map((skill, index) => (
-              <div className="card skill-card" key={index}>
-                <div className="icon-box">{skill.icon}</div>
-                <h3>{skill.title}</h3>
-                <ul className="skill-list">
-                  {skill.items.map((item, i) => (
-                    <li key={i}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+          <div className="section-content">
+            <div className="grid-4">
+              {skills.map((skill, index) => (
+                <div className="card skill-card" key={index}>
+                  <div className="icon-box">{skill.icon}</div>
+                  <h3>{skill.title}</h3>
+                  <ul className="skill-list">
+                    {skill.items.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
 
         <div className="about-section section-shell">
           <h2>My Favorite Tools</h2>
-          <div className="card full-width gray-bg">
-            <div className="tools-grid">
-              {tools.map((tool, index) => (
-                <div className="tool-item" key={index}>
-                  <div className="tool-icon">
-                    {typeof tool.icon === "string" ? (
-                      <img
-                        src={tool.icon}
-                        alt={tool.name}
-                        style={{
-                          width: "100%",
-                          height: "100%",
-                          objectFit: "contain",
-                        }}
-                      />
-                    ) : (
-                      tool.icon
-                    )}
+          <div className="section-content">
+            <div className="card full-width gray-bg">
+              <div className="tools-grid">
+                {tools.map((tool, index) => (
+                  <div className="tool-item" key={index}>
+                    <div className="tool-icon">
+                      {typeof tool.icon === "string" ? (
+                        <img
+                          src={tool.icon}
+                          alt={tool.name}
+                          style={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "contain",
+                          }}
+                        />
+                      ) : (
+                        tool.icon
+                      )}
+                    </div>
+                    <span>{tool.name}</span>
                   </div>
-                  <span>{tool.name}</span>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </div>
