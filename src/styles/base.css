@@ -1,0 +1,242 @@
+/**
+ * BASE STYLES
+ * Shared typography, resets, and global utility classes.
+ * (Colors are imported from variables.css)
+ */
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  height: 100%;
+  margin: 0;
+  overflow-x: hidden;
+  padding: 0;
+  width: 100%;
+  letter-spacing: 0.03em;
+  word-spacing: 0.05em;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Standardized margins for section headers */
+h1, h2 {
+  margin-bottom: 1rem; /* Ensure gap between title and content */
+}
+
+h1 {
+  font-family: "Roboto", sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.1;
+  margin: 0 0 1rem 0; /* Standardized margin */
+  color: var(--text-title);
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 0 0 1.5rem 0; /* Standardized margin */
+  padding-top: 1rem;
+  color: var(--text-title);
+}
+
+/* Common Utility Classes */
+.gray-bg {
+  background-color: var(--bg-secondary);
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 5px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Button styles (Shared) */
+.btn {
+  padding: 1rem 2rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border-radius: 4px;
+  display: inline-block;
+}
+
+.btn-primary {
+  background-color: var(--text-title);
+  color: var(--bg-primary);
+  border: 1px solid var(--text-title);
+}
+
+.btn-primary:hover {
+  opacity: 0.85;
+}
+
+.btn-secondary {
+  background-color: var(--bg-primary);
+  color: var(--text-title);
+  border: 1px solid var(--border-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-secondary);
+  border-color: var(--border-color);
+}
+
+/* Social Icon Animations */
+.social-icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  transition: all 0.3s ease;
+  opacity: 0.6;
+  color: var(--social-icon-color);
+}
+
+.social-icon:hover {
+  transform: translateY(-3px) scale(1.1); /* Move up and zoom slightly */
+  opacity: 1;
+  color: var(--social-icon-hover);
+  filter: brightness(1.2); /* Subtle flash effect */
+}
+
+/* Dark Mode Specific Component Overrides */
+body.dark .tool-item {
+  color: var(--text-subtitle);
+}
+
+body.dark .tool-item:hover {
+  color: var(--text-title);
+}
+
+body.dark .gray-bg {
+  background-color: var(--bg-secondary);
+}
+
+body.dark .social-icon {
+  filter: none;
+}
+
+body.dark .social-icon:hover {
+  filter: none;
+}
+
+body.dark .contact-input::placeholder {
+  color: var(--text-primary);
+}
+
+body.dark .contact-input:focus {
+  border-color: var(--text-primary) !important;
+  border-width: 2px !important;
+}
+
+body.dark .social-card:hover {
+  background-color: var(--bg-hover) !important;
+}
+
+body.dark .article-card:hover {
+  background-color: var(--bg-card-hover) !important;
+}
+
+/* Home Page Specifics */
+.home-title {
+  color: var(--text-title);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin: 0;
+}
+
+.home-description {
+  max-width: 700px;
+  margin: 2rem 0 2.5rem; /* Increased top margin from 1.5rem to 2rem */
+  color: var(--text-primary);
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.home-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 4rem;
+  min-height: 90vh;
+}
+
+.home-photo-wrapper {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 2rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  border: none;
+}
+
+/* Home Page Buttons (Shared Base) */
+.home-btn {
+  border-radius: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.section-shell {
+  width: 100%;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-content {
+  width: 100%;
+}
+
+.card.full-width.gray-bg {
+  background-color: var(--bg-tools-card);
+  border-color: var(--border-tools-card);
+}
+
+/* Footer (Base Styles) */
+.site-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Default to desktop right-align */
+  padding: 2rem 10rem;
+  background-color: transparent;
+  width: 100%;
+  box-sizing: border-box;
+  border-top: 1px solid var(--border-color);
+  margin-top: auto;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 2.5rem;
+}
+
+@keyframes pageTransition {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation: pageTransition 0.4s ease-out forwards;
+}

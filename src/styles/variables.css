@@ -1,7 +1,7 @@
 /**
-* CSS Variables - The Theme Configuration
-* Defines all colors and design tokens for Light and Dark modes.
-*/
+ * CSS Variables - The Theme Configuration
+ * Defines all colors and design tokens for Light and Dark modes.
+ */
 
 :root {
   /* Light Mode Colors (Default) */
@@ -9,7 +9,11 @@
   --bg-secondary: #f3f4f6;    /* Secondary background (e.g., alternate sections) */
   --bg-card: #ffffff;         /* Background for cards and containers */
   
-  --text-primary: #6b7280;    /* Main body text color */
+  /* Tools Card Specifics */
+  --bg-tools-card: #f3f4f6;   /* Light gray background for tools section (Tailwind gray-100) */
+  --border-tools-card: #e5e7eb;
+
+  --text-primary: #57606a;    /* Main body text color (Slightly darker than original #6b7280) */
   --text-title: #1f2937;      /* Headings, strong text, and primary buttons */
   --text-subtitle: #525252;   /* Subtitles and secondary text */
   --text-date: #737373;       /* Dates and metadata */
@@ -26,8 +30,13 @@
   --bg-hover: #f3f4f6;        /* Background color on hover for interactive elements */
   --bg-card-hover: #ffffff;   /* Background color on hover for cards */
   
+  --bg-timeline-marker: #f0f0f0; /* New: Slightly darker gray than white/light-gray background for marker */
+
   --social-icon-color: #1a1a1a; /* Social icon default color */
   --social-icon-hover: #000000; /* Social icon hover color */
+  
+  /* Theme Toggle Icon */
+  --icon-theme-toggle: #1f2937; /* Dark icon for light mode */
 }
 
 body.dark {
@@ -36,6 +45,10 @@ body.dark {
   --bg-secondary: #1f1f1f;    /* Secondary background (Dark) */
   --bg-card: #1e1e1e;         /* Card background (Dark) */
   
+  /* Tools Card Specifics (Dark Mode) */
+  --bg-tools-card: #262626;   /* Darker gray for tools section */
+  --border-tools-card: #333333;
+
   --text-primary: #888888;    /* Main body text color (Light Gray) */
   --text-title: #e5e5e5;      /* Headings and primary text (White/Lightest Gray) */
   --text-subtitle: #a3a3a3;   /* Subtitles (Medium Gray) */
@@ -53,6 +66,11 @@ body.dark {
   --bg-hover: #262626;        /* Hover background (Dark Gray) */
   --bg-card-hover: #2d2d2d;   /* Card hover background (Lighter Dark) */
   
+  --bg-timeline-marker: #2a2a2a; /* New: Darker gray for marker in dark mode */
+
   --social-icon-color: #f0f0f0; /* Social icon default color (Dark Mode) */
   --social-icon-hover: #ffffff; /* Social icon hover color (Dark Mode) */
+  
+  /* Theme Toggle Icon */
+  --icon-theme-toggle: #e5e5e5; /* Ensure contrast against dark background */
 }

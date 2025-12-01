@@ -5,7 +5,6 @@
  */
 
 import React from "react";
-import "./Experience.css";
 
 import rocheLogo from "../images/companies/roche.svg";
 import biotronikLogo from "../images/companies/biotronik.svg";
@@ -100,7 +99,7 @@ const experiences = [
 const Experience = () => {
   return (
     <section className="experience-section page-section" id="experience">
-      <div className="experience-header">
+      <div className="page-header experience-header">
         <h1>Experience</h1>
         <p>A timeline of my professional journey and key achievements.</p>
       </div>
