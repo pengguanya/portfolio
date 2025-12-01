@@ -485,6 +485,29 @@
     margin-bottom: 2rem;
   }
 
+  .about-skills .skill-card {
+    text-align: left; /* Left align text for skills on desktop */
+    padding: 2rem 1.5rem;
+  }
+
+  .about-skills .icon-box {
+    justify-content: flex-start; /* Left align icon */
+  }
+
+  .about-skills .skill-list {
+    padding-left: 0; /* Remove default padding if any */
+  }
+
+  .about-skills .skill-list li {
+    font-size: 1.05rem;
+    margin-bottom: 0.5rem; /* Standard space between items */
+    line-height: 1.4; /* Tighter line height for multi-line terms */
+  }
+
+  .about-skills .skill-list li + li {
+    margin-top: 0.75rem; /* Larger space between distinct skill items */
+  }
+
   /* Force Skills grid to be 4 columns in one row */
   .about-skills .grid-4 {
     grid-template-columns: repeat(4, 1fr);
