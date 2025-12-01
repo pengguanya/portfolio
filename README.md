@@ -93,6 +93,11 @@ My personal portfolio site built with React and Parcel. It showcases recent AI/M
 - **Images:** drop files into `src/images` and update imports
 - **Styles:** global rules in `src/styles.css` plus component-specific CSS next to each component
 
+## Toggling Sections (e.g., Experience)
+- Edit [`src/config/sections.js`](src/config/sections.js) to manage which sections appear in the header and router.
+- Each entry is `{ id, enabled }`. Set `enabled: false` for `experience` to hide the page everywhere (desktop, tablet, portrait, landscape). Navigation, routing, and the Home CTA buttons automatically skip disabled sections.
+- Re-enable the section later by flipping the flag back to `true`—the component files stay untouched, so no layout regression risk.
+
 ## Responsive Layout & Navigation
 - The fixed header (`src/Components/Header.jsx`) now collapses into a hamburger menu on tablets/phones (≤768px). Related styles live in `src/styles.css` under `.site-header`, `.nav-links`, and `.mobile-menu-button`.
 - Typography, grid spacing, and hero imagery adapt at 1200px, 1024px, 768px, and 640px so every section stays readable without horizontal scrolling.

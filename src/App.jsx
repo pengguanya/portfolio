@@ -6,14 +6,9 @@
 
 import React from "react";
 
-import About from "./Components/About";
-import Articles from "./Components/Articles";
-import Contact from "./Components/Contact";
-import Experience from "./Components/Experience";
 import Footer from "./Components/Footer";
 import Header from "./Components/Header";
-import Home from "./Components/Home";
-import Portfolio from "./Components/Portfolio";
+import { defaultSectionId, enabledSectionIds, getSectionById } from "./config/sections";
 
 import "./styles.css";
 
@@ -41,11 +36,18 @@ const siteProps = {
 const primaryColor = "#4E567E";
 const secondaryColor = "#D2F1E4";
 
-const routes = ["home", "about", "experience", "portfolio", "articles", "contact"];
-
 const App = () => {
-  const [activeSection, setActiveSection] = React.useState("home");
+  const [activeSection, setActiveSectionState] = React.useState(defaultSectionId);
   const [theme, setTheme] = React.useState("light");
+
+  const setActiveSection = React.useCallback(
+    (sectionId) => {
+      const selected = getSectionById(sectionId);
+      const fallbackId = enabledSectionIds[0] || defaultSectionId;
+      setActiveSectionState(selected?.enabled ? sectionId : fallbackId);
+    },
+    []
+  );
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
@@ -56,22 +58,19 @@ const App = () => {
   }, [theme]);
 
   const renderContent = () => {
-    switch (activeSection) {
-      case "home":
-        return <Home name={siteProps.name} title={siteProps.title} setActiveSection={setActiveSection} theme={theme} />;
-      case "about":
-        return <About />;
-      case "experience":
-        return <Experience theme={theme} />;
-      case "articles":
-        return <Articles theme={theme} />;
-      case "contact":
-        return <Contact theme={theme} siteProps={siteProps} />;
-      case "portfolio":
-        return <Portfolio />;
-      default:
-        return <Home name={siteProps.name} title={siteProps.title} setActiveSection={setActiveSection} theme={theme} />;
+    const section = getSectionById(activeSection);
+    const fallbackSection = enabledSectionIds.length ? getSectionById(enabledSectionIds[0]) : getSectionById(defaultSectionId);
+    const targetSection = section?.enabled ? section : fallbackSection;
+
+    if (!targetSection?.enabled || typeof targetSection.render !== "function") {
+      return null;
     }
+
+    return targetSection.render({
+      siteProps,
+      setActiveSection,
+      theme,
+    });
   };
 
   const getBackground = () => {
@@ -85,7 +84,13 @@ const App = () => {
 
   return (
     <div id="main" style={{ background: getBackground(), minHeight: "100vh", transition: "background 0.3s ease" }}>
-      <Header activeSection={activeSection} setActiveSection={setActiveSection} theme={theme} toggleTheme={toggleTheme} routes={routes} />
+      <Header
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
+        theme={theme}
+        toggleTheme={toggleTheme}
+        routes={enabledSectionIds}
+      />
       <div key={activeSection} className="animate-in">
         {renderContent()}
       </div>
