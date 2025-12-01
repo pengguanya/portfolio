@@ -482,6 +482,11 @@
     margin-bottom: 2rem;
   }
 
+  /* Force Skills grid to be 4 columns in one row */
+  .about-skills .grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   /* Restore Floating Social Icons */
   .social-icons-container {
     display: flex;
