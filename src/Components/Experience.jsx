@@ -5,7 +5,6 @@
  */
 
 import React from "react";
-import "./Experience.css";
 
 import rocheLogo from "../images/companies/roche.svg";
 import biotronikLogo from "../images/companies/biotronik.svg";
