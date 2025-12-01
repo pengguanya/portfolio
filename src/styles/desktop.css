@@ -68,6 +68,12 @@
     box-sizing: border-box;
   }
 
+  /* Explicitly prioritize desktop width over mobile styles for projects-grid */
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    max-width: 1080px !important; 
+  }
+
   /* Constrain specialized containers */
   .timeline,
   .articles-grid,
