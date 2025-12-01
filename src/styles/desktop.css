@@ -185,6 +185,24 @@
     padding-left: 5rem; /* Increase content padding to account for larger marker (was 3rem) */
   }
 
+  /* Consistent Font Sizes for Experience */
+  .timeline-title {
+    font-size: 1.35rem; /* Increased slightly for desktop hierarchy */
+  }
+
+  .timeline-company {
+    font-size: 1.1rem;
+  }
+
+  .timeline-date {
+    font-size: 0.95rem; /* Smaller than body text (18px/1.125rem), but readable */
+  }
+
+  .timeline-desc,
+  .timeline-achievements li {
+    font-size: 1.05rem;
+  }
+
   /* Home Page Desktop Specifics */
   .home-section {
     padding-top: 9rem; /* Extra breathing room between header and hero */
