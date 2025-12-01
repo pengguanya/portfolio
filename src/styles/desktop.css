@@ -435,6 +435,24 @@
     margin-bottom: 2rem; /* Space between the Paragraphs and the "Education" section */
   }
 
+  /* About Page - Consistent Text Sizes for Cards */
+  .about-education .card h3,
+  .about-certifications .cert-item h4,
+  .about-skills .card h3 {
+    font-size: 1.25rem; /* Consistent clear header size */
+  }
+
+  .about-education .sub-text,
+  .about-certifications .cert-item p,
+  .about-skills .skill-list li {
+    font-size: 1.05rem; /* Consistent body text size, matching Experience/About Me */
+  }
+
+  .about-education .date-text,
+  .about-certifications .date-text {
+    font-size: 0.95rem; /* Consistent metadata/date size */
+  }
+
   /* 4. Lower Sections (Education, Skills, Tools) */
   .about-section h2 {
     font-size: 1.8rem;
