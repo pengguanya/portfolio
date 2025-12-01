@@ -137,9 +137,10 @@ const Articles = ({ theme }) => {
       flexDirection: "column",
       height: "100%",
       border: "1px solid var(--border-color)",
+      padding: "1rem",
     },
     cardContent: {
-      padding: "1.5rem",
+      padding: 0,
       flex: 1,
       display: "flex",
       flexDirection: "column",
