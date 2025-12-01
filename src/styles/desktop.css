@@ -163,6 +163,30 @@
     color: var(--text-subtitle);
   }
 
+  /* Experience Timeline Desktop Specifics */
+  .timeline-marker {
+    width: 4rem;
+    height: 4rem;
+    padding: 8px; /* Slightly larger padding for larger container */
+  }
+
+  .timeline-logo {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  /* Ensure marker remains centered on the line */
+  /* The line is the left border of .timeline, so 'left: 0' in base/mobile + translateX(-50%) should center it. */
+  /* But let's verify if .timeline needs margin adjustments. */
+  
+  .timeline {
+    padding-left: 1rem; /* Add a bit more breathing room from the line to the content start */
+  }
+
+  .timeline-item {
+    padding-left: 4.5rem; /* Increase content padding to account for larger marker (was 3rem) */
+  }
+
   /* Home Page Desktop Specifics */
   .home-section {
     padding-top: 9rem; /* Extra breathing room between header and hero */
