@@ -185,6 +185,10 @@
     padding-left: 5rem; /* Increase content padding to account for larger marker (was 3rem) */
   }
 
+  .timeline-item:last-child {
+    margin-bottom: 4rem; /* Extra space at the bottom of the timeline before footer */
+  }
+
   .timeline-content {
     padding: 2rem 1.75rem; /* Increase padding: Top/Bottom 2rem, Left/Right 1.75rem */
   }
