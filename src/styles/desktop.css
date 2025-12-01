@@ -436,6 +436,10 @@
     margin-bottom: 2rem; /* Space between Title "About Me" and the paragraphs */
   }
 
+  .about-content {
+    margin-bottom: 4rem; /* Uniform spacing: Content -> Education */
+  }
+
   /* About Page - Consistent Text Sizes for Cards */
   .about-education .card h3,
   .about-skills .card h3 {
@@ -481,7 +485,7 @@
   }
 
   .about-section {
-    margin-bottom: 3rem; /* Space between "Education" -> "Skills" -> "Tools" */
+    margin-bottom: 4rem; /* Uniform spacing: Education -> Skills -> Tools */
   }
 
   .about-education .grid-3 {
