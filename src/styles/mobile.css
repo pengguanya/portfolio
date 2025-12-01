@@ -950,15 +950,15 @@ body.dark .timeline-marker {
   }
 
   .timeline {
-    max-width: 82%;
-    margin: 0 auto;
-    padding-left: 1.75rem;
-    padding-right: 0.9rem;
+    max-width: 100%;
+    margin: 0 2rem 0 3.5rem; /* Add horizontal gutter so markers stay inside viewport */
+    padding-left: 0rem;
+    padding-right: 0rem;
   }
 
   .timeline-item {
-    margin-bottom: 2.5rem;
-    padding-left: 0.9rem;
+    margin-bottom: 2rem;
+    padding-left: 3rem;
   }
 
   .section-shell {
