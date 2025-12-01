@@ -60,7 +60,7 @@
   #contact > div,
   .about-section .grid-3,
   .about-section .grid-4 {
-    max-width: 1200px; /* Increased from 1080px to 1200px for desktop */
+    max-width: 1080px; /* Standardized to 1080px */
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -71,7 +71,7 @@
   .timeline,
   .articles-grid,
   .portfolio-grid {
-    max-width: 1200px; /* Increased to 1200px to match main container width */
+    max-width: 1080px; /* Standardized to 1080px */
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -80,7 +80,7 @@
   .contact-grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 3rem;
-    max-width: 1200px; /* Increased to match other pages */
+    max-width: 1080px; /* Standardized to 1080px */
     align-items: start;
   }
 
@@ -110,7 +110,7 @@
 
          .articles-category {
            margin-bottom: 4rem;
-           max-width: 1200px; /* Increased from 1000px */
+           max-width: 1080px; /* Aligned with 1080px standard */
            margin-left: auto;
            margin-right: auto;
          }
@@ -138,7 +138,7 @@
     padding-bottom: 2.5rem;      /* Space before the main content */
     margin: 0 auto 0;
     text-align: center;
-    max-width: 1200px; /* Increased to match main container width */
+    max-width: 1080px; /* Aligned with 1080px standard */
   }
 
   .experience-header h1,
@@ -370,7 +370,7 @@
   
   /* 1. Container Width */
   .about-container {
-    max-width: 1080px; 
+    max-width: 1080px !important; /* Explicitly forced to 1080px */
     padding: 2rem;
   }
   
@@ -397,7 +397,7 @@
   }
 
   .section-shell {
-    max-width: 1200px; /* Increased from 1080px */
+    max-width: 1080px; /* Aligned with 1080px standard */
   }
 
   /* Increase tool icon size */
@@ -463,7 +463,7 @@
 
   .about-education,
   .about-certifications {
-    max-width: 1200px; /* Increased from 1080px */
+    max-width: 1080px; /* Aligned with 1080px standard */
     margin-left: auto;
     margin-right: auto;
   }
