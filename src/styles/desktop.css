@@ -433,10 +433,6 @@
     margin-bottom: 2rem; /* Space between Title "About Me" and the paragraphs */
   }
 
-  .about-content {
-    margin-bottom: 2rem; /* Space between the Paragraphs and the "Education" section */
-  }
-
   /* About Page - Consistent Text Sizes for Cards */
   .about-education .card h3,
   .about-certifications .cert-item h4,
@@ -453,6 +449,11 @@
   .about-education .date-text,
   .about-certifications .date-text {
     font-size: 0.95rem; /* Consistent metadata/date size */
+  }
+
+  .about-education .card,
+  .about-certifications .cert-item {
+    padding: 1.5rem 1.25rem; /* Increased padding: Top/Bottom 1.5rem, Left/Right 1.25rem */
   }
 
   /* 4. Lower Sections (Education, Skills, Tools) */
