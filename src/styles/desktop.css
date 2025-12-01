@@ -23,6 +23,7 @@
   }
 
   .about-container {
+    max-width: 1200px; /* Explicitly increased for About page content */
     padding: 2rem;
   }
 
