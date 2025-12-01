@@ -690,40 +690,50 @@ body.dark .nav-links {
 /* Experience Section - Timeline (Mobile First) */
 .experience-header {
   text-align: center;
-  margin-bottom: 4rem;
+  margin: 2.5rem auto 2rem;
+  padding: 0 1.25rem;
 }
 
 .experience-header h1 {
-  font-size: 2.5rem;
+  font-size: 1.8rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   color: var(--text-title);
 }
 
 .experience-header p {
+  max-width: 85%;
+  margin-left: auto;
+  margin-right: auto;
   color: var(--text-subtitle);
-  font-size: 1.1rem;
+  font-size: 0.95rem;
+  margin-top: 0;
 }
 
 .timeline {
   position: relative;
-  padding-left: 2rem;
+  max-width: 100%;
+  margin: 0 1.5rem 0 3rem; /* Add horizontal gutter so markers stay inside viewport */
+  padding-left: 0rem;
+  padding-right: 0rem;
   border-left: 2px solid var(--border-color);
+  box-sizing: border-box;
 }
 
 .timeline-item {
   position: relative;
-  margin-bottom: 4rem;
-  padding-left: 2rem;
+  margin-bottom: 2rem;
+  padding-left: 3rem;
+  padding-bottom: 0rem;
 }
 
 .timeline-item:last-child {
-  margin-bottom: 0;
+  margin-bottom: 1rem;
 }
 
 .timeline-marker {
   position: absolute;
-  left: -2rem; /* Adjust based on padding-left of timeline-item + border width */
+  left: 0rem; /* Align marker center with the vertical line */
   top: 0;
   width: 3rem;
   height: 3rem;
@@ -736,8 +746,8 @@ body.dark .nav-links {
   align-items: center;
   justify-content: center;
   z-index: 1;
-  transform: translateX(-50%); /* Center on the line */
-  margin-left: -1px; /* Fine tune alignment with 2px border */
+  transform: translateX(-50%);
+  margin-left: -1px;
   box-shadow: 0 2px 4px var(--shadow-color);
 }
 
@@ -764,7 +774,8 @@ body.dark .timeline-marker {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: 12px;
-  padding: 2rem;
+  padding: 1rem;
+  padding-bottom: 0.5rem;
   transition: all 0.3s ease;
 }
 
@@ -778,21 +789,21 @@ body.dark .timeline-marker {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: var(--text-date);
   margin-bottom: 0.75rem;
   font-weight: 500;
 }
 
 .timeline-title {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   font-weight: 700;
   color: var(--text-title);
   margin-bottom: 0.25rem;
 }
 
 .timeline-company {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: var(--text-primary);
   margin-bottom: 1rem;
   font-weight: 500;
@@ -800,8 +811,8 @@ body.dark .timeline-marker {
 
 .timeline-desc {
   color: var(--text-primary);
-  margin-bottom: 1.5rem;
-  line-height: 1.6;
+  margin-bottom: 1rem;
+  line-height: 1.4;
 }
 
 .timeline-achievements {
@@ -813,10 +824,10 @@ body.dark .timeline-marker {
 .timeline-achievements li {
   position: relative;
   padding-left: 1.5rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.6rem;
   color: var(--text-primary);
-  font-size: 0.95rem;
-  line-height: 1.6;
+  font-size: 0.9rem;
+  line-height: 1.4;
 }
 
 .timeline-achievements li::before {
@@ -873,6 +884,26 @@ body.dark .timeline-marker {
     line-height: 1.5;
   }
 
+  .experience-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .experience-header p {
+    font-size: 0.9rem;
+  }
+
+  .timeline-title {
+    font-size: 1.05rem;
+  }
+
+  .timeline-company {
+    font-size: 0.9rem;
+  }
+
+  .timeline-achievements li {
+    font-size: 0.85rem;
+  }
+
   .card, .box {
     padding: 1rem;
     margin-bottom: 1rem;
@@ -907,6 +938,27 @@ body.dark .timeline-marker {
   .home-btn {
     width: 9.5rem !important;
     max-width: none;
+  }
+
+  .experience-header {
+    margin-top: 2rem;
+    padding: 0 0.75rem;
+  }
+
+  .experience-header p {
+    max-width: 75%;
+  }
+
+  .timeline {
+    max-width: 82%;
+    margin: 0 auto;
+    padding-left: 1.75rem;
+    padding-right: 0.9rem;
+  }
+
+  .timeline-item {
+    margin-bottom: 2.5rem;
+    padding-left: 0.9rem;
   }
 
   .section-shell {
