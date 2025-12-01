@@ -1126,7 +1126,7 @@ body.dark .nav-links {
   width: 3rem;
   height: 3rem;
   overflow: hidden;
-  background: white;
+  background: var(--bg-timeline-marker);
   padding: 5px;
   border: 2px solid var(--border-color);
   border-radius: 50%;
@@ -1141,7 +1141,7 @@ body.dark .nav-links {
 
 /* Dark mode marker adjustment (Moved from desktop/Experience.css) */
 body.dark .timeline-marker {
-  background: var(--bg-card);
+  background: var(--bg-timeline-marker);
   border-color: var(--border-color);
 }
 

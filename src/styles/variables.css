@@ -30,6 +30,8 @@
   --bg-hover: #f3f4f6;        /* Background color on hover for interactive elements */
   --bg-card-hover: #ffffff;   /* Background color on hover for cards */
   
+  --bg-timeline-marker: #f0f0f0; /* New: Slightly darker gray than white/light-gray background for marker */
+
   --social-icon-color: #1a1a1a; /* Social icon default color */
   --social-icon-hover: #000000; /* Social icon hover color */
   
@@ -64,6 +66,8 @@ body.dark {
   --bg-hover: #262626;        /* Hover background (Dark Gray) */
   --bg-card-hover: #2d2d2d;   /* Card hover background (Lighter Dark) */
   
+  --bg-timeline-marker: #2a2a2a; /* New: Darker gray for marker in dark mode */
+
   --social-icon-color: #f0f0f0; /* Social icon default color (Dark Mode) */
   --social-icon-hover: #ffffff; /* Social icon hover color (Dark Mode) */
   
