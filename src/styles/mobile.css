@@ -1008,8 +1008,8 @@ body.dark .timeline-marker {
   .page-section.portfolio-section,
   .page-section.articles-section,
   .page-section.contact-section {
-    max-width: 88%;
-    padding: 0 0.75rem 3rem;
+    max-width: 96%;
+    padding: 0 1rem 3rem;
   }
 
   .timeline {
