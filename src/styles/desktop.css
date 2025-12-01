@@ -22,11 +22,6 @@
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 
-  .about-container {
-    max-width: 1200px !important; /* Explicitly increased for About page content with priority */
-    padding: 2rem;
-  }
-
   .contact-grid {
     max-width: 900px;
     margin-left: auto;
@@ -375,7 +370,7 @@
   
   /* 1. Container Width */
   .about-container {
-    max-width: 960px; 
+    max-width: 1080px; 
     padding: 2rem;
   }
   
