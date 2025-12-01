@@ -490,8 +490,12 @@
     padding: 2rem 1.5rem;
   }
 
+  .about-skills .skill-card h3 {
+    text-align: center; /* Revert header alignment to center */
+  }
+
   .about-skills .icon-box {
-    justify-content: flex-start; /* Left align icon */
+    justify-content: center; /* Revert icon alignment to center */
   }
 
   .about-skills .skill-list {
