@@ -1,3 +1,8 @@
+.portfolio-section,
+.articles-section,
+.contact-section {
+  padding-bottom: 3rem;
+}
 .page-section.portfolio-section > *,
 .page-section.articles-section > *,
 .page-section.contact-section > * {
@@ -20,12 +25,6 @@
   margin-right: auto;
 }
 
-.page-section.portfolio-section > *,
-.page-section.articles-section > *,
-.page-section.contact-section > * {
-  width: 100%;
-  box-sizing: border-box;
-}
 /**
  * MOBILE STYLES (Default / Mobile-First)
  * These styles apply by default (usually < 1024px)
@@ -449,7 +448,7 @@ body.dark .nav-links {
   max-width: 92%;
   margin-left: auto;
   margin-right: auto;
-  padding: 0 1rem;
+  padding: 0 1rem 3rem;
   box-sizing: border-box;
 }
 
@@ -1010,7 +1009,7 @@ body.dark .timeline-marker {
   .page-section.articles-section,
   .page-section.contact-section {
     max-width: 88%;
-    padding: 0 0.75rem;
+    padding: 0 0.75rem 3rem;
   }
 
   .timeline {
