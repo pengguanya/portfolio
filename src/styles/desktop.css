@@ -62,7 +62,7 @@
   .grid-3, 
   .grid-4,
   #contact > div {
-    max-width: 960px; /* Reduced from 1200px */
+    max-width: 1080px; /* Increased from 960px to 1080px */
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -73,7 +73,7 @@
   .timeline,
   .articles-grid,
   .portfolio-grid {
-    max-width: 800px;
+    max-width: 900px; /* Increased from 800px to 900px */
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -82,7 +82,7 @@
   .contact-grid {
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
     gap: 3rem;
-    max-width: 900px;
+    max-width: 1000px; /* Increased from 900px */
     align-items: start;
   }
 
@@ -112,7 +112,7 @@
 
          .articles-category {
            margin-bottom: 4rem;
-           max-width: 800px;
+           max-width: 900px; /* Increased from 800px */
            margin-left: auto;
            margin-right: auto;
          }
@@ -140,7 +140,7 @@
     padding-bottom: 2.5rem;      /* Space before the main content */
     margin: 0 auto 0;
     text-align: center;
-    max-width: 800px;
+    max-width: 900px; /* Increased from 800px to match content */
   }
 
   .experience-header h1,
@@ -399,7 +399,7 @@
   }
 
   .section-shell {
-    max-width: 960px;
+    max-width: 1080px; /* Increased from 960px */
   }
 
   /* Increase tool icon size */
@@ -461,7 +461,7 @@
 
   .about-education,
   .about-certifications {
-    max-width: 960px;
+    max-width: 1080px; /* Increased from 960px */
     margin-left: auto;
     margin-right: auto;
   }
