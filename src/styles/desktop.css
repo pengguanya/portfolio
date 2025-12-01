@@ -185,6 +185,10 @@
     padding-left: 5rem; /* Increase content padding to account for larger marker (was 3rem) */
   }
 
+  .timeline-content {
+    padding: 2rem 1.75rem; /* Increase padding: Top/Bottom 2rem, Left/Right 1.75rem */
+  }
+
   /* Consistent Font Sizes for Experience */
   .timeline-title {
     font-size: 1.35rem; /* Increased slightly for desktop hierarchy */
