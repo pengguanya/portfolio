@@ -112,90 +112,19 @@ const Articles = ({ theme }) => {
       });
   }, []);
 
-  const styles = {
-    section: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-    },
-    grid: {
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-      gap: "2rem",
-      width: "100%",
-    },
-    card: {
-      backgroundColor: "var(--bg-card)",
-      borderRadius: "12px",
-      overflow: "hidden",
-      boxShadow: "0 4px 6px -1px var(--shadow-color), 0 2px 4px -1px rgba(0, 0, 0, 0.06)",
-      transition: "transform 0.2s, box-shadow 0.2s, background-color 0.2s",
-      cursor: "pointer",
-      textDecoration: "none",
-      color: "inherit",
-      display: "flex",
-      flexDirection: "column",
-      height: "100%",
-      border: "1px solid var(--border-color)",
-      padding: "1rem",
-    },
-    cardContent: {
-      padding: "0.75rem 0 0 0",
-      flex: 1,
-      display: "flex",
-      flexDirection: "column",
-    },
-    cardTitle: {
-      fontSize: "1.25rem",
-      fontWeight: "600",
-      marginBottom: "0.5rem",
-      color: "var(--text-title)",
-    },
-    cardDate: {
-      fontSize: "0.875rem",
-      color: "var(--text-date)",
-      marginBottom: "1rem",
-    },
-    cardExcerpt: {
-      fontSize: "1rem",
-      color: "var(--text-primary)",
-      lineHeight: "1.5",
-      flex: 1,
-    },
-    loading: {
-      textAlign: "center",
-      fontSize: "1.2rem",
-      color: "var(--text-date)",
-    },
-    categorySection: {
-      width: "100%",
-      marginBottom: "4rem",
-    },
-    categoryTitle: {
-      fontSize: "1.8rem",
-      fontWeight: "600",
-      marginBottom: "1.5rem",
-      color: "var(--text-title)",
-      borderBottom: "2px solid var(--border-color)",
-      paddingBottom: "0.5rem",
-      display: "inline-block",
-      textTransform: "capitalize",
-    },
-  };
-
   if (loading) {
     return (
-      <section style={styles.section} id="articles">
-        <div style={styles.loading}>Loading articles...</div>
+      <section className="articles-section page-section" id="articles">
+        <div className="articles-loading">Loading articles...</div>
       </section>
     );
   }
 
   if (error) {
     return (
-      <section style={styles.section} className="page-section" id="articles">
-        <div style={styles.loading}>{error}</div>
-        <a href="https://pengguanya.github.io/" target="_blank" rel="noopener noreferrer" style={{ marginTop: "1rem", color: "var(--text-primary)" }}>
+      <section className="articles-section page-section" id="articles">
+        <div className="articles-loading">{error}</div>
+        <a href="https://pengguanya.github.io/" target="_blank" rel="noopener noreferrer" className="articles-error-link">
           Visit Blog Directly
         </a>
       </section>
@@ -203,35 +132,34 @@ const Articles = ({ theme }) => {
   }
 
   return (
-    <section style={styles.section} className="articles-section page-section" id="articles">
+    <section className="articles-section page-section" id="articles">
       <div className="page-header articles-header">
         <h1>Latest Articles</h1>
         <p>Thoughts on Data Science, Statistics, and Development</p>
       </div>
 
       {Object.keys(categorizedArticles).sort().map((category) => (
-        <div key={category} style={styles.categorySection}>
-          <h2 style={styles.categoryTitle}>{formatCategoryName(category)}</h2>
-          <div style={styles.grid}>
+        <div key={category} className="articles-category">
+          <h2 className="articles-category__title">{formatCategoryName(category)}</h2>
+          <div className="articles-grid">
             {categorizedArticles[category].slice(0, 3).map((article, index) => (
               <a
                 key={index}
                 href={article.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={styles.card}
                 className="article-card"
               >
-                <div style={styles.cardContent}>
-                  <h2 style={styles.cardTitle}>{article.title}</h2>
-                  <div style={styles.cardDate}>
+                <div className="article-card__content">
+                  <h2 className="article-card__title">{article.title}</h2>
+                  <div className="article-card__date">
                     {new Date(article.pubDate).toLocaleDateString("en-US", {
                       year: "numeric",
                       month: "long",
                       day: "numeric",
                     })}
                   </div>
-                  <p style={styles.cardExcerpt}>
+                  <p className="article-card__excerpt">
                     {article.description
                       ? article.description.replace(/<[^>]*>?/gm, "").substring(0, 150) + "..."
                       : "Click to read more..."}

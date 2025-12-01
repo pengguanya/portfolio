@@ -67,6 +67,27 @@
     margin-right: auto;
     width: 100%;
   }
+         
+         .articles-section {
+           align-items: center;
+         }
+
+         .articles-category {
+           margin-bottom: 4rem;
+         }
+
+         .articles-grid {
+           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+           gap: 3rem;
+         }
+
+         .article-card__title {
+           font-size: 1.25rem;
+         }
+
+         .article-card__excerpt {
+           font-size: 1rem;
+         }
 
   /* Ensure page titles don't get hidden */
   .experience-header {
