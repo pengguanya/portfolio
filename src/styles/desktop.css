@@ -437,7 +437,7 @@
   }
 
   .about-content {
-    margin-bottom: 4rem; /* Uniform spacing: Content -> Education */
+    margin-bottom: 3rem; /* Standard spacing: Content -> Education */
   }
 
   /* About Page - Consistent Text Sizes for Cards */
@@ -485,7 +485,7 @@
   }
 
   .about-section {
-    margin-bottom: 4rem; /* Uniform spacing: Education -> Skills -> Tools */
+    margin-bottom: 3rem; /* Standard spacing: Education -> Skills -> Tools */
   }
 
   .about-education .grid-3 {
