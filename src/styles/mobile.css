@@ -544,6 +544,7 @@ body.dark .nav-links {
   width: 100%;
   border-radius: 8px;
   box-sizing: border-box;
+  padding: 0.65rem 1rem; /* Mobile: slimmer Send Message button height */
 }
 
 .contact-social {
@@ -1118,6 +1119,23 @@ body.dark .timeline-marker {
     line-height: 1.5;
   }
 
+  #about .about-content p {
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+
+  #experience .timeline-company,
+  #experience .timeline-desc,
+  #experience .timeline-achievements li {
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+
+  #portfolio .project-description {
+    font-size: 0.85rem;
+    line-height: 1.45;
+  }
+
   .page-header h1 {
     font-size: 1.8rem;
   }
@@ -1192,7 +1210,8 @@ body.dark .timeline-marker {
 
   .articles-grid {
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 1.5rem;
+    column-gap: 1.5rem;
+    row-gap: 2.5rem; /* Landscape: add extra vertical space between article rows */
   }
 
   .articles-category {
@@ -1268,6 +1287,10 @@ body.dark .timeline-marker {
 
   #about .about-skills {
     margin: 0 auto 0.6rem; /* Landscape: bottom gap between Skills and Tools */
+  }
+
+  #about .about-header {
+    padding-top: 1.25rem; /* Landscape: extra space between top bar and profile photo */
   }
 
   #about .about-content {
