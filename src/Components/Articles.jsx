@@ -140,7 +140,7 @@ const Articles = ({ theme }) => {
       padding: "1rem",
     },
     cardContent: {
-      padding: 0,
+      padding: "0.75rem 0 0 0",
       flex: 1,
       display: "flex",
       flexDirection: "column",
