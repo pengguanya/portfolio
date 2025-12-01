@@ -59,7 +59,8 @@
   .grid-4,
   #contact > div,
   .about-section .grid-3,
-  .about-section .grid-4 {
+  .about-section .grid-4,
+  .projects-grid {
     max-width: 1080px; /* Standardized to 1080px */
     margin-left: auto;
     margin-right: auto;
