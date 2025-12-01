@@ -47,6 +47,14 @@
     padding-top: 4rem; /* Match fixed header height */
   }
 
+  /* Contact page: slightly narrower overall width on desktop only
+     without affecting other sections or mobile layout */
+  .page-section.contact-section {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   /* Max Width Constraints to prevent horizontal overflow */
   div#main, section {
     max-width: 100vw;
@@ -106,39 +114,53 @@
     max-width: 100%;
   }
 
+  .contact-social {
+    gap: 1rem; /* reduce vertical space between title and social cards on desktop */
+  }
+
   .contact-social__card {
     padding: 1.5rem;
     max-width: 100%;
   }
 
+  /* Visually center "Connect with me" heading against the smaller "Name" label on desktop,
+     and keep spacing tight to the first social card */
   .contact-social__title {
-    margin-bottom: 1rem;
+    margin-bottom: 0.25rem;
+    padding-top: 0;  /* override base h2 padding-top */
+    margin-top: -0.5rem; /* nudge up slightly so its taller text centers with the Name label */
   }
          
-         .articles-section {
-           align-items: center;
-         }
+  .articles-section {
+    align-items: center;
+  }
 
-         .articles-category {
-           margin-bottom: 4rem;
-           max-width: 1080px; /* Aligned with 1080px standard */
-           margin-left: auto;
-           margin-right: auto;
-         }
+  /* Ensure the articles header and category wrapper share the same max-width
+     as the articles grid on desktop so their left edges align. */
+  .page-section.articles-section > .articles-header,
+  .page-section.articles-section > .articles-category {
+    max-width: 1080px; /* Match .articles-grid container */
+    margin-left: auto;
+    margin-right: auto;
+  }
 
-         .articles-grid {
-           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-           gap: 3rem;
-           /* Already constrained by max-width: 800px in the specialized containers block */
-         }
+  .articles-category {
+    margin-bottom: 4rem;
+  }
 
-         .article-card__title {
-           font-size: 1.25rem;
-         }
+  .articles-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    /* Already constrained by max-width: 800px in the specialized containers block */
+  }
 
-         .article-card__excerpt {
-           font-size: 1rem;
-         }
+  .article-card__title {
+    font-size: 1.25rem;
+  }
+
+  .article-card__excerpt {
+    font-size: 1rem;
+  }
 
   /* Ensure page titles don't get hidden (Desktop uniform headers) */
   .experience-header,
