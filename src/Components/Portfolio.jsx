@@ -118,7 +118,7 @@ const Portfolio = () => {
 
   return (
     <section className="portfolio-section page-section" id="portfolio">
-      <div className="portfolio-header">
+      <div className="page-header portfolio-header">
         <h1>Portfolio</h1>
         <p>A selection of my recent projects, showcasing my expertise in AI/ML, data visualization, and research.</p>
       </div>

@@ -118,16 +118,6 @@ const Articles = ({ theme }) => {
       flexDirection: "column",
       alignItems: "center",
     },
-    header: {
-      textAlign: "center",
-      marginBottom: "4rem",
-    },
-    title: {
-      fontSize: "2.5rem",
-      fontWeight: "700",
-      marginBottom: "1rem",
-      color: "var(--text-title)",
-    },
     grid: {
       display: "grid",
       gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
@@ -213,11 +203,9 @@ const Articles = ({ theme }) => {
 
   return (
     <section style={styles.section} className="page-section" id="articles">
-      <div style={styles.header}>
-        <h1 style={styles.title}>Latest Articles</h1>
-        <p style={{ fontSize: "1.2rem", color: "var(--text-subtitle)" }}>
-          Thoughts on Data Science, Statistics, and Development
-        </p>
+      <div className="page-header articles-header">
+        <h1>Latest Articles</h1>
+        <p>Thoughts on Data Science, Statistics, and Development</p>
       </div>
 
       {Object.keys(categorizedArticles).sort().map((category) => (

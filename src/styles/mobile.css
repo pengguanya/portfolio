@@ -688,26 +688,31 @@ body.dark .nav-links {
 }
 
 /* Experience Section - Timeline (Mobile First) */
-.experience-header {
+.page-header {
   text-align: center;
   margin: 2.5rem auto 2rem;
   padding: 0 1.25rem;
+  width: 100%;
+  max-width: 90%;
 }
 
-.experience-header h1 {
+.page-header h1 {
   font-size: 1.8rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
   color: var(--text-title);
+  margin: 0 0 0.5rem 0;
 }
 
-.experience-header p {
-  max-width: 85%;
-  margin-left: auto;
-  margin-right: auto;
-  color: var(--text-subtitle);
+.page-header p {
   font-size: 0.95rem;
-  margin-top: 0;
+  color: var(--text-subtitle);
+  margin: 0 auto 1.25rem auto;
+  max-width: 90%;
+  line-height: 1.5;
+}
+
+.experience-header {
+  margin-bottom: 2rem;
 }
 
 .timeline {
@@ -884,11 +889,11 @@ body.dark .timeline-marker {
     line-height: 1.5;
   }
 
-  .experience-header h1 {
+  .page-header h1 {
     font-size: 1.8rem;
   }
 
-  .experience-header p {
+  .page-header p {
     font-size: 0.9rem;
   }
 
@@ -940,12 +945,12 @@ body.dark .timeline-marker {
     max-width: none;
   }
 
-  .experience-header {
+  .page-header {
     margin-top: 2rem;
     padding: 0 0.75rem;
   }
 
-  .experience-header p {
+  .page-header p {
     max-width: 75%;
   }
 

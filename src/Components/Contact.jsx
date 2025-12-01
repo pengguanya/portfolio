@@ -102,20 +102,6 @@ const Contact = ({ theme, siteProps }) => {
       flexDirection: "column",
       alignItems: "center",
     },
-    header: {
-      textAlign: "center",
-      marginBottom: "4rem",
-    },
-    title: {
-      fontSize: "2.5rem",
-      fontWeight: "700",
-      marginBottom: "1rem",
-      color: "var(--text-title)",
-    },
-    subtitle: {
-      fontSize: "1.2rem",
-      color: "var(--text-subtitle)",
-    },
     grid: {
       display: "grid",
       gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
@@ -214,11 +200,9 @@ const Contact = ({ theme, siteProps }) => {
 
   return (
     <section style={styles.section} className="page-section" id="contact">
-      <div style={styles.header}>
-        <h1 style={styles.title}>Get in Touch</h1>
-        <p style={styles.subtitle}>
-          Have a question or want to work together? Feel free to reach out!
-        </p>
+      <div className="page-header contact-header">
+        <h1>Get in Touch</h1>
+        <p>Have a question or want to work together? Feel free to reach out!</p>
       </div>
 
       <div style={styles.grid}>
