@@ -20,7 +20,6 @@
  */
 
 import React, { useState } from "react";
-import "./Portfolio.css";
 
 import clinicalAgentsImg from "../images/projects/clinical-agents.jpg";
 import deepClinicalImg from "../images/projects/deep-clinical-v2.jpg";
