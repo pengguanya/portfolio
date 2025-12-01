@@ -186,7 +186,16 @@
   }
 
   .timeline-item:last-child {
-    margin-bottom: 4rem; /* Extra space at the bottom of the timeline before footer */
+    margin-bottom: 0; /* Reset internal margin, rely on page-section padding or last-child spacing */
+  }
+
+  /* Standardize bottom spacing for all main sections */
+  .experience-section,
+  .portfolio-section,
+  .articles-section,
+  .contact-section,
+  .home-section {
+    padding-bottom: 4rem; /* Consistent bottom spacing before footer */
   }
 
   .timeline-content {
