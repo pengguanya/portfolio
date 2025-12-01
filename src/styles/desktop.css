@@ -165,26 +165,24 @@
 
   /* Experience Timeline Desktop Specifics */
   .timeline-marker {
-    width: 4rem;
-    height: 4rem;
-    padding: 8px; /* Slightly larger padding for larger container */
+    width: 4.5rem;
+    height: 4.5rem;
+    padding: 10px; /* Adjust padding for larger circle */
   }
 
   .timeline-logo {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 
   /* Ensure marker remains centered on the line */
-  /* The line is the left border of .timeline, so 'left: 0' in base/mobile + translateX(-50%) should center it. */
-  /* But let's verify if .timeline needs margin adjustments. */
+  /* The line is the left border of .timeline. */
+  /* In mobile.css, left: 0 relative to timeline-item aligns with the inner edge of .timeline border. */
+  /* margin-left: -1px centers it over the 2px border. */
+  /* transform: translateX(-50%) handles the width centering. */
   
-  .timeline {
-    padding-left: 1rem; /* Add a bit more breathing room from the line to the content start */
-  }
-
   .timeline-item {
-    padding-left: 4.5rem; /* Increase content padding to account for larger marker (was 3rem) */
+    padding-left: 5rem; /* Increase content padding to account for larger marker (was 3rem) */
   }
 
   /* Home Page Desktop Specifics */
