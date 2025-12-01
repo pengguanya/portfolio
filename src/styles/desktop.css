@@ -70,7 +70,7 @@
 
   /* Explicitly prioritize desktop width over mobile styles for projects-grid */
   .projects-grid {
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(3, 1fr); /* Force 3 columns per row */
     max-width: 1080px !important; 
   }
 
