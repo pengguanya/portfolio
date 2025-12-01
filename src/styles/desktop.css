@@ -196,6 +196,7 @@
 
   .timeline-date {
     font-size: 0.95rem; /* Smaller than body text (18px/1.125rem), but readable */
+    font-weight: 400; /* Reduced from default 500/bold */
   }
 
   .timeline-desc,
