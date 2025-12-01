@@ -202,7 +202,7 @@ const Articles = ({ theme }) => {
   }
 
   return (
-    <section style={styles.section} className="page-section" id="articles">
+    <section style={styles.section} className="articles-section page-section" id="articles">
       <div className="page-header articles-header">
         <h1>Latest Articles</h1>
         <p>Thoughts on Data Science, Statistics, and Development</p>

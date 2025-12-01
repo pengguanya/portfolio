@@ -1,3 +1,31 @@
+.page-section.portfolio-section > *,
+.page-section.articles-section > *,
+.page-section.contact-section > * {
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+.portfolio-section,
+.articles-section,
+.contact-section {
+  width: 100%;
+}
+
+.page-section.portfolio-section,
+.page-section.articles-section,
+.page-section.contact-section {
+  width: 100%;
+  max-width: 92%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.page-section.portfolio-section > *,
+.page-section.articles-section > *,
+.page-section.contact-section > * {
+  width: 100%;
+  box-sizing: border-box;
+}
 /**
  * MOBILE STYLES (Default / Mobile-First)
  * These styles apply by default (usually < 1024px)
@@ -64,6 +92,12 @@ section img.background {
 
 /* Shared Section Shell for mobile */
 @media (max-width: 1023px) {
+  .portfolio-section,
+  .articles-section,
+  .contact-section {
+    width: 100%;
+  }
+
   .section-shell {
     width: 100%;
     max-width: 100%;
@@ -407,6 +441,24 @@ body.dark .nav-links {
   max-width: 90%;
   box-sizing: border-box;
   margin: 0 auto;
+}
+.page-section.portfolio-section,
+.page-section.articles-section,
+.page-section.contact-section {
+  width: 100%;
+  max-width: 92%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.page-section.portfolio-section > *,
+.page-section.articles-section > *,
+.page-section.contact-section > * {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Card Styles */
@@ -952,6 +1004,13 @@ body.dark .timeline-marker {
 
   .page-header p {
     max-width: 75%;
+  }
+
+  .page-section.portfolio-section,
+  .page-section.articles-section,
+  .page-section.contact-section {
+    max-width: 88%;
+    padding: 0 0.75rem;
   }
 
   .timeline {

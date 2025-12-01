@@ -199,7 +199,7 @@ const Contact = ({ theme, siteProps }) => {
   };
 
   return (
-    <section style={styles.section} className="page-section" id="contact">
+    <section style={styles.section} className="contact-section page-section" id="contact">
       <div className="page-header contact-header">
         <h1>Get in Touch</h1>
         <p>Have a question or want to work together? Feel free to reach out!</p>
