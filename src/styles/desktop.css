@@ -41,9 +41,14 @@
    Full PC Layout
    ========================================= */
 @media (min-width: 1024px) {
-  /* Add padding to prevent header overlap and ensure content visibility */
-  .page-section {
-    padding-top: 6rem; /* Push content down below fixed header */
+  /* Add padding to prevent header overlap and ensure content visibility 
+     Override mobile specificity (0,2,0) for portfolio/articles/contact */
+  .page-section,
+  .page-section.portfolio-section,
+  .page-section.articles-section,
+  .page-section.contact-section,
+  .page-section.experience-section {
+    padding-top: 4rem; /* Match fixed header height */
   }
 
   /* Max Width Constraints to prevent horizontal overflow */
@@ -57,7 +62,7 @@
   .grid-3, 
   .grid-4,
   #contact > div {
-    max-width: 1200px; /* Constrain content width */
+    max-width: 960px; /* Reduced from 1200px */
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -68,21 +73,33 @@
   .timeline,
   .articles-grid,
   .portfolio-grid {
-    max-width: 1000px;
+    max-width: 800px;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
   }
 
   .contact-grid {
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-    gap: 4rem;
-    max-width: 1100px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 3rem;
+    max-width: 900px;
     align-items: start;
   }
 
+  /* Limit width of form inputs and buttons in desktop */
+  .contact-input, 
+  .contact-submit {
+    max-width: 100%;
+  }
+  
+  /* Or if we want strict limits on the form column itself */
+  .contact-form {
+    max-width: 100%;
+  }
+
   .contact-social__card {
-    padding: 1.75rem;
+    padding: 1.5rem;
+    max-width: 100%;
   }
 
   .contact-social__title {
@@ -95,11 +112,15 @@
 
          .articles-category {
            margin-bottom: 4rem;
+           max-width: 800px;
+           margin-left: auto;
+           margin-right: auto;
          }
 
          .articles-grid {
            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
            gap: 3rem;
+           /* Already constrained by max-width: 800px in the specialized containers block */
          }
 
          .article-card__title {
@@ -115,11 +136,11 @@
   .portfolio-header,
   .articles-header,
   .contact-header {
-    padding-top: 5rem;           /* Space below the fixed top bar */
+    padding-top: 1.5rem;         /* Visual space below header */
     padding-bottom: 2.5rem;      /* Space before the main content */
     margin: 0 auto 0;
     text-align: center;
-    max-width: 900px;
+    max-width: 800px;
   }
 
   .experience-header h1,
@@ -293,7 +314,7 @@
   
   /* 1. Container Width */
   .about-container {
-    max-width: 1100px; 
+    max-width: 960px; 
     padding: 2rem;
   }
   
@@ -320,7 +341,7 @@
   }
 
   .section-shell {
-    max-width: 1100px;
+    max-width: 960px;
   }
 
   /* Increase tool icon size */
@@ -364,7 +385,7 @@
 
   .about-education,
   .about-certifications {
-    max-width: 1100px;
+    max-width: 960px;
     margin-left: auto;
     margin-right: auto;
   }
