@@ -276,6 +276,7 @@
   
   .profile-image {
     max-width: 400px;
+    margin-top: 1.5rem;
   }
   
   /* 3. "About Me" Section Spacing */
@@ -285,7 +286,7 @@
   }
 
   .about-content {
-    margin-bottom: 3rem; /* Space between the Paragraphs and the "Education" section */
+    margin-bottom: 2rem; /* Space between the Paragraphs and the "Education" section */
   }
 
   /* 4. Lower Sections (Education, Skills, Tools) */

@@ -322,24 +322,6 @@ body.dark .nav-links {
 }
 
 /* Home Page Buttons - Mobile Specifics */
-.home-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  width: 100%;
-  max-width: 100%; /* Allow full width */
-  margin: 0 auto;
-  padding: 0 1rem; /* Add padding so buttons don't touch screen edges */
-  box-sizing: border-box;
-}
-
-.home-btn {
-  width: 100% !important; /* Force full width on mobile */
-  font-size: 0.85rem !important;
-  padding: 0.6rem !important; /* Reduced padding (less thick) */
-  min-height: auto; /* Ensure no min-height forces it to be thick */
-}
-
 .home-photo-wrapper {
   width: 230px; /* Slightly increased from 200px */
   height: 230px;
@@ -397,7 +379,7 @@ body.dark .nav-links {
 }
 
 .about-content {
-  margin-bottom: 1rem;
+  margin-bottom: 0.25rem; /* Portrait: gap between About Me text and Education cards */
 }
 
 .about-content h1 {
@@ -494,7 +476,7 @@ body.dark .nav-links {
 
 @media (max-width: 1023px) {
   #about .section-shell {
-    margin-bottom: 1.25rem;
+    margin-bottom: 1.25rem; /* Portrait: consistent spacing between Education → Skills → Tools */
   }
 
   #about .section-shell .grid-4 {
@@ -502,7 +484,7 @@ body.dark .nav-links {
   }
 
   #about .section-shell .grid-4 .card h3 {
-    font-size: 1.05rem;
+    font-size: 1rem;
   }
 
   #about .section-shell .grid-4 .icon-box {
@@ -510,8 +492,8 @@ body.dark .nav-links {
   }
 
   #about .section-shell .grid-4 .icon-box svg {
-    width: 28px;
-    height: 28px;
+    width: 24px;
+    height: 24px;
   }
 
   #about .card.full-width.gray-bg .tools-grid {
@@ -533,6 +515,7 @@ body.dark .nav-links {
   #about .card.full-width.gray-bg .tool-item span {
     font-size: 0.9rem;
   }
+
 }
 
 .cert-grid {
@@ -933,7 +916,7 @@ body.dark .timeline-marker {
   /* About -> Education cards: fit 3 per row in landscape */
   #about .about-education {
     max-width: 100%;
-    margin: 0 auto 0.75rem;
+    margin: 0 auto 1.75rem; /* Landscape: bottom gap between Education and Skills */
   }
 
   #about .about-education .grid-3 {
@@ -961,9 +944,29 @@ body.dark .timeline-marker {
     margin: 0;
   }
 
+  #about .section-shell .grid-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  #about .card.full-width.gray-bg .tools-grid {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  }
+
+  #about .section-shell > .section-content {
+    max-width: 96%;
+  }
+
+  #about .about-skills {
+    margin: 0 auto 0.6rem; /* Landscape: bottom gap between Skills and Tools */
+  }
+
+  #about .about-content {
+    margin-bottom: 1.25rem; /* Landscape: gap between About Me text and Education grid */
+  }
+
   /* About page tweaks */
   .profile-image {
-    max-width: 220px;
+    max-width: 260px;
     margin: 0 auto 0.35rem;
   }
   

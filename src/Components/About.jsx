@@ -186,7 +186,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="about-section section-shell">
+        <div className="about-section about-skills section-shell">
           <h2>Skills & Expertise</h2>
           <div className="section-content">
             <div className="grid-4">
@@ -205,7 +205,7 @@ const About = () => {
           </div>
         </div>
 
-        <div className="about-section section-shell">
+        <div className="about-section about-tools section-shell">
           <h2>My Favorite Tools</h2>
           <div className="section-content">
             <div className="card full-width gray-bg">
