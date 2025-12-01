@@ -72,6 +72,10 @@
   .projects-grid {
     grid-template-columns: repeat(3, 1fr); /* Force 3 columns per row */
     max-width: 1080px !important; 
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    box-sizing: border-box;
   }
 
   /* Constrain specialized containers */
