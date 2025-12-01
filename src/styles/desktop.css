@@ -136,7 +136,7 @@
   .portfolio-header,
   .articles-header,
   .contact-header {
-    padding-top: 1.5rem;         /* Visual space below header */
+    padding-top: 3.5rem;         /* Increased from 1.5rem for more space */
     padding-bottom: 2.5rem;      /* Space before the main content */
     margin: 0 auto 0;
     text-align: center;
