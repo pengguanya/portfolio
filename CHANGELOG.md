@@ -1,3 +1,24 @@
+# [1.1.0](https://github.com/pengguanya/portfolio/compare/v1.0.1...v1.1.0) (2025-12-01)
+
+
+### Bug Fixes
+
+* add breathing room under mobile sections ([44fa8ab](https://github.com/pengguanya/portfolio/commit/44fa8ab3ad9aa2fe8666c78ca48cc3f7f8b1e0c7))
+* align mobile page widths ([5b90877](https://github.com/pengguanya/portfolio/commit/5b90877ba13fded967daf891f07184affd3ce13f))
+* anchor desktop nav indicator ([436ec94](https://github.com/pengguanya/portfolio/commit/436ec94c4bfa7f558881be939becb773a35c8019))
+* **styles:** standardize desktop layout, headers, and spacing ([d6eee61](https://github.com/pengguanya/portfolio/commit/d6eee61a9b12c8ca1b1c699d275fd44943e8a4d1))
+* tighten article card top padding ([7764c20](https://github.com/pengguanya/portfolio/commit/7764c20ba63921b9dbf861527d528aae5c8514df))
+
+
+### Features
+
+* add SEO meta tags and Open Graph support ([50d8619](https://github.com/pengguanya/portfolio/commit/50d8619fd0f394e0029e785cec36dbf5daa0c7c1))
+* make sections configurable ([4d52bb9](https://github.com/pengguanya/portfolio/commit/4d52bb9f3c951fc8e28e64141d3da91ea2577042))
+* normalize About spacing across breakpoints ([632bcd8](https://github.com/pengguanya/portfolio/commit/632bcd8e8f17f3cdb1009e969e2f0b5142554279))
+* **ui:** implement responsive header and dynamic content sections ([6fd6570](https://github.com/pengguanya/portfolio/commit/6fd657037db884e4ddd4b890c7b2c2921fa0d87b))
+* unify mobile page headers ([0c3136f](https://github.com/pengguanya/portfolio/commit/0c3136f57432b08359cc97059ba89d0ce978655a))
+* widen landscape portfolio layout ([e7548ea](https://github.com/pengguanya/portfolio/commit/e7548ea66f6ca881f166950cc4cc531e148ac8ab))
+
 ## [1.0.1](https://github.com/pengguanya/portfolio/compare/v1.0.0...v1.0.1) (2025-11-28)
 
 
