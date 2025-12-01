@@ -517,6 +517,10 @@
     grid-template-columns: repeat(4, 1fr);
   }
 
+  .about-tools .tool-item span {
+    font-size: 1rem; /* Slightly larger than mobile default (0.9rem) */
+  }
+
   /* Restore Floating Social Icons */
   .social-icons-container {
     display: flex;
