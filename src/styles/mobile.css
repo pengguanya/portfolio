@@ -505,6 +505,97 @@ body.dark .nav-links {
   width: 100%;
 }
 
+/* Contact Section Layout (Mobile First) */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem; /* Gap between the form and social cards on portrait mobile */
+  width: 100%;
+  max-width: 95%;
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem; /* Space between label, input, and validation message */
+}
+
+.contact-label {
+  font-weight: 600;
+  color: var(--text-title);
+  font-size: 0.95rem;
+}
+
+.contact-error {
+  color: var(--color-error);
+  font-size: 0.85rem;
+}
+
+.contact-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.contact-submit {
+  width: 100%;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.contact-social {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-social__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem; /* Gap between title and social cards */
+  color: var(--text-title);
+}
+
+.contact-social__card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-card);
+  text-decoration: none;
+  color: inherit;
+  box-shadow: 0 4px 6px -1px var(--shadow-color);
+}
+
+.contact-social__icon {
+  font-size: 1.5rem;
+  color: var(--text-title);
+}
+
+.contact-social__content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.contact-social__name {
+  font-weight: 600;
+  color: var(--text-title);
+}
+
+.contact-social__handle {
+  color: var(--text-primary);
+  font-size: 0.9rem;
+}
+
 /* Card Styles */
 .card {
   background: var(--bg-card);
@@ -1184,10 +1275,9 @@ body.dark .timeline-marker {
   }
   
   /* Side-by-Side Contact Form in Landscape */
-  #contact > div:last-child {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 1.5rem !important;
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
     align-items: start;
   }
 }

@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope } from "react-icons/fa";
 
-const Contact = ({ theme, siteProps }) => {
-  const isLight = theme === "light";
-
+const Contact = ({ siteProps }) => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -96,203 +94,101 @@ const Contact = ({ theme, siteProps }) => {
     }
   };
 
-  const styles = {
-    section: {
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-    },
-    grid: {
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))",
-      gap: "4.5rem",
-      width: "100%",
-    },
-    form: {
-      display: "flex",
-      flexDirection: "column",
-      gap: "1.5rem",
-    },
-    label: {
-      display: "block",
-      marginBottom: "0.5rem",
-      fontWeight: "600",
-      color: "var(--text-title)",
-    },
-    input: {
-      width: "100%",
-      padding: "0.6rem",
-      borderRadius: "8px",
-      border: "1px solid var(--border-color)",
-      backgroundColor: "var(--bg-card)",
-      color: "var(--text-primary)",
-      fontSize: "0.95rem",
-      outline: "none",
-      transition: "border-color 0.2s",
-      boxSizing: "border-box",
-    },
-    textarea: {
-      width: "100%",
-      padding: "0.6rem",
-      borderRadius: "8px",
-      border: "1px solid var(--border-color)",
-      backgroundColor: "var(--bg-card)",
-      color: "var(--text-primary)",
-      fontSize: "0.95rem",
-      minHeight: "120px",
-      resize: "vertical",
-      outline: "none",
-      boxSizing: "border-box",
-    },
-    button: {
-      width: "100%",
-      boxSizing: "border-box",
-      borderRadius: "8px",
-    },
-    socialSection: {
-      display: "flex",
-      flexDirection: "column",
-      gap: "1rem",
-    },
-    socialTitle: {
-      fontSize: "1.25rem",
-      fontWeight: "600",
-      marginBottom: "0.5rem",
-      color: "var(--text-title)",
-      marginTop: "-0.25rem",
-      paddingTop: 0,
-    },
-    socialCard: {
-      display: "flex",
-      alignItems: "center",
-      gap: "1rem",
-      padding: "1.5rem",
-      borderRadius: "12px",
-      border: "1px solid var(--border-color)",
-      backgroundColor: "var(--bg-card)",
-      textDecoration: "none",
-      transition: "transform 0.2s, border-color 0.2s",
-      cursor: "pointer",
-    },
-    icon: {
-      fontSize: "1.5rem",
-      color: "var(--text-title)",
-    },
-    cardContent: {
-      display: "flex",
-      flexDirection: "column",
-    },
-    cardTitle: {
-      fontWeight: "600",
-      color: "var(--text-title)",
-      marginBottom: "0.25rem",
-    },
-    cardHandle: {
-      color: "var(--text-primary)",
-      fontSize: "0.9rem",
-    },
-    error: {
-      color: "#ef4444",
-      fontSize: "0.875rem",
-      marginTop: "0.25rem",
-    },
-  };
-
   return (
-    <section style={styles.section} className="contact-section page-section" id="contact">
+    <section className="contact-section page-section" id="contact">
       <div className="page-header contact-header">
         <h1>Get in Touch</h1>
         <p>Have a question or want to work together? Feel free to reach out!</p>
       </div>
 
-      <div style={styles.grid}>
+      <div className="contact-grid">
         {/* Contact Form */}
-        <form style={styles.form} onSubmit={handleSubmit}>
-          <div>
-            <label style={styles.label}>Name</label>
+        <form className="contact-form" onSubmit={handleSubmit}>
+          <div className="contact-field">
+            <label className="contact-label" htmlFor="contact-name">Name</label>
             <input
               type="text"
               name="name"
+              id="contact-name"
               autoComplete="name"
               placeholder="Your name"
-              style={styles.input}
               className="contact-input"
               value={formData.name}
               onChange={handleChange}
             />
-            {errors.name && <span style={styles.error}>{errors.name}</span>}
+            {errors.name && <span className="contact-error">{errors.name}</span>}
           </div>
-          <div>
-            <label style={styles.label}>Email</label>
+          <div className="contact-field">
+            <label className="contact-label" htmlFor="contact-email">Email</label>
             <input
               type="email"
               name="email"
+              id="contact-email"
               autoComplete="email"
               placeholder="your.email@example.com"
-              style={styles.input}
               className="contact-input"
               value={formData.email}
               onChange={handleChange}
             />
-            {errors.email && <span style={styles.error}>{errors.email}</span>}
+            {errors.email && <span className="contact-error">{errors.email}</span>}
           </div>
-          <div>
-            <label style={styles.label}>Message</label>
+          <div className="contact-field">
+            <label className="contact-label" htmlFor="contact-message">Message</label>
             <textarea
               name="message"
+              id="contact-message"
               placeholder="Your message..."
-              style={styles.textarea}
-              className="contact-input"
+              className="contact-input contact-textarea"
               value={formData.message}
               onChange={handleChange}
             />
-            {errors.message && <span style={styles.error}>{errors.message}</span>}
+            {errors.message && <span className="contact-error">{errors.message}</span>}
           </div>
-          <button type="submit" style={styles.button} className={`btn btn-primary contact-button ${submitError ? "error" : ""}`}>
+          <button type="submit" className={`btn btn-primary contact-button contact-submit ${submitError ? "error" : ""}`}>
             Send Message
           </button>
         </form>
 
         {/* Social Links */}
-        <div style={styles.socialSection}>
-          <h2 style={styles.socialTitle}>Connect with me</h2>
+        <div className="contact-social">
+          <h2 className="contact-social__title">Connect with me</h2>
           
           {siteProps.gitHub && (
-            <a href={`https://github.com/${siteProps.gitHub}`} target="_blank" rel="noopener noreferrer" style={styles.socialCard} className="social-card">
-              <FaGithub style={styles.icon} />
-              <div style={styles.cardContent}>
-                <span style={styles.cardTitle}>GitHub</span>
-                <span style={styles.cardHandle}>@{siteProps.gitHub}</span>
+            <a href={`https://github.com/${siteProps.gitHub}`} target="_blank" rel="noopener noreferrer" className="social-card contact-social__card">
+              <FaGithub className="contact-social__icon" />
+              <div className="contact-social__content">
+                <span className="contact-social__name">GitHub</span>
+                <span className="contact-social__handle">@{siteProps.gitHub}</span>
               </div>
             </a>
           )}
 
           {siteProps.linkedIn && (
-            <a href={`https://linkedin.com/in/${siteProps.linkedIn}`} target="_blank" rel="noopener noreferrer" style={styles.socialCard} className="social-card">
-              <FaLinkedin style={styles.icon} />
-              <div style={styles.cardContent}>
-                <span style={styles.cardTitle}>LinkedIn</span>
-                <span style={styles.cardHandle}>{siteProps.name}</span>
+            <a href={`https://linkedin.com/in/${siteProps.linkedIn}`} target="_blank" rel="noopener noreferrer" className="social-card contact-social__card">
+              <FaLinkedin className="contact-social__icon" />
+              <div className="contact-social__content">
+                <span className="contact-social__name">LinkedIn</span>
+                <span className="contact-social__handle">{siteProps.name}</span>
               </div>
             </a>
           )}
 
           {siteProps.twitter && (
-            <a href={`https://twitter.com/${siteProps.twitter}`} target="_blank" rel="noopener noreferrer" style={styles.socialCard} className="social-card">
-              <FaTwitter style={styles.icon} />
-              <div style={styles.cardContent}>
-                <span style={styles.cardTitle}>Twitter</span>
-                <span style={styles.cardHandle}>@{siteProps.twitter}</span>
+            <a href={`https://twitter.com/${siteProps.twitter}`} target="_blank" rel="noopener noreferrer" className="social-card contact-social__card">
+              <FaTwitter className="contact-social__icon" />
+              <div className="contact-social__content">
+                <span className="contact-social__name">Twitter</span>
+                <span className="contact-social__handle">@{siteProps.twitter}</span>
               </div>
             </a>
           )}
 
           {siteProps.email && (
-            <a href={`mailto:${siteProps.email}`} style={styles.socialCard} className="social-card">
-              <FaEnvelope style={styles.icon} />
-              <div style={styles.cardContent}>
-                <span style={styles.cardTitle}>Email</span>
-                <span style={styles.cardHandle}>{siteProps.email}</span>
+            <a href={`mailto:${siteProps.email}`} className="social-card contact-social__card">
+              <FaEnvelope className="contact-social__icon" />
+              <div className="contact-social__content">
+                <span className="contact-social__name">Email</span>
+                <span className="contact-social__handle">{siteProps.email}</span>
               </div>
             </a>
           )}
