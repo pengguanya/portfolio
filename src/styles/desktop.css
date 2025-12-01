@@ -165,6 +165,7 @@
     height: 100%; /* Make link fill the height for proper underline positioning if needed, or just align */
     display: flex;
     align-items: center; /* Ensure text inside link is centered */
+    position: relative;
   }
   
   .nav-link-indicator {
