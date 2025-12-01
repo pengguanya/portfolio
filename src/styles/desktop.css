@@ -435,9 +435,12 @@
 
   /* About Page - Consistent Text Sizes for Cards */
   .about-education .card h3,
-  .about-certifications .cert-item h4,
   .about-skills .card h3 {
-    font-size: 1.25rem; /* Consistent clear header size */
+    font-size: 1.15rem; /* Reduced from 1.25rem for skills/education hierarchy */
+  }
+
+  .about-certifications .cert-item h4 {
+    font-size: 1.1rem; /* Slightly smaller than main headers */
   }
 
   .about-education .sub-text,
