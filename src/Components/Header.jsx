@@ -9,6 +9,9 @@ import React, { useEffect, useRef, useState } from "react";
 const Header = ({ activeSection, setActiveSection, theme, toggleTheme, routes }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const navRef = useRef(null);
+  const headerRef = useRef(null);
+  const navLinkRefs = useRef({});
+  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0 });
 
   useEffect(() => {
     const handleResize = () => {
@@ -39,13 +42,57 @@ const Header = ({ activeSection, setActiveSection, theme, toggleTheme, routes })
     };
   }, [isMenuOpen]);
 
+  // Update indicator position when activeSection changes or window resizes
+  useEffect(() => {
+    const updateIndicatorPosition = () => {
+      // Only update indicator position on desktop (>= 1024px)
+      if (window.innerWidth < 1024) {
+        setIndicatorStyle({ left: 0, width: 0 });
+        return;
+      }
+
+      const activeButton = navLinkRefs.current[activeSection];
+      if (activeButton && headerRef.current) {
+        const headerRect = headerRef.current.getBoundingClientRect();
+        const buttonRect = activeButton.getBoundingClientRect();
+        
+        setIndicatorStyle({
+          left: buttonRect.left - headerRect.left,
+          width: buttonRect.width,
+        });
+      } else {
+        // If refs aren't ready yet, try again on next frame
+        requestAnimationFrame(() => {
+          const retryButton = navLinkRefs.current[activeSection];
+          if (retryButton && headerRef.current) {
+            const headerRect = headerRef.current.getBoundingClientRect();
+            const buttonRect = retryButton.getBoundingClientRect();
+            
+            setIndicatorStyle({
+              left: buttonRect.left - headerRect.left,
+              width: buttonRect.width,
+            });
+          }
+        });
+      }
+    };
+
+    // Small delay to ensure refs are attached
+    const timeoutId = setTimeout(updateIndicatorPosition, 0);
+    window.addEventListener("resize", updateIndicatorPosition);
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener("resize", updateIndicatorPosition);
+    };
+  }, [activeSection]);
+
   const handleSectionChange = (section) => {
     setActiveSection(section);
     setIsMenuOpen(false);
   };
 
   return (
-    <header className="site-header">
+    <header ref={headerRef} className="site-header">
       <div className="header-brand">Guanya Peng</div>
 
       <button
@@ -65,15 +112,26 @@ const Header = ({ activeSection, setActiveSection, theme, toggleTheme, routes })
           return (
             <button
               key={section}
+              ref={(el) => {
+                navLinkRefs.current[section] = el;
+              }}
               className={`nav-link ${isActive ? "active" : ""}`}
               onClick={() => handleSectionChange(section)}
             >
               {section.charAt(0).toUpperCase() + section.slice(1)}
-              {isActive && <span className="nav-link-indicator" />}
             </button>
           );
         })}
       </nav>
+      {indicatorStyle.width > 0 && (
+        <span
+          className="nav-link-indicator"
+          style={{
+            left: `${indicatorStyle.left}px`,
+            width: `${indicatorStyle.width}px`,
+          }}
+        />
+      )}
 
       <div className="theme-controls">
         <div className="language-pill">
