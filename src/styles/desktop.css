@@ -348,12 +348,13 @@
     display: block;
     position: absolute;
     bottom: -3px; /* Tiny gap below border (-1px would overlap, -2px is barely separated) */
-    left: 0;
-    right: 0;
     height: 1px; /* Very thin line */
     background: var(--text-title);
     border-radius: 0;
     z-index: 11;
+    transition: left 0.3s ease-in-out, width 0.3s ease-in-out;
+    /* Position relative to site-header */
+    left: 0;
   }
 
   /* Theme Controls */
