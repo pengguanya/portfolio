@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/pengguanya/portfolio/compare/v1.1.0...v1.2.0) (2025-12-02)
+
+
+### Features
+
+* add smooth sliding animation for desktop navigation indicator ([a8dc178](https://github.com/pengguanya/portfolio/commit/a8dc17885f0b84366407f90038469611318a158d))
+
 # [1.1.0](https://github.com/pengguanya/portfolio/compare/v1.0.1...v1.1.0) (2025-12-01)
 
 
