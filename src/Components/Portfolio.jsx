@@ -22,12 +22,12 @@
 import React, { useState } from "react";
 import { resolveImage } from "../utils/imageHelper";
 
-import clinicalAgentsImg from "../images/projects/clinical-agents.jpg";
-import deepClinicalImg from "../images/projects/deep-clinical-v2.jpg";
-import proteinImg from "../images/projects/protein-v2.jpg";
-import crmPackImg from "../images/projects/crmpack-v2.jpg";
-import semanticSearchImg from "../images/projects/semantic-search.jpg";
-import labAutomationImg from "../images/projects/lab-automation.jpg";
+import clinicalAgentsImg from "url:../images/projects/clinical-agents.jpg";
+import deepClinicalImg from "url:../images/projects/deep-clinical-v2.jpg";
+import proteinImg from "url:../images/projects/protein-v2.jpg";
+import crmPackImg from "url:../images/projects/crmpack-v2.jpg";
+import semanticSearchImg from "url:../images/projects/semantic-search.jpg";
+import labAutomationImg from "url:../images/projects/lab-automation.jpg";
 
 /**
  * Project Data

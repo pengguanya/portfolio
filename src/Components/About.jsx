@@ -5,27 +5,27 @@
  */
 
 import React from "react";
-import image from "../images/about-photo.jpg";
+import image from "url:../images/about-photo.jpg";
 import { resolveImage } from "../utils/imageHelper";
 
 // Import tool icons
-import vscodeIcon from "../images/tools/vscode.svg";
-import vimIcon from "../images/tools/vim.svg";
-import githubIcon from "../images/tools/github.svg";
-import gitlabIcon from "../images/tools/gitlab.png";
-import notionIcon from "../images/tools/notion.svg";
-import openaiIcon from "../images/tools/openai_2025.svg";
-import perplexityIcon from "../images/tools/perplexity_new.png";
-import awsIcon from "../images/tools/aws.svg";
-import boltIcon from "../images/tools/bolt.jpg";
-import supabaseIcon from "../images/tools/supabase.png";
-import replicateIcon from "../images/tools/replicate.jpg";
-import huggingfaceIcon from "../images/tools/huggingface.svg";
-import railwayIcon from "../images/tools/railway.png";
-import langchainIcon from "../images/tools/langchain.png";
-import n8nIcon from "../images/tools/n8n.png";
+import vscodeIcon from "url:../images/tools/vscode.svg";
+import vimIcon from "url:../images/tools/vim.svg";
+import githubIcon from "url:../images/tools/github.svg";
+import gitlabIcon from "url:../images/tools/gitlab.png";
+import notionIcon from "url:../images/tools/notion.svg";
+import openaiIcon from "url:../images/tools/openai_2025.svg";
+import perplexityIcon from "url:../images/tools/perplexity_new.png";
+import awsIcon from "url:../images/tools/aws.svg";
+import boltIcon from "url:../images/tools/bolt.jpg";
+import supabaseIcon from "url:../images/tools/supabase.png";
+import replicateIcon from "url:../images/tools/replicate.jpg";
+import huggingfaceIcon from "url:../images/tools/huggingface.svg";
+import railwayIcon from "url:../images/tools/railway.png";
+import langchainIcon from "url:../images/tools/langchain.png";
+import n8nIcon from "url:../images/tools/n8n.png";
 
-import anthropicIcon from "../images/tools/anthropic.svg";
+import anthropicIcon from "url:../images/tools/anthropic.svg";
 
 import {
   FaCode,
