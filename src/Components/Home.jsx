@@ -9,6 +9,7 @@ import React, { useState, useEffect } from "react";
 import arrowSvg from "../images/down-arrow.svg";
 import PropTypes from "prop-types";
 import { getGreetings } from "../utils/greetings";
+import { resolveImage } from "../utils/imageHelper";
 
 /**
  * Home background image
@@ -61,7 +62,7 @@ const Home = ({ name, title, setActiveSection, theme }) => {
   return (
     <section id="home" className="min-height home-section">
       <div className="home-photo-wrapper">
-        <img src={image} alt={imageAltText} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        <img src={resolveImage(image)} alt={imageAltText} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
       </div>
       
       <h1 className="home-title">
