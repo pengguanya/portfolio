@@ -6,10 +6,10 @@
 
 import React from "react";
 
-import rocheLogo from "../images/companies/roche.svg";
-import biotronikLogo from "../images/companies/biotronik.svg";
-import sakkLogo from "../images/companies/sakk.jpeg";
-import uzhLogo from "../images/companies/uzh.svg";
+import rocheLogo from "url:../images/companies/roche.svg";
+import biotronikLogo from "url:../images/companies/biotronik.svg";
+import sakkLogo from "url:../images/companies/sakk.jpeg";
+import uzhLogo from "url:../images/companies/uzh.svg";
 
 const experiences = [
   {
