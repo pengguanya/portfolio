@@ -1,3 +1,14 @@
+## [1.2.1](https://github.com/pengguanya/portfolio/compare/v1.2.0...v1.2.1) (2025-12-03)
+
+
+### Bug Fixes
+
+* explicit url: import scheme for Experience page images ([9e6816f](https://github.com/pengguanya/portfolio/commit/9e6816f8a41432efcc498d8618f244bc57ab9d77))
+* explicit url: import scheme for Parcel 2 assets ([e6ef8bb](https://github.com/pengguanya/portfolio/commit/e6ef8bb206a0a3a55bbf9c883471c8bcd14a4ce8))
+* resolve React errors and broken images caused by Parcel 2 ESM import change ([bdebe2e](https://github.com/pengguanya/portfolio/commit/bdebe2ebf231799c6b6cc0f31e4e7c711d92a557))
+* update eslint-plugin-jsx-a11y and add overrides for transitive dependencies ([86aa0d3](https://github.com/pengguanya/portfolio/commit/86aa0d397be91499415b170364f3e45695aa349e))
+* update parcel from 2.7.0 to 2.16.1 to resolve security vulnerabilities ([132b3f3](https://github.com/pengguanya/portfolio/commit/132b3f31aafcc35096fb42865cc162a66c66afce))
+
 # [1.2.0](https://github.com/pengguanya/portfolio/compare/v1.1.0...v1.2.0) (2025-12-02)
 
 
