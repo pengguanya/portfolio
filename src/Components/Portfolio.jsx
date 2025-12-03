@@ -20,7 +20,6 @@
  */
 
 import React, { useState } from "react";
-import { resolveImage } from "../utils/imageHelper";
 
 import clinicalAgentsImg from "url:../images/projects/clinical-agents.jpg";
 import deepClinicalImg from "url:../images/projects/deep-clinical-v2.jpg";
@@ -140,7 +139,7 @@ const Portfolio = () => {
           <div className="project-card" key={index}>
             <div className="project-image-container" style={!project.image ? getPlaceholderStyle(project.title) : {}}>
               {project.image ? (
-                <img src={resolveImage(project.image)} alt={project.title} className="project-image" />
+                <img src={project.image} alt={project.title} className="project-image" />
               ) : (
                 <span>{project.title.charAt(0)}</span>
               )}

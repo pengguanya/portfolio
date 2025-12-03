@@ -6,7 +6,6 @@
 
 import React from "react";
 import image from "url:../images/about-photo.jpg";
-import { resolveImage } from "../utils/imageHelper";
 
 // Import tool icons
 import vscodeIcon from "url:../images/tools/vscode.svg";
@@ -143,7 +142,7 @@ const About = () => {
     <section className="padding" id="about">
       <div className="about-container">
         <div className="about-header">
-          <img className="profile-image" src={resolveImage(image)} alt="Guanya Peng" />
+          <img className="profile-image" src={image} alt="Guanya Peng" />
         </div>
 
         <div className="about-content">
@@ -214,9 +213,9 @@ const About = () => {
                 {tools.map((tool, index) => (
                   <div className="tool-item" key={index}>
                     <div className="tool-icon">
-                      {typeof resolveImage(tool.icon) === "string" ? (
+                      {typeof tool.icon === "string" ? (
                         <img
-                          src={resolveImage(tool.icon)}
+                          src={tool.icon}
                           alt={tool.name}
                           style={{
                             width: "100%",
