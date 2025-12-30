@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/pengguanya/portfolio/compare/v1.2.1...v1.2.2) (2025-12-30)
+
+
+### Bug Fixes
+
+* resolve 404 error on Azure Static Web Apps by skipping build ([5ae0a95](https://github.com/pengguanya/portfolio/commit/5ae0a9504ed8c24ee515a69bdb4033fb034fb9df))
+
 ## [1.2.1](https://github.com/pengguanya/portfolio/compare/v1.2.0...v1.2.1) (2025-12-03)
 
 
