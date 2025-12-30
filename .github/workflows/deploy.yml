@@ -137,7 +137,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: site-dist
-          path: dist
+          path: final-dist
 
       - name: Deploy
         uses: azure/static-web-apps-deploy@v1
@@ -145,7 +145,7 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: upload
-          app_location: dist
+          app_location: final-dist
           api_location: ""
           output_location: ""
           skip_app_build: true
