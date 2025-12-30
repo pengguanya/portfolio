@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/pengguanya/portfolio/compare/v1.2.2...v1.2.3) (2025-12-30)
+
+
+### Bug Fixes
+
+* verify release pipeline ([89ae462](https://github.com/pengguanya/portfolio/commit/89ae4626a6e39e1fb4cebb80521aa7a153ea47c4))
+
 ## [1.2.2](https://github.com/pengguanya/portfolio/compare/v1.2.1...v1.2.2) (2025-12-30)
 
 
