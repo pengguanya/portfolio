@@ -139,6 +139,11 @@ jobs:
           name: site-dist
           path: final-dist
 
+      - name: Debug file structure
+        run: |
+          echo "Listing final-dist contents:"
+          ls -R final-dist
+
       - name: Deploy
         uses: azure/static-web-apps-deploy@v1
         with:
