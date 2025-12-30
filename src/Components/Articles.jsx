@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { formatCategoryName } from "../utils/formatters";
+import { formatCategoryName, decodeHtmlEntities } from "../utils/formatters";
 
 const Articles = ({ theme }) => {
   const [categorizedArticles, setCategorizedArticles] = useState({});
@@ -25,10 +25,12 @@ const Articles = ({ theme }) => {
         const entries = Array.from(xmlDoc.querySelectorAll("entry"));
 
         const items = entries.map((entry) => {
-          const title = entry.querySelector("title")?.textContent || "";
+          const rawTitle = entry.querySelector("title")?.textContent || "";
+          const title = decodeHtmlEntities(rawTitle);
           const link = entry.querySelector("link[rel='alternate']")?.getAttribute("href") || "";
           const pubDate = entry.querySelector("published")?.textContent || "";
-          const description = entry.querySelector("summary")?.textContent || entry.querySelector("content")?.textContent || "";
+          const rawDescription = entry.querySelector("summary")?.textContent || entry.querySelector("content")?.textContent || "";
+          const description = decodeHtmlEntities(rawDescription);
           const guid = entry.querySelector("id")?.textContent || link;
           
           const categories = Array.from(entry.querySelectorAll("category")).map(cat => cat.getAttribute("term"));

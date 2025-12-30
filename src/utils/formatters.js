@@ -19,3 +19,17 @@ export const formatCategoryName = (name) => {
     return txt.charAt(0).toUpperCase() + txt.slice(1).toLowerCase();
   });
 };
+
+/**
+ * Decodes HTML entities in a string.
+ * e.g. "404 Errors &amp; Subscriptions" -> "404 Errors & Subscriptions"
+ * 
+ * @param {string} str - The string to decode
+ * @returns {string} - The decoded string
+ */
+export const decodeHtmlEntities = (str) => {
+  if (!str) return "";
+  const txt = document.createElement("textarea");
+  txt.innerHTML = str;
+  return txt.value;
+};
