@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/pengguanya/portfolio/compare/v1.2.2...v1.2.3) (2025-12-30)
+
+
+### Bug Fixes
+
+* add staticwebapp.config.json and update deploy workflow path ([ea8c834](https://github.com/pengguanya/portfolio/commit/ea8c834810c8d9839bde0b8a8eb239b7e1f03a68))
+
 ## [1.2.2](https://github.com/pengguanya/portfolio/compare/v1.2.1...v1.2.2) (2025-12-30)
 
 
