@@ -254,7 +254,7 @@
 
   /* Home Page Desktop Specifics */
   .home-section {
-    padding-top: 9rem; /* Extra breathing room between header and hero */
+    padding-top: 10.5rem; /* Extra breathing room between header and hero */
     justify-content: center;
   }
 
