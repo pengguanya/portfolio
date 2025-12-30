@@ -109,4 +109,4 @@ This is a personal site, but feel free to open issues if you spot bugs or want t
 ## License
 ISC © Guanya Peng
 
-<!-- ci-test placeholder -->
+<!-- ci-test placeholder: verify pipeline -->
