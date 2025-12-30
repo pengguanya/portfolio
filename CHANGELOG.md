@@ -1,3 +1,10 @@
+## [1.2.4](https://github.com/pengguanya/portfolio/compare/v1.2.3...v1.2.4) (2025-12-30)
+
+
+### Bug Fixes
+
+* **articles:** decode html entities in article titles and descriptions ([1e5a028](https://github.com/pengguanya/portfolio/commit/1e5a028bc152d689ce03966b2a41a0a2f6a7b919))
+
 ## [1.2.3](https://github.com/pengguanya/portfolio/compare/v1.2.2...v1.2.3) (2025-12-30)
 
 
