@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/pengguanya/portfolio/compare/v1.2.1...v1.2.2) (2025-12-30)
+
+
+### Bug Fixes
+
+* skip oryx build in azure deployment ([ec4f787](https://github.com/pengguanya/portfolio/commit/ec4f787a349020273e2a99f9da5ea83c9e3a9b67))
+
 ## [1.2.1](https://github.com/pengguanya/portfolio/compare/v1.2.0...v1.2.1) (2025-12-03)
 
 
