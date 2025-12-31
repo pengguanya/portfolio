@@ -74,7 +74,8 @@ const Contact = ({ siteProps }) => {
           name,
           email,
           message,
-          _subject: `Contact from ${name}`
+          _subject: `Contact from ${name}`,
+          _captcha: "false"
         })
       });
 
