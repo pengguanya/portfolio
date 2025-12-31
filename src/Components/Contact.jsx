@@ -64,7 +64,7 @@ const Contact = ({ siteProps }) => {
     }
 
     try {
-      const response = await fetch(`https://formsubmit.co/ajax/${siteProps.email}`, {
+      const response = await fetch("https://formspree.io/f/mvzgpyoy", {
         method: "POST",
         headers: { 
           'Content-Type': 'application/json',
@@ -74,8 +74,7 @@ const Contact = ({ siteProps }) => {
           name,
           email,
           message,
-          _subject: `Contact from ${name}`,
-          _captcha: "false"
+          _subject: `Contact from ${name}`
         })
       });
 
