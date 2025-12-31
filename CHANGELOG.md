@@ -1,3 +1,10 @@
+## [1.2.6](https://github.com/pengguanya/portfolio/compare/v1.2.5...v1.2.6) (2025-12-31)
+
+
+### Bug Fixes
+
+* **contact:** update Formspree endpoint to xbdlrbon ([b56d2dd](https://github.com/pengguanya/portfolio/commit/b56d2dd1f3049f244845679a95315b2c0e221d41))
+
 ## [1.2.5](https://github.com/pengguanya/portfolio/compare/v1.2.4...v1.2.5) (2025-12-31)
 
 
