@@ -35,10 +35,10 @@ import {
 } from "react-icons/fa";
 
 const description = [
-  "I am a Senior Data Science Product Leader and Data Engineer with over 6 years of experience in building large-scale data pipelines and AI/ML products in regulated pharmaceutical environments. Currently based in Zurich, Switzerland, I specialize in bridging the gap between complex data and actionable insights through robust engineering and advanced analytics.",
-  "My expertise spans the full data lifecycle, from designing Snowflake data models and ELT pipelines with PySpark and SQL to deploying automated MLOps workflows using Kubeflow and GitLab CI/CD on AWS. I have a strong track record of delivering FAIR-aligned datasets and secure, reusable pipelines that power analytics and GenAI applications.",
-  "I am passionate about leveraging technology to solve real-world challenges, having led projects in AI-enhanced computer vision, agentic AI workflows, and discrete-event simulation for manufacturing optimization. I thrive in collaborative environments, partnering with SMEs and data scientists to drive innovation and operational excellence.",
-  "With a background in Computational Biology and Physics, I bring a rigorous analytical approach to every project. Whether it's developing foundational models or optimizing clinical trial processes, I am dedicated to delivering high-quality, impactful solutions.",
+  "I am a versatile Data Professional with over 6 years of experience across Data Science, Data Engineering, and Product Leadership in highly regulated environments. Currently based in Zurich, Switzerland, I specialize in architecting intelligent systems and bridging the gap between complex quantitative analysis and operational excellence.",
+  "My expertise spans the entire data value chain, from engineering robust Snowflake data models and scalable ELT pipelines with PySpark to designing sophisticated statistical models and deploying MLOps workflows on AWS. I have a strong track record of delivering FAIR-aligned datasets and secure, reusable AI solutions that drive measurable business impact.",
+  "I am passionate about solving real-world challenges with a rigorous scientific approach, having led projects ranging from AI-enhanced computer vision and agentic workflows to discrete-event simulations for manufacturing optimization. I thrive in cross-functional environments, partnering with domain experts and stakeholders to translate abstract problems into high-performance technical solutions.",
+  "With a PhD in Computational Biology and a background in Physics, I bring deep analytical and quantitative rigor to every project. Whether it's building foundational data infrastructure or developing advanced predictive models, I am dedicated to delivering high-quality, scalable, and impactful solutions for the future of AI and data.",
 ];
 
 const education = [
