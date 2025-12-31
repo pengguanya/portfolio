@@ -1,3 +1,10 @@
+## [1.2.5](https://github.com/pengguanya/portfolio/compare/v1.2.4...v1.2.5) (2025-12-31)
+
+
+### Bug Fixes
+
+* **contact:** disable captcha to improve form delivery reliability ([757e77f](https://github.com/pengguanya/portfolio/commit/757e77f88ffe67cf0e502ec3c4b48f1867446103))
+
 ## [1.2.4](https://github.com/pengguanya/portfolio/compare/v1.2.3...v1.2.4) (2025-12-30)
 
 
