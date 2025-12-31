@@ -24,7 +24,7 @@ import "./styles.css";
 const siteProps = {
   name: "Guanya Peng",
   title: "A passionate developer crafting data-driven solutions to solve real-world challenges.",
-  email: "guanya.peng24@gmail.com",
+  email: "guanya.peng@outlook.com",
   gitHub: "pengguanya",
   instagram: "",
   linkedIn: "guanyapeng",
