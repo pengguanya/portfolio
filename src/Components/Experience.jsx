@@ -15,7 +15,7 @@ const experiences = [
   {
     id: 1,
     date: "01/2022 - Present",
-    title: "Senior Data Science Product Leader",
+    title: "Senior Data Scientist",
     company: "Roche",
     logo: rocheLogo,
     location: "Basel, Switzerland",
@@ -30,7 +30,7 @@ const experiences = [
   {
     id: 2,
     date: "09/2020 - 12/2021",
-    title: "Senior Data Manager (AI/ML)",
+    title: "Data Scientist",
     company: "Roche",
     logo: rocheLogo,
     location: "Basel, Switzerland",
