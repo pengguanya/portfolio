@@ -1,3 +1,10 @@
+## [1.2.7](https://github.com/pengguanya/portfolio/compare/v1.2.6...v1.2.7) (2026-06-05)
+
+
+### Bug Fixes
+
+* **articles:** show all blog categories with defined ordering ([c1054fd](https://github.com/pengguanya/portfolio/commit/c1054fd52379e029764834e08d255772ffe916e0))
+
 ## [1.2.6](https://github.com/pengguanya/portfolio/compare/v1.2.5...v1.2.6) (2025-12-31)
 
 
