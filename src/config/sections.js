@@ -29,7 +29,7 @@ export const sections = [
   {
     id: "experience",
     label: "Experience",
-    enabled: true,
+    enabled: false,
     render: ({ theme }) => <Experience theme={theme} />,
   },
   {
