@@ -1,3 +1,10 @@
+## [1.2.8](https://github.com/pengguanya/portfolio/compare/v1.2.7...v1.2.8) (2026-06-05)
+
+
+### Bug Fixes
+
+* update section content ([a4b1988](https://github.com/pengguanya/portfolio/commit/a4b19880fa4d600f52ee1b58b0dbea8749049497))
+
 ## [1.2.7](https://github.com/pengguanya/portfolio/compare/v1.2.6...v1.2.7) (2026-06-05)
 
 
